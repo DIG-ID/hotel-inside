@@ -19,6 +19,8 @@ function hi_theme_setup() {
 
 	add_theme_support( 'post-thumbnails' );
 
+	add_theme_support( 'post-formats', array( 'gallery', 'video' ) );
+
 	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
 
 	add_image_size( 'event-gallery-full', 1920, 900, array( 'center', 'center' ) );
