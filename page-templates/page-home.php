@@ -1,8 +1,9 @@
 <?php
 /**
- * Template Name: Contacts Page Template
+ * Template Name: Home Page Template
  */
 ?>
+
 <?php get_header(); ?>
 
 <?php get_footer(); ?>
