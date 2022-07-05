@@ -6,7 +6,8 @@ function hi_theme_setup() {
 
 	register_nav_menus(
 		array(
-			'main' => __( 'Main Menu', 'hotel-inside' ),
+			'main'   => __( 'Main Menu', 'hotel-inside' ),
+			'footer' => __( 'Footer Menu', 'hotel-inside' ),
 		)
 	);
 
