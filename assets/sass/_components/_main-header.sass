@@ -1,0 +1,22 @@
+.main-header
+  .top-header
+    padding: 20px 0px
+    background-color: $main-blue
+  .navbar
+    background-color: #fff
+
+.admin-bar
+  .main-header.fixed-top
+    top: 32px
+
+@include media-breakpoint-down(md)
+  .admin-bar
+    .main-header.fixed-top
+      top: 46px
+
+@include media-breakpoint-down(sm)
+  .main-header
+    .custom-logo-link
+      svg
+        width: 100%
+        height: 40px

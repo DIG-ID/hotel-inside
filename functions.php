@@ -6,6 +6,7 @@ function hi_theme_setup() {
 
 	register_nav_menus(
 		array(
+			'top'    => __( 'top Menu', 'hotel-inside' ),
 			'main'   => __( 'Main Menu', 'hotel-inside' ),
 			'footer' => __( 'Footer Menu', 'hotel-inside' ),
 		)
@@ -68,3 +69,6 @@ require get_template_directory() . '/inc/theme-template-tags.php';
 
 // Theme customizer options.
 require get_template_directory() . '/inc/customizer.php';
+
+// Theme custom nav walker.
+require get_template_directory() . '/inc/custom-nav-walker.php';
