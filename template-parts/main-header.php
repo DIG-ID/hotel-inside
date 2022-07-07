@@ -1,7 +1,7 @@
 <header id="main-header" class="main-header fixed-top" itemscope itemtype="http://schema.org/WebSite">
 	<div class="top-header">
 		<div class="container">
-			<div class="row">
+			<div class="row align-items-center">
 				<div class="col">
 					<?php if ( is_front_page() && is_home() ) : ?>
 						<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url" class="navbar-brand custom-logo-link ">
@@ -18,7 +18,7 @@
 				<div class="col">
 					<p>think thank</p>
 				</div>
-				<div class="col">
+				<div class="col d-flex justify-content-between align-items-center">
 					<?php get_search_form(); ?>
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
 						<span></span>

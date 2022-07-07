@@ -1,53 +1,50 @@
-<footer class="site-footer">
-	<?php if ( has_nav_menu( 'footer' ) ) : ?>
-		<nav aria-label="<?php esc_attr_e( 'Footer menu', 'hotel-inside' ); ?>" class="footer-navigation">
-			<ul class="footer-navigation-wrapper">
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'footer',
-						'items_wrap'     => '%3$s',
-						'container'      => false,
-						'depth'          => 1,
-						'link_before'    => '<span>',
-						'link_after'     => '</span>',
-						'fallback_cb'    => false,
-					)
-				);
-				?>
-			</ul><!-- .footer-navigation-wrapper -->
-		</nav><!-- .footer-navigation -->
-	<?php endif; ?>
-	<div class="site-info">
-		<div class="site-name">
-			<?php if ( has_custom_logo() ) : ?>
-				<div class="site-logo"><?php the_custom_logo(); ?></div>
-			<?php else : ?>
-				<?php if ( get_bloginfo( 'name' ) && get_theme_mod( 'display_title_and_tagline', true ) ) : ?>
-					<?php if ( is_front_page() && ! is_paged() ) : ?>
-						<?php bloginfo( 'name' ); ?>
-					<?php else : ?>
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>
+
+<footer class="main-footer">
+	<div class="footer-content">
+		<div class="container">
+			<div class="row">
+				<?php get_template_part( 'template-parts/footer/branding' ); ?>
+				<?php get_template_part( 'template-parts/footer/navigation' ); ?>
+				<?php get_template_part( 'template-parts/footer/newsletter' ); ?>
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</div><!-- .footer-content -->
+	<div class="footer-copyright">
+		<div class="container">
+			<div class="row">
+				<div class="col-6">
+					<div class="powered-by">
+						<?php
+						printf(
+							/* translators: %s: WordPress. */
+							esc_html__( 'Proudly powered by %s.', 'hotel-inside' ),
+							'<a href="' . esc_url( __( 'https://dig.id/', 'hotel-inside' ) ) . '">dig.id</a>'
+						);
+						?>
+					</div><!-- .powered-by -->
+				</div>
+				<div class="col-6">
+					<?php if ( has_nav_menu( 'copy-footer' ) ) : ?>
+						<nav aria-label="<?php esc_attr_e( 'Footer copyright menu', 'hotel-inside' ); ?>" class="footer-copyright-navigation">
+							<ul class="footer-copyright-navigation-wrapper">
+								<?php
+								wp_nav_menu(
+									array(
+										'theme_location' => 'copy-footer',
+										'items_wrap'     => '%3$s',
+										'container'      => false,
+										'depth'          => 1,
+										'link_before'    => '<span>',
+										'link_after'     => '</span>',
+										'fallback_cb'    => false,
+									)
+								);
+								?>
+							</ul><!-- .footer-navigation-wrapper -->
+						</nav><!-- .footer-navigation -->
 					<?php endif; ?>
-				<?php endif; ?>
-			<?php endif; ?>
-		</div><!-- .site-name -->
-
-		<?php
-		if ( function_exists( 'the_privacy_policy_link' ) ) {
-			the_privacy_policy_link( '<div class="privacy-policy">', '</div>' );
-		}
-		?>
-
-		<div class="powered-by">
-			<?php
-			printf(
-				/* translators: %s: WordPress. */
-				esc_html__( 'Proudly powered by %s.', 'hotel-inside' ),
-				'<a href="' . esc_url( __( 'https://dig.id/', 'hotel-inside' ) ) . '">dig.id</a>'
-			);
-			?>
-		</div><!-- .powered-by -->
-
-	</div><!-- .site-info -->
+				</div>
+			</div><!-- .row -->
+		</div><!-- .container -->
+	</div><!-- .footer-bar -->
 </footer><!-- #colophon -->

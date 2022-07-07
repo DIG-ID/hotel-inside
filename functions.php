@@ -6,9 +6,10 @@ function hi_theme_setup() {
 
 	register_nav_menus(
 		array(
-			'top'    => __( 'top Menu', 'hotel-inside' ),
-			'main'   => __( 'Main Menu', 'hotel-inside' ),
-			'footer' => __( 'Footer Menu', 'hotel-inside' ),
+			'top'         => __( 'Top Menu', 'hotel-inside' ),
+			'main'        => __( 'Main Menu', 'hotel-inside' ),
+			'footer'      => __( 'Footer Menu', 'hotel-inside' ),
+			'copy-footer' => __( 'Copyright Menu', 'hotel-inside' ),
 		)
 	);
 
@@ -57,12 +58,40 @@ function hi_theme_enqueue_styles() {
 	//Get the theme data
 	$the_theme     = wp_get_theme();
 	$theme_version = $the_theme->get( 'Version' );
-	wp_enqueue_style( 'theme-styles', get_stylesheet_directory_uri() . '/dist/main.css', array(), $theme_version );
+
+	// Register Theme main style.
+	wp_register_style( 'hotel-inside-theme-styles', get_template_directory_uri() . '/dist/main.css', array(), $theme_version );
+
+	// Enqueue theme stylesheet.
+	wp_enqueue_style( 'hotel-inside-theme-styles' );
+
+	wp_register_script(
+		'hotel-inside-theme-scripts',
+		get_template_directory_uri() . '/dist/main.js',
+		array(),
+		$theme_version,
+		true
+	);
+
+	wp_enqueue_script( 'hotel-inside-theme-scripts' );
+
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'theme-scripts', get_stylesheet_directory_uri() . '/dist/main.js', array( 'jquery' ), $theme_version, false );
+
 }
 
 add_action( 'wp_enqueue_scripts', 'hi_theme_enqueue_styles' );
+
+if ( ! function_exists( 'hi_preload_webfonts' ) ) :
+
+	function hi_preload_webfonts() {
+		?>
+		<link rel="preload" href="https://use.typekit.net/frp2sqi.css" as="font" crossorigin>
+		<?php
+	}
+
+endif;
+
+add_action( 'wp_head', 'hi_preload_webfonts' );
 
 // Theme custom template tags.
 require get_template_directory() . '/inc/theme-template-tags.php';
