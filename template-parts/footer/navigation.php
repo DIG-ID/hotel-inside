@@ -1,5 +1,5 @@
 <div class="col">
-	<h3 class="footer-title"><?php esc_html_e( 'Categories', 'hotel-inside' ); ?></h3>
+	<h3 class="footer-title"><?php esc_html_e( 'Themen', 'hotel-inside' ); ?></h3>
 	<?php if ( has_nav_menu( 'footer' ) ) : ?>
 		<nav aria-label="<?php esc_attr_e( 'Footer menu', 'hotel-inside' ); ?>" class="footer-navigation">
 			<ul class="footer-navigation-wrapper">

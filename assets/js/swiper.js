@@ -1,10 +1,12 @@
 import Swiper from 'swiper/bundle';
 
 $(function() {
+
   var heroSwiperThumbs = new Swiper('.hero-swiper-thumbs', {
     spaceBetween: 0,
     slidesPerView: 4,
   });
+
   var heroSwiper = new Swiper('.hero-swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
@@ -20,6 +22,16 @@ $(function() {
     },
     thumbs: {
       swiper: heroSwiperThumbs,
+    },
+  });
+
+  var categorie1BlockSwiper = new Swiper('.categorie-1-block-slider', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    loop: true,
+    navigation: {
+      nextEl: ".categorie-1-block-slider-button-next",
+      prevEl: ".categorie-1-block-slider-button-prev",
     },
   });
 

@@ -14,13 +14,16 @@
 			<div class="row">
 				<div class="col-6">
 					<div class="powered-by">
-						<?php
-						printf(
-							/* translators: %s: WordPress. */
-							esc_html__( 'Proudly powered by %s.', 'hotel-inside' ),
-							'<a href="' . esc_url( __( 'https://dig.id/', 'hotel-inside' ) ) . '">dig.id</a>'
-						);
-						?>
+						<p>
+							<?php
+							$y = date( 'Y' );
+							printf(
+								/* translators: %s: WordPress. */
+								esc_html__( '&copy;  Proudly powered by %s.', 'hotel-inside' ),
+								'<a href="' . esc_url( __( 'https://dig.id/', 'hotel-inside' ) ) . '">dig.id</a>'
+							);
+							?>
+						</p>
 					</div><!-- .powered-by -->
 				</div>
 				<div class="col-6">

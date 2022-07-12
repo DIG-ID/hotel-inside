@@ -3,7 +3,7 @@
  * Displays the hero/slider section on the home page.
  */
 ?>
-<section id="hero-section" class="hero-section">
+<section id="section-hero" class="section section-hero">
 	<?php
 	$args = array(
 		'posts_per_page' => 4,

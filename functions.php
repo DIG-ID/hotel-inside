@@ -62,6 +62,9 @@ function hi_theme_enqueue_styles() {
 	// Register Theme main style.
 	wp_register_style( 'hotel-inside-theme-styles', get_template_directory_uri() . '/dist/main.css', array(), $theme_version );
 
+	// Add styles inline.
+	wp_add_inline_style( 'hotel-inside-theme-styles', hi_get_font_face_styles() );
+
 	// Enqueue theme stylesheet.
 	wp_enqueue_style( 'hotel-inside-theme-styles' );
 
@@ -81,11 +84,81 @@ function hi_theme_enqueue_styles() {
 
 add_action( 'wp_enqueue_scripts', 'hi_theme_enqueue_styles' );
 
+
+
+if ( ! function_exists( 'hi_get_font_face_styles' ) ) :
+
+	/**
+	 * Get font face styles.
+	 * Called by functions twentytwentytwo_styles() and twentytwentytwo_editor_styles() above.
+	 */
+	function hi_get_font_face_styles() {
+
+		return "
+		@font-face {
+				font-family: 'acumin-pro';
+				src: url('https://use.typekit.net/af/6d4bb2/00000000000000003b9acafc/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3') format('woff2'),url('https://use.typekit.net/af/6d4bb2/00000000000000003b9acafc/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3') format('woff'),url('https://use.typekit.net/af/6d4bb2/00000000000000003b9acafc/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3') format('opentype');
+				font-display: swap;
+				font-style: normal;
+				font-weight:700;
+				font-stretch: normal;
+			}
+			
+			@font-face {
+				font-family: 'acumin-pro';
+				src: url('https://use.typekit.net/af/6ce26b/00000000000000003b9acafd/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3') format('woff2'),url('https://use.typekit.net/af/6ce26b/00000000000000003b9acafd/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3') format('woff'),url('https://use.typekit.net/af/6ce26b/00000000000000003b9acafd/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3') format('opentype');
+				font-display: swap;
+				font-style: italic;
+				font-weight: 700;
+				font-stretch: normal;
+			}
+			
+			@font-face {
+				font-family:'acumin-pro';
+				src: url('https://use.typekit.net/af/aa5b59/00000000000000003b9acaf7/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3') format('woff2'),url('https://use.typekit.net/af/aa5b59/00000000000000003b9acaf7/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3') format('woff'),url('https://use.typekit.net/af/aa5b59/00000000000000003b9acaf7/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3') format('opentype');
+				font-display: swap;
+				font-style: italic;
+				font-weight: 400;
+				font-stretch: normal;
+			}
+			
+			@font-face {
+				font-family:'acumin-pro';
+				src: url('https://use.typekit.net/af/46da36/00000000000000003b9acaf6/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('woff2'),url('https://use.typekit.net/af/46da36/00000000000000003b9acaf6/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('woff'),url('https://use.typekit.net/af/46da36/00000000000000003b9acaf6/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('opentype');
+				font-display: swap;
+				font-style: normal;
+				font-weight: 400;
+				font-stretch: normal;
+			}
+			
+			@font-face {
+				font-family: 'rajdhani';
+				src: url('https://use.typekit.net/af/9ec815/00000000000000007735b876/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('woff2'),url('https://use.typekit.net/af/9ec815/00000000000000007735b876/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('woff'),url('https://use.typekit.net/af/9ec815/00000000000000007735b876/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3') format('opentype');
+				font-display: auto;
+				font-style: normal;
+				font-weight: 400;
+				font-stretch: normal;
+			}
+			
+			@font-face {
+				font-family: 'rajdhani';
+				src: url('https://use.typekit.net/af/fe9d1c/00000000000000007735b87f/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3') format('woff2'),url('https://use.typekit.net/af/fe9d1c/00000000000000007735b87f/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3') format('woff'),url('https://use.typekit.net/af/fe9d1c/00000000000000007735b87f/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3') format('opentype');
+				font-display: auto;
+				font-style: normal;
+				font-weight: 700;
+				font-stretch: normal;
+			}
+		";
+
+	}
+
+endif;
+
 if ( ! function_exists( 'hi_preload_webfonts' ) ) :
 
 	function hi_preload_webfonts() {
 		?>
-		<link rel="preload" href="https://use.typekit.net/frp2sqi.css" as="font" crossorigin>
+		<link rel="preload" href="https://p.typekit.net/p.css?s=1&k=frp2sqi&ht=tk&f=26053.26054.26056.26062.41022.41025&a=100534906&app=typekit&e=css" as="font" crossorigin>
 		<?php
 	}
 
