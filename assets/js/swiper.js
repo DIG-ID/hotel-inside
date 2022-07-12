@@ -25,7 +25,7 @@ $(function() {
     },
   });
 
-  var categorie1BlockSwiper = new Swiper('.categorie-1-block-slider', {
+  var categorie1BlockSwiper = new Swiper('.section-slider-w-sidebar-swiper', {
     slidesPerView: 1,
     spaceBetween: 0,
     loop: true,
