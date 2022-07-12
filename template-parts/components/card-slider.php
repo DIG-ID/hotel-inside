@@ -1,4 +1,4 @@
-<article id="post-<?php the_ID(); ?>" class="swiper-slide card card-one-block-w-slider">
+<article id="post-<?php the_ID(); ?>" class="swiper-slide card card-block-w-slider">
 	<?php if ( has_post_thumbnail() ) : ?>
 		<?php the_post_thumbnail( 'thumbnail' ); ?>
 	<?php else : ?>
