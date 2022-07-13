@@ -62,7 +62,7 @@
 							'post_status'         => 'publish',
 							'ignore_sticky_posts' => 1,
 							'post__not_in'        => get_option( 'sticky_posts' ),
-							'tax_query'           => array(
+							/*'tax_query'           => array(
 								array(
 									'taxonomy' => 'post_format',
 									'field'    => 'slug',
@@ -72,7 +72,7 @@
 									),
 									'operator' => 'NOT IN',
 								),
-							),
+							),*/
 						);
 						$the_query = new WP_Query( $args );
 						if ( $the_query->have_posts() ) :

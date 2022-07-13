@@ -2,7 +2,8 @@
 	<?php if ( has_post_thumbnail() ) : ?>
 		<?php the_post_thumbnail( 'thumbnail' ); ?>
 	<?php else : ?>
-		<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/default-1-block-thumbnail.png' ); ?>" alt="default thumbnail">
+		<!--<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/default-1-block-thumbnail.png' ); ?>" alt="default thumbnail">-->
+		<img src="https://picsum.photos/670/454" alt="example thumbnail">
 	<?php endif; ?>
 	<div class="card-content">
 		<?php the_title( '<h3 class="card-title">', '</h3>' ); ?>
