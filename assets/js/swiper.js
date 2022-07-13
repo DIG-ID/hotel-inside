@@ -35,4 +35,16 @@ $(function() {
     },
   });
 
+  var partnersSwiper = new Swiper('.partners-swiper', {
+    slidesPerView: 6,
+    spaceBetween: 30,
+    loop: true,
+    //speed: 6000,
+    //slidesPerView: 'auto',
+    /*autoplay: {
+      delay: 1,
+      disableOnInteraction: false,
+    },*/
+  });
+
 });

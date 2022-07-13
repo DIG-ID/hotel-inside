@@ -1,8 +1,3 @@
-<?php
-/**
- * Displays the hero/slider section on the home page.
- */
-?>
 <section id="section-hero" class="section section-hero">
 	<?php
 	$args = array(
@@ -43,20 +38,20 @@
 				<?php	while ( $news_query->have_posts() ) : $news_query->the_post(); ?>
 					<div class="swiper-slide col-4">
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-						<?php
-						$post_tags = get_the_tags();
+							<?php
+							$post_tags = get_the_tags();
 							if ( ( $post_tags ) ) :
-									echo '<ul>';
-									foreach( $post_tags as $post_tag ) :
-										echo '<li>' . esc_html( $post_tag->name ) . '</li>';
-									endforeach;
-									echo '</ul>';
+								echo '<ul>';
+								foreach( $post_tags as $post_tag ) :
+									echo '<li>' . esc_html( $post_tag->name ) . '</li>';
+								endforeach;
+								echo '</ul>';
 							endif;
 							?>
 							<?php the_title( '<p>', '</p>' ); ?>
 							<div class="post-date">
 								<i class="fco-icon-clock"></i>
-								<time datetime="<?php echo get_the_date('c'); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
+								<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
 							</div>
 						</article>
 					</div>
