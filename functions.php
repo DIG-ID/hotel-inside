@@ -138,7 +138,7 @@ if ( ! function_exists( 'hi_get_font_face_styles' ) ) :
 				font-style:normal;
 				font-weight:100;
 				font-stretch:normal;
-				}
+			}
 			
 			@font-face {
 				font-family: 'rajdhani';
