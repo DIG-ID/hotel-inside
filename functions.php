@@ -133,10 +133,10 @@ if ( ! function_exists( 'hi_get_font_face_styles' ) ) :
 
 			@font-face {
 				font-family:'acumin-pro';
-				src:url('https://use.typekit.net/af/b27b16/00000000000000003b9acaf0/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3') format('woff2'),url('https://use.typekit.net/af/b27b16/00000000000000003b9acaf0/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3') format('woff'),url('https://use.typekit.net/af/b27b16/00000000000000003b9acaf0/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n1&v=3') format('opentype');
+				src:url('https://use.typekit.net/af/a2c82e/00000000000000003b9acaf4/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3') format('woff2'),url('https://use.typekit.net/af/a2c82e/00000000000000003b9acaf4/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3') format('woff'),url('https://use.typekit.net/af/a2c82e/00000000000000003b9acaf4/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3') format('opentype');
 				font-display:auto;
 				font-style:normal;
-				font-weight:100;
+				font-weight:300;
 				font-stretch:normal;
 			}
 			
