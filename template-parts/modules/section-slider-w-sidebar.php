@@ -86,13 +86,20 @@
 					</div><!-- .col -->
 				</div><!-- .row -->
 				<?php endif; ?>
-
-				<div class="row">
-					<div class="col-12">
-						ads
+				<?php
+				$ads_img  = get_theme_mod( '' );
+				$ads_link = get_theme_mod( '' );
+				if ( ! empty( $ads_img ) ) :
+					?>
+					<div class="row">
+						<div class="col-12">
+							<a href="<?php echo esc_url( $ads_link ); ?>" target="_blank"></a>
+							<?php echo wp_get_attachment_image( $ads_img, 'full' ); ?>
+						</div>
 					</div>
-				</div>
-
+					<?php
+				endif;
+				?>
 			</div><!-- .col -->
 		</div><!-- .row -->
 	</div><!-- .container -->
