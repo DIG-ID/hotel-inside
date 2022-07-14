@@ -2,29 +2,85 @@
     #main-header
         display: none
 .coming-soon
-    &__container
-        height: 100vh
+    &__col
+        max-width: 800px
+    &__col-countdown
+        position: absolute
+        top: -61px
     &__half
-        height:50%
+        margin: 0
+        min-height:50vh
         align-items: center
         justify-content: center
+        flex-direction: column
     &__logo
         display: block
         margin: 0 auto
         max-width: 292px
     &__tophalf
+        position: relative
         background-color: #1A2338
+        padding: 62px 0
     &__bothalf
+        position: relative
         background-color: #C26538
+        padding: 130px 0
     &__toptext
         font-family: $acumin-font
-        font-weight: 400
+        font-weight: 600
         font-size: 34px
+        padding: 50px 0
         color: #F3F3F3
+        text-align: center
     &__bottext
         font-family: $acumin-font 
         font-size: 22px
         font-weight: 300
         line-height: 40px
         color: #F3F3F3
-        
+        text-align: center
+    &__newsletter
+        text-align: center
+        margin-top: 40px
+        input[type=email]
+            margin-right: 20px
+            width: 270px
+            border-radius: 24px
+            color: #1A2338
+            background-color: #FFFFFF
+            border: none
+            text-transform: uppercase
+            font-family: $acumin-font
+            font-size: 14px
+            font-weight: 400
+            padding: 7px 15px
+        input[type=submit]
+            width: 160px
+            margin-left: 20px
+            border-radius: 24px
+            background-color: #1A2338
+            color: #FFFFFF
+            border: none
+            text-transform: uppercase
+            font-family: $acumin-font
+            font-size: 14px
+            font-weight: 400
+            padding: 7px 0
+
+.countdown-section
+    .container
+        max-width: 536px
+        text-align: center
+    &__circlebox
+        width: 122px
+        height: 122px
+        border:2px solid #C26538
+        background-color: #1A2338
+        border-radius: 50%
+        span
+            font-family: $acumin-font
+            font-size: 54px
+            line-height: 108px
+            font-weight: 600
+            color: #F3F3F3
+            display: inline-block
