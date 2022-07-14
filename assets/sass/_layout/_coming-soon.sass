@@ -50,10 +50,10 @@
             background-color: #FFFFFF
             border: none
             text-transform: uppercase
-            font-family: $acumin-font
-            font-size: 14px
-            font-weight: 400
-            padding: 7px 15px
+            font-family: $montserrat-font
+            font-size: 12px
+            font-weight: 600
+            padding: 8.5px 15px
         input[type=submit]
             width: 160px
             margin-left: 20px
@@ -62,16 +62,21 @@
             color: #FFFFFF
             border: none
             text-transform: uppercase
-            font-family: $acumin-font
-            font-size: 14px
-            font-weight: 400
-            padding: 7px 0
+            font-family: $montserrat-font
+            font-size: 12px
+            font-weight: 600
+            padding: 8.5px 0
 
 .countdown-section
     .container
         max-width: 555px
         text-align: center
         padding: 0
+    &__box
+        font-family: $acumin-font
+        text-transform: uppercase
+        font-size: 12px
+        font-weight: 400
     &__circlebox
         width: 122px
         height: 122px
@@ -86,3 +91,22 @@
             font-weight: 600
             color: #F3F3F3
             display: inline-block
+
+@include media-breakpoint-down(sm)
+    .coming-soon
+        &__col-countdown
+            position: relative
+            margin-top: -130px
+        &__newsletter
+            input[type=email]
+                margin: 0 0 15px 0
+                width: 100%
+            input[type=submit]
+                margin: 0
+                width: 100%
+
+    .countdown-section
+        .col-6
+            display: flex
+            justify-content: center
+            margin-bottom: 15px

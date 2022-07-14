@@ -157,6 +157,15 @@ if ( ! function_exists( 'hi_get_font_face_styles' ) ) :
 				font-weight: 700;
 				font-stretch: normal;
 			}
+
+			@font-face {
+				font-family:'montserrat';
+				src:url('https://use.typekit.net/af/2180b4/00000000000000007735a193/30/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3') format('woff2'),url('https://use.typekit.net/af/2180b4/00000000000000007735a193/30/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3') format('woff'),url('https://use.typekit.net/af/2180b4/00000000000000007735a193/30/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3') format('opentype');
+				font-display:auto;
+				font-style:normal;
+				font-weight:600;
+				font-stretch:normal;
+			}
 		";
 
 	}
