@@ -16,11 +16,11 @@
 					<?php endif; ?>
 				</div>
 				<div class="col">
-					<p>think thank</p>
+					<img src="<?php echo wp_upload_dir()['url'] . '/hotel-inside-tag.svg' ?>" class="navbar__subtitle" alt="hotel inside tag">
 				</div>
-				<div class="col d-flex justify-content-between align-items-center">
+				<div class="col d-flex align-items-center">
 					<?php get_search_form(); ?>
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+					<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
 						<span></span>
 						<span></span>
 						<span></span>
