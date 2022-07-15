@@ -15,7 +15,7 @@ if ( $myterms ) :
 						<h2 class="section-title"><?php echo esc_html( $mysingleterm->name ); ?></h2>
 					</div>
 					<div class="col-3 text-end">
-						<a href="<?php echo esc_url( get_term_link( $mysingleterm ) ); ?>"><?php _e( 'Alle Beiträge', 'hotel-inside' ); ?></a>
+						<a href="<?php echo esc_url( get_term_link( $mysingleterm ) ); ?>" class="btn-go-to-overview"><?php _e( 'Alle Beiträge', 'hotel-inside' ); ?> <svg xmlns="http://www.w3.org/2000/svg" width="37.305" height="13.055" viewBox="0 0 37.305 13.055"><defs><style>.a,.b{fill:none;stroke:#9c98ae;stroke-width:2px;}.b{stroke-linecap:square;}</style></defs><g transform="translate(-92.61 -5.991)"><line class="a" x2="35.634" transform="translate(92.61 12.426)"/><line class="b" x2="7.259" transform="translate(123.368 17.632) rotate(-45)"/><line class="b" x2="7.259" transform="translate(123.368 7.405) rotate(45)"/></g></svg></a>
 					</div>
 				</div><!-- .row -->
 				<div class="row">

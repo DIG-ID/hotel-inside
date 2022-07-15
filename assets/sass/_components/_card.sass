@@ -6,10 +6,33 @@
     height: auto
     object-fit: cover
   &-title
+    font-family: $acumin-font
+    // Addition lines for 2 line or multiline ellipsis
+    text-overflow: ellipsis
+    overflow: hidden
+    display: -webkit-box !important
+    -webkit-line-clamp: 3
+    -webkit-box-orient: vertical
+    white-space: normal
   &-date
+    display: flex
+    align-items: center
+    color: $font-grey
+    svg
+      width: 16.706px
+      height: 16.706px
+      margin-right: 10px
+    time
+      font-family: $montserrat-font
+      font-weight: 300
+      font-size: 14px
+      text-transform: uppercase
   &-description
   &-content
     hr
+      max-width: 50%
+      background-color: $main-blue
+      color: $main-blue
   &-block-w-slider
     img
       margin-bottom: 20px
@@ -23,3 +46,5 @@
     max-width: 150px
   .card-content
     padding: 10px 20px
+  .card-title
+    font-size: 18px
