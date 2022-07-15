@@ -34,7 +34,7 @@
 							</div>
 						</div>
 						<div class="container-fluid p-0">
-							<div class="row mega-menu__row mega-menu__bottom-row">
+							<div class="row mega-menu__row mega-menu__bottom-row"> 
 								<?php get_template_part( 'template-parts/mega-menu/copyright-menu' ); ?>
 							</div>
 						</div>
