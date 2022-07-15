@@ -20,24 +20,23 @@
 				</div>
 				<div class="col d-flex align-items-center">
 					<?php get_search_form(); ?>
-					<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+					<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mega-menu">
 						<span></span>
 						<span></span>
 						<span></span>
 					</button>
-					<?php
-					wp_nav_menu(
-						array(
-							'theme_location'  => 'top',
-							'container_class' => 'collapse navbar-collapse justify-content-xl-end',
-							'container_id'    => 'navbarSupportedContent',
-							'menu_class'      => 'navbar-nav align-items-xl-center',
-							'fallback_cb'     => '',
-							'menu_id'         => 'top-nav',
-							'walker'          => new Custom_Walker_Nav_Menu(),
-						)
-					);
-					?>
+					<div id="mega-menu" class="mega-menu collapse">
+						<div class="container">
+							<div class="row mega-menu__row">
+								<?php get_template_part( 'template-parts/mega-menu/socials' ); ?>
+								<?php get_template_part( 'template-parts/mega-menu/main-menu' ); ?>
+								<?php get_template_part( 'template-parts/mega-menu/secondary-menu' ); ?>
+							</div>
+							<div class="row mega-menu__row">
+								<?php get_template_part( 'template-parts/mega-menu/copyright-menu' ); ?>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

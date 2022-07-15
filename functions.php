@@ -6,10 +6,11 @@ function hi_theme_setup() {
 
 	register_nav_menus(
 		array(
-			'top'         => __( 'Top Menu', 'hotel-inside' ),
-			'main'        => __( 'Main Menu', 'hotel-inside' ),
-			'footer'      => __( 'Footer Menu', 'hotel-inside' ),
-			'copy-footer' => __( 'Copyright Menu', 'hotel-inside' ),
+			'top'         	=> __( 'Top Menu', 'hotel-inside' ),
+			'top-secondary' => __( 'Top Secondary Menu', 'hotel-inside' ),
+			'main'        	=> __( 'Main Menu', 'hotel-inside' ),
+			'footer'      	=> __( 'Footer Menu', 'hotel-inside' ),
+			'copy-footer' 	=> __( 'Copyright Menu', 'hotel-inside' ),
 		)
 	);
 
