@@ -16,7 +16,7 @@
 					<?php endif; ?>
 				</div>
 				<div class="col">
-					<img src="<?php echo wp_upload_dir()['url'] . '/hotel-inside-tag.svg' ?>" class="navbar__subtitle" alt="hotel inside tag">
+					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hotel-inside-tag.svg' ); ?>" class="navbar__subtitle" alt="hotel inside tag">
 				</div>
 				<div class="col d-flex align-items-center">
 					<?php get_search_form(); ?>

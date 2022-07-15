@@ -4,7 +4,7 @@ if ( $myterms ) :
 	$i = 0;
 	foreach ( $myterms as $mysingleterm ) :
 		$i++;
-		if ( 3 === $i ) :
+		if ( 4 === $i ) :
 			get_template_part( 'template-parts/modules/section', 'newsletter-cta' );
 		endif;
 		?>
