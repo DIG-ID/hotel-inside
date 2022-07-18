@@ -8,7 +8,7 @@
 	<div class="card-content">
 		<?php the_title( '<h3 class="card-title">', '</h3>' ); ?>
 		<div class="card-date">
-			<i class="fco-icon-clock"></i>
+			<i class="icon-clock"></i>
 			<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
 		</div>
 		<hr>
