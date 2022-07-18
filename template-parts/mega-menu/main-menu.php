@@ -1,4 +1,4 @@
-<div class="col-lg-6">
+<div class="col-lg-5">
     <h3 class="mega-menu__title"><?php esc_html_e( 'Themen', 'hotel-inside' ); ?></h3>
     <?php
         wp_nav_menu(
