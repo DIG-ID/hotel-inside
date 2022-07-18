@@ -11,6 +11,5 @@
 			<i class="icon-clock"></i>
 			<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
 		</div>
-		<div class="card-description"><?php the_excerpt(); ?></div>
 	</div>
 </article>

@@ -1,12 +1,16 @@
 .card
   border: none
+  margin-bottom: 40px
   img
     width: 100%
     max-width: 100%
     height: auto
     object-fit: cover
+    margin-bottom: 20px
   &-title
     font-family: $acumin-font
+    font-size: 22px
+    margin-bottom: 10px
     // Addition lines for 2 line or multiline ellipsis
     text-overflow: ellipsis
     overflow: hidden
@@ -18,7 +22,7 @@
     display: flex
     align-items: center
     color: $font-grey
-    svg
+    i
       margin-right: 10px
     time
       font-family: $montserrat-font
@@ -26,22 +30,32 @@
       font-size: 14px
       text-transform: uppercase
   &-description
+    font-family: $acumin-font
+    font-weight: 300
+    font-size: 16px
+    // Addition lines for 2 line or multiline ellipsis
+    text-overflow: ellipsis
+    overflow: hidden
+    display: -webkit-box !important
+    -webkit-line-clamp: 2
+    -webkit-box-orient: vertical
+    white-space: normal
   &-content
     hr
       max-width: 50%
       background-color: $main-blue
       color: $main-blue
   &-block-w-slider
-    img
-      margin-bottom: 20px
     .card-content
 
 .card-sidebar
   flex-direction: row
   width: 100%
   align-items: center
+  margin-bottom: 20px
   img
     max-width: 150px
+    margin-bottom: 0px
   .card-content
     padding: 10px 20px
   .card-title

@@ -1,0 +1,161 @@
+.section-hero
+  width: 100%
+  height: calc( 95vh - 175px )
+  min-height: 100%
+  position: relative
+  padding-top: 0px
+  padding-bottom: 0px
+
+.hero-swiper
+  width: 100%
+  height: 100%
+  //padding: 150px 0px
+  position: relative
+  .hero-banner-wrapper
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: -1
+    &::before
+      position: absolute
+      top: 0
+      left: 0
+      content: ''
+      width: 100%
+      height: 100%
+      background: $main-blue
+      background: linear-gradient(0deg, rgba(27, 31, 39, 1) 0%, rgba(27, 31, 39, 1) 5%, rgba(27, 31, 39, 0.9) 20%, rgba(27, 31, 39, 0.7) 40%, rgba(27, 31, 39, 0.5) 60%, rgba(27, 31, 39, 0.1) 100%)
+    img
+      display: block
+      width: 100%
+      height: 100%
+      object-fit: cover
+  .swiper-slide
+    width: 100%
+    height: 100%
+    .post
+      width: 100%
+      height: 100%
+      padding-bottom: 220px
+      display: flex
+      flex-direction: column
+      justify-content: flex-end
+      h2
+        font-family: $acumin-font
+        font-weight: 700
+        font-size: 30px
+        color: #FFFFFF
+        margin-bottom: 20px
+        text-overflow: ellipsis
+        overflow: hidden
+        // Addition lines for 2 line or multiline ellipsis
+        display: -webkit-box !important
+        -webkit-line-clamp: 3
+        -webkit-box-orient: vertical
+        white-space: normal
+      .post-date
+        display: flex
+        align-items: center
+        i
+          margin-right: 10px
+          color: $font-grey
+        time
+          font-family: $montserrat-font
+          font-weight: normal
+          font-size: 16px
+          font-weight: 300
+          text-transform: uppercase
+          color: #fff
+
+.hero-swiper-thumbs
+  position: absolute
+  left: 0
+  right: 0
+  bottom: 50px
+  width: 100%
+  hr
+    background-color: red
+    color: red
+    margin-bottom: 50px
+  .swiper-slide
+    .post
+      background-color: transparent
+      transition: all .3s ease-in-out
+      &:hover
+        background-color: transparent
+        cursor: pointer
+        p
+          color: #FFFFFF
+      ul
+        margin: 0
+        padding: 0
+        list-style: none
+        display: flex
+      p
+        position: relative
+        margin-bottom: 20px
+        padding-top: 10px
+        font-family: $acumin-font
+        font-weight: 700
+        font-size: 18px
+        transition: all .3s ease-in-out
+        color: #fff
+        // Addition lines for 2 line or multiline ellipsis
+        text-overflow: ellipsis
+        overflow: hidden
+        display: -webkit-box !important
+        -webkit-line-clamp: 3
+        -webkit-box-orient: vertical
+        white-space: normal
+        &::before
+          content: ''
+          display: block
+          position: absolute
+          top: 0px
+          width: 170px
+          height: 3px
+          background-color: #fff
+      .post-date
+        display: flex
+        align-items: center
+        i
+          margin-right: 10px
+          color: $font-grey
+        time
+          font-family: $montserrat-font
+          font-weight: normal
+          font-size: 16px
+          font-weight: 300
+          text-transform: uppercase
+          color: #fff
+
+
+
+@include media-breakpoint-down(lg)
+  .hero-section
+    margin-bottom: 0px
+    .hero-swiper
+      .swiper-slide
+        .post
+          h2
+            font-size: 4rem
+    .hero-swiper-thumbs
+      display: none
+
+@include media-breakpoint-down(sm)
+  .hero-section
+    height: calc( 80vh - 175px )
+    .hero-swiper
+      .swiper-slide
+        .post
+          padding-bottom: 100px
+          h2
+            font-size: 3rem
+            line-height: 3rem
+      .swiper-button-prev,
+      .swiper-button-next
+        display: none

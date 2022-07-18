@@ -48,4 +48,3 @@ if ( $myterms ) :
 	endforeach;
 endif;
 ?>
-

@@ -1,4 +1,4 @@
-<section class="section section-club-evets-slider">
+<section class="section section-club-events-slider">
 	<div class="container">
 		<div class="row">
 			<div class="col-12">

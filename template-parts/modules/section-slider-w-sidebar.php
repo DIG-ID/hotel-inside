@@ -20,7 +20,7 @@
 						<div class="col-10">
 							<h2 class="section-title"><?php echo esc_html( $cpt_name->labels->singular_name ); ?></h2>
 						</div>
-						<div class="col-2 position-relative d-flex justify-content-between align-items-center">
+						<div class="col-2 position-relative d-flex justify-content-end align-items-center">
 							<div class="swiper-button-prev section-slider-w-sidebar-button-prev"></div>
 							<div class="swiper-button-next section-slider-w-sidebar-button-next"></div>
 						</div>
