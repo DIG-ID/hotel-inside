@@ -98,11 +98,16 @@
             margin: 0 0 0 20px!important
         label
             display: none
-        form > div > div:nth-child(1)
+        form > table > tr:nth-child(1)
             max-width: 270px
             float: left
-        form > div > div:nth-child(2)
+        form > table
+            display: flex
+            justify-content: center
+        form > table > tr:nth-child(2)
             float: left
+        form > h2
+            font-size: 22px
 
 .countdown-section
     .container
