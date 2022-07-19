@@ -80,26 +80,3 @@ $wp_customize->add_control(
 		)
 	)
 );
-
-$wp_customize->add_setting(
-	'newsletter_sc',
-	array(
-		'default'           => '',
-		'type'              => 'theme_mod',
-		'capability'        => 'edit_theme_options',
-		'transport'         => 'refresh',
-		'sanitize_callback' => 'wp_kses_post',
-	)
-);
-$wp_customize->add_control(
-	new WP_Customize_Control(
-		$wp_customize,
-		'newsletter_sc',
-		array(
-			'label'       => __( 'Newsletter Shortcode', 'hotel-inside' ),
-			'description' => '',
-			'section'     => 'footer_section',
-			'type'        => 'text',
-		)
-	)
-);
