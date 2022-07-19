@@ -23,7 +23,9 @@
 							<div class="container">
 								<div class="row">
 									<div class="col-12 col-sm-12 col-md-12 col-lg-7">
-										<?php the_title( '<h2>', '</h2>' ); ?>
+										<a href="<?php get_the_permalink(); ?>">
+											<?php the_title( '<h2>', '</h2>' ); ?>
+										</a>
 										<div class="post-date">
 											<i class="icon-clock"></i>
 											<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
@@ -45,7 +47,7 @@
 				<?php	while ( $news_query->have_posts() ) : $news_query->the_post(); ?>
 					<div class="swiper-slide col-4">
 						<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-							<?php the_title( '<p>', '</p>' ); ?>
+							<?php the_title( '<p class="post-title">', '</p>' ); ?>
 							<div class="post-date">
 								<i class="icon-clock"></i>
 								<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>

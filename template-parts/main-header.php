@@ -15,10 +15,10 @@
 						</a>
 					<?php endif; ?>
 				</div>
-				<div class="col">
+				<div class="col text-center">
 					<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hotel-inside-tag.svg' ); ?>" class="navbar__subtitle" alt="hotel inside tag">
 				</div>
-				<div class="col d-flex align-items-center">
+				<div class="col d-flex align-items-center justify-content-end">
 					<?php get_search_form(); ?>
 					<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mega-menu">
 						<span></span>

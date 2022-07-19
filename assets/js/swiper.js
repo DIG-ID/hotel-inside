@@ -26,8 +26,8 @@ $(function() {
     spaceBetween: 0,
     loop: true,
     navigation: {
-      nextEl: ".categorie-1-block-slider-button-next",
-      prevEl: ".categorie-1-block-slider-button-prev",
+      nextEl: ".section-slider-w-sidebar-button-next",
+      prevEl: ".section-slider-w-sidebar-button-prev",
     },
   });
 
