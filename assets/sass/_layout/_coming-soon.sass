@@ -39,7 +39,7 @@
     &__bothalf
         position: relative
         background-color: #C26538
-        padding: 130px 0
+        padding: 128px 0
     &__toptext
         font-family: $acumin-font
         font-weight: 600
@@ -55,20 +55,22 @@
         color: #F3F3F3
         text-align: center
     &__newsletter
+        display: flex
+        justify-content: center
         text-align: center
         margin-top: 40px
         input[type=email]
             margin-right: 20px
             width: 270px
-            border-radius: 24px
+            border-radius: 24px!important
             color: #1A2338
             background-color: #FFFFFF
-            border: none
+            border: none!important
             text-transform: uppercase
             font-family: $montserrat-font
             font-size: 12px
             font-weight: 600
-            padding: 8.5px 15px
+            padding: 8.5px 15px!important
         input[type=submit]
             width: 160px
             margin-left: 20px
@@ -81,6 +83,26 @@
             font-size: 12px
             font-weight: 600
             padding: 8.5px 0
+        button[type=submit]
+            width: 160px
+            margin-left: 20px
+            border-radius: 24px!important
+            background-color: #1A2338!important
+            color: #FFFFFF!important
+            border: none!important
+            text-transform: uppercase
+            font-family: $montserrat-font
+            font-size: 12px
+            font-weight: 600
+            padding: 8.5px 0!important
+            margin: 0 0 0 20px!important
+        label
+            display: none
+        form > div > div:nth-child(1)
+            max-width: 270px
+            float: left
+        form > div > div:nth-child(2)
+            float: left
 
 .countdown-section
     .container

@@ -79,7 +79,9 @@
             <p class="coming-soon__bottext">Werden Sie Hotel- und Hospitality-Insider!<br>Abonnieren Sie unseren Newsletter und erhalten Sie die relevantesten Insights und die aktuellsten Kommentare und Videobeiträge von Hans R. Amrein.</p>
         </div>
         <div class="col-12 coming-soon__col">
-        <?php echo do_shortcode(get_field('newsletter_shortcode')); ?>
+        <div class="coming-soon__newsletter">
+        <?php echo do_shortcode( '[newsletter2go form_type=subscribe]' ); ?>
+        </div>
         </div>        
     </div>
 </div>
