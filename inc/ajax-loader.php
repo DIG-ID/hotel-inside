@@ -50,7 +50,7 @@ function demo_load_my_posts() {
             foreach( $all_posts as $key => $post ):
                 $msg .= '<div class="col-sm-12 col-md-6 col-lg-4"><div class="marktplatz__col">';
                 $msg .= '
-                <h3 class="marktplatz__title">' . $post->post_title . '</h3>
+                <h3 class="marktplatz__title active">' . $post->post_title . '</h3>
                 <p class="marktplatz__cat">position</p><br>';
                 $terms = get_the_terms( $post->ID, 'categories_marktplatz' );
                 if ($terms) {
