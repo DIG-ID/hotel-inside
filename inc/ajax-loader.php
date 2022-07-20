@@ -14,7 +14,7 @@ function demo_load_my_posts() {
         $sort = sanitize_text_field($_POST['data']['th_sort']); // The order of our sort (DESC or ASC)
         $cur_page = $page;
         $page -= 1;
-        $per_page = 3; // Number of items to display per page
+        $per_page = 9; // Number of items to display per page
         $previous_btn = true;
         $next_btn = true;
         $first_btn = true;
@@ -43,7 +43,7 @@ function demo_load_my_posts() {
         // Check if our query returns anything.
         if( $all_posts ):
             
-            $msg .= '<div class="container-fluid"><div class="row gx-4">';
+            $msg .= '<div class="container-fluid"><div class="row g-4">';
             
            
             // Iterate thru each item
