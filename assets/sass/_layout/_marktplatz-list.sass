@@ -12,8 +12,6 @@
     &__col
         background-color: #F3F3F3
         padding: 15px
-        width: 370px
-        margin: 15px
     &__title
         font-family: $acumin-font
         font-size: 22px
@@ -35,8 +33,26 @@
         color: #C26538
         text-decoration: none
 
+.markt-search-form
+    display: flex
+    justify-content: center
+    margin-bottom: 40px
+    input[type=text]
+        width: 254px
+        border-radius: 24px
+        border: 1px solid #707070
+    input[type=submit]
+        display: none
+
+.section-markt-intro
+    padding-top: 100px!important
+
+.section-marktplatz
+    padding-top: 20px!important
+
 .section-markt-outro
     background-color: $main-orange
+
 .markt-outro
     &__row
         justify-content: center
@@ -48,3 +64,47 @@
         font-weight: 400
         color: #FFFFFF
         margin-bottom: 30px
+
+.cvf-universal-content
+    display: flex
+    justify-content: center
+
+.cvf-universal-pagination
+    display: flex
+    justify-content: end
+    padding-right: var(--bs-gutter-x, 0.75rem)
+    padding-left: var(--bs-gutter-x, 0.75rem)
+    ul
+        margin: 0
+        padding: 0
+        li
+            display: inline
+            margin: 0
+            padding: 6px 12px
+            background: #F9F9F9
+            color: #3C3C3C
+        li:first-child
+            border-radius: 18px
+            margin-right: 5px
+        li:last-child
+            border-radius: 18px
+            margin-left: 5px
+        li:nth-child(2)
+            padding-left: 20px
+            border-top-left-radius: 18px
+            border-bottom-left-radius: 18px
+        li:nth-last-child(2)
+            padding-right: 20px
+            border-top-right-radius: 18px
+            border-bottom-right-radius: 18px
+        li.active:hover
+            cursor: pointer
+            background: #F9F9F9
+            font-weight: 600
+            color: #3C3C3C
+        li.inactive
+            background: #F9F9F9
+        li.selected
+            background: #F9F9F9
+            font-weight: 600
+            color: #3C3C3C

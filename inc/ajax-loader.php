@@ -42,19 +42,27 @@ function demo_load_my_posts() {
        
         // Check if our query returns anything.
         if( $all_posts ):
-            $msg .= '<table class = "table table-striped table-hover table-file-list">';
+            
+            $msg .= '<div class="container-fluid"><div class="row gx-4">';
+            
            
             // Iterate thru each item
             foreach( $all_posts as $key => $post ):
+                $msg .= '<div class="col-sm-12 col-md-6 col-lg-4"><div class="marktplatz__col">';
                 $msg .= '
-                <tr>
-                    <td width = "25%"><a href = "' . get_permalink( $post->ID ) . '">' . $post->post_title . '</a></td>
-                    <td width = "60%">' . $post->post_excerpt . '</td>
-                    <td width = "15%">' . $post->post_date . '</td>
-                </tr>';        
+                <h3 class="marktplatz__title">' . $post->post_title . '</h3>
+                <p class="marktplatz__cat">position</p><br>';
+                $terms = get_the_terms( $post->ID, 'categories_marktplatz' );
+                if ($terms) {
+                    foreach($terms as $term) {
+                    $msg .= '<p class="marktplatz__cat">' . $term->name . '</p>';
+                    } 
+                } 
+                $msg .= '<a href="' . get_permalink( $post->ID ) . '" class="marktplatz__read-more m-0">Mehr erfahren</a>';   
+                $msg .= '</div></div>';     
             endforeach;
            
-            $msg .= '</table>';
+            $msg .= '</div></div>';   
        
         // If the query returns nothing, we throw an error message
         else:
@@ -88,17 +96,11 @@ function demo_load_my_posts() {
         <div class='cvf-universal-pagination'>
             <ul>";
 
-        if ($first_btn && $cur_page > 1) {
-            $pag_container .= "<li p='1' class='active'>First</li>";
-        } else if ($first_btn) {
-            $pag_container .= "<li p='1' class='inactive'>First</li>";
-        }
-
         if ($previous_btn && $cur_page > 1) {
             $pre = $cur_page - 1;
-            $pag_container .= "<li p='$pre' class='active'>Previous</li>";
+            $pag_container .= "<li p='$pre' class='active'> < </li>";
         } else if ($previous_btn) {
-            $pag_container .= "<li class='inactive'>Previous</li>";
+            $pag_container .= "<li class='inactive'> < </li>";
         }
         for ($i = $start_loop; $i <= $end_loop; $i++) {
 
@@ -110,15 +112,9 @@ function demo_load_my_posts() {
        
         if ($next_btn && $cur_page < $no_of_paginations) {
             $nex = $cur_page + 1;
-            $pag_container .= "<li p='$nex' class='active'>Next</li>";
+            $pag_container .= "<li p='$nex' class='active'> > </li>";
         } else if ($next_btn) {
-            $pag_container .= "<li class='inactive'>Next</li>";
-        }
-
-        if ($last_btn && $cur_page < $no_of_paginations) {
-            $pag_container .= "<li p='$no_of_paginations' class='active'>Last</li>";
-        } else if ($last_btn) {
-            $pag_container .= "<li p='$no_of_paginations' class='inactive'>Last</li>";
+            $pag_container .= "<li class='inactive'> > </li>";
         }
 
         $pag_container = $pag_container . "
