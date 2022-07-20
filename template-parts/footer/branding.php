@@ -3,7 +3,7 @@ $footer_logo = get_theme_mod( 'footer-logo' );
 $email       = get_theme_mod( 'footer_contacts_email' );
 $phone       = get_theme_mod( 'footer_contacts_tel' );
 ?>
-<div class="col">
+<div class="col col-12 col-lg-3">
 	<div class="footer-branding">
 		<?php if ( ! empty( $footer_logo ) ) : ?>
 			<?php echo wp_get_attachment_image( $footer_logo, 'full' ); ?>

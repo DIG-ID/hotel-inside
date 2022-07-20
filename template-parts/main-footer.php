@@ -2,7 +2,7 @@
 <footer class="main-footer">
 	<div class="footer-content">
 		<div class="container">
-			<div class="row">
+			<div class="row justify-content-between">
 				<?php get_template_part( 'template-parts/footer/branding' ); ?>
 				<?php get_template_part( 'template-parts/footer/navigation' ); ?>
 				<?php get_template_part( 'template-parts/footer/newsletter' ); ?>
@@ -19,7 +19,8 @@
 							$y = date( 'Y' );
 							printf(
 								/* translators: %s: WordPress. */
-								esc_html__( '&copy;  Proudly powered by %s.', 'hotel-inside' ),
+								esc_html__( '%d &copy; All rights reserved by %s.', 'hotel-inside' ),
+								esc_html( $y ),
 								'<a href="' . esc_url( __( 'https://dig.id/', 'hotel-inside' ) ) . '">dig.id</a>'
 							);
 							?>
