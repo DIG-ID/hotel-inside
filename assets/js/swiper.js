@@ -31,7 +31,7 @@ $(function() {
     },
   });
 
-  var partnersSwiper = new Swiper('.swiper-marktplatz', {
+  var marktplatzSwiper = new Swiper('.swiper-marktplatz', {
     slidesPerView: 6,
     spaceBetween: 30,
     loop: true,
@@ -41,6 +41,18 @@ $(function() {
       delay: 1,
       disableOnInteraction: false,
     },*/
+  });
+
+  var clubEventsSwiper = new Swiper('.swiper-club-events', {
+    slidesPerView: 1,
+    grid: {
+      rows: 2,
+    },
+    loop: true,
+    navigation: {
+      nextEl: ".section-club-events-button-next",
+      prevEl: ".section-club-events-button-prev",
+    },
   });
 
 });
