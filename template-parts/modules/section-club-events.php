@@ -48,7 +48,7 @@
 								$date_start = get_field( 'club_event_start_date' );
 								$date_end   = get_field( 'club_event_end_date' );
 								?>
-								<div class="col-12 col-md-6">
+								<div class="swiper-slide">
 									<?php the_title(); ?>
 								</div>
 								<?php
