@@ -45,11 +45,9 @@
 						if ( $event_query->have_posts() ) :
 							while ( $event_query->have_posts() ) :
 								$event_query->the_post();
-								$date_start = get_field( 'club_event_start_date' );
-								$date_end   = get_field( 'club_event_end_date' );
 								?>
 								<div class="swiper-slide">
-									<?php the_title(); ?>
+									<?php get_template_part( 'template-parts/components/card', 'club-event' ); ?>
 								</div>
 								<?php
 							endwhile;

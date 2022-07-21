@@ -44,7 +44,7 @@ $(function() {
   });
 
   var clubEventsSwiper = new Swiper('.swiper-club-events', {
-    slidesPerView: 2,
+    slidesPerView: 1,
     grid: {
       rows: 2,
     },
