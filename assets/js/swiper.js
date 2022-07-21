@@ -31,7 +31,7 @@ $(function() {
     },
   });
 
-  var partnersSwiper = new Swiper('.partners-swiper', {
+  var partnersSwiper = new Swiper('.swiper-marktplatz', {
     slidesPerView: 6,
     spaceBetween: 30,
     loop: true,
