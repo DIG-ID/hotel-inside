@@ -48,6 +48,7 @@ $(function() {
     grid: {
       rows: 2,
     },
+    spaceBetween: 30,
     navigation: {
       nextEl: ".section-club-events-button-next",
       prevEl: ".section-club-events-button-prev",
