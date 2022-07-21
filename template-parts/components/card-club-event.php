@@ -1,6 +1,6 @@
 <article id="post-<?php the_ID(); ?>" class="card card-club-event">
 	<?php if ( has_post_thumbnail() ) : ?>
-		<?php the_post_thumbnail( 'thumbnail' ); ?>
+		<?php the_post_thumbnail( 'club-event-thumnail' ); ?>
 	<?php else : ?>
 		<a href="<?php get_the_permalink(); ?>">
 			<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/default-1-block-thumbnail.png' ); ?>" alt="default thumbnail">
@@ -11,6 +11,7 @@
 		<a href="<?php get_the_permalink(); ?>">
 			<?php the_title( '<h3 class="card-title">', '</h3>' ); ?>
 		</a>
+		<div class="card-description"><?php the_excerpt(); ?></div>
 		<div class="card-date">
 			<?php
 			$timestamp_today = strtotime( gmdate( 'Ymd' ) );

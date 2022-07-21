@@ -48,7 +48,6 @@ $(function() {
     grid: {
       rows: 2,
     },
-    loop: true,
     navigation: {
       nextEl: ".section-club-events-button-next",
       prevEl: ".section-club-events-button-prev",

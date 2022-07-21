@@ -28,6 +28,8 @@ function hi_theme_setup() {
 
 	add_image_size( 'event-gallery-full', 1920, 900, array( 'center', 'center' ) );
 
+	add_image_size( 'club-event-thumnail', 768, 390, array( 'center', 'center' ) );
+
 }
 
 add_action( 'after_setup_theme', 'hi_theme_setup' );

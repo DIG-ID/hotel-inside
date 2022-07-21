@@ -4,12 +4,12 @@
 			<div class="col-5">
 				<h2 class="section-title"><?php _e( 'Club', 'hotel-inside' ); ?></h2>
 			</div>
-			<div class="col-3 position-relative d-flex justify-content-end align-items-center">
+			<div class="col-2 position-relative d-flex justify-content-end align-items-center">
 				<div class="swiper-button-prev section-club-events-button-prev"></div>
 				<div class="swiper-button-next section-club-events-button-next"></div>
 			</div>
-			<div class="col-2 text-end">
-				<a href="<?php echo esc_url( get_post_type_archive_link( 'club-events' ) ); ?>" class="btn-go-to-overview"><?php _e( 'Alle Beiträge', 'hotel-inside' ); ?> <i class="icon-arrow"></i></a>
+			<div class="col-5 text-end">
+				<a href="<?php echo esc_url( get_post_type_archive_link( 'club_events' ) ); ?>" class="btn-go-to-overview"><?php _e( 'Zum Club', 'hotel-inside' ); ?> <i class="icon-arrow"></i></a>
 			</div>
 		</div>
 		<div class="row">
@@ -35,7 +35,7 @@
 								array(
 									'key'     => 'club_event_end_date',
 									'value'   => $date_today,
-									'compare' => '>=',
+									'compare' => '<',
 									'type'    => 'DATE',
 								),
 							),
