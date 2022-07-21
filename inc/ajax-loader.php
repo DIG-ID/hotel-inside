@@ -8,7 +8,6 @@ function demo_load_my_posts() {
     $msg = '';
    
     if( isset( $_POST['data']['page'] ) ){
-        // Always sanitize the posted fields to avoid SQL injections
         $page = sanitize_text_field($_POST['data']['page']); // The page we are currently at
         $name = sanitize_text_field($_POST['data']['th_name']); // The name of the column name we want to sort
         $sort = sanitize_text_field($_POST['data']['th_sort']); // The order of our sort (DESC or ASC)
@@ -26,7 +25,6 @@ function demo_load_my_posts() {
        
         $where_search = '';
        
-        // Check if there is a string inputted on the search box
         if( ! empty( $_POST['data']['search']) ){
             // If a string is inputted, include an additional query logic to our main query to filter the results
             $where_search = ' AND (post_title LIKE "%%' . $_POST['data']['search'] . '%%" OR post_content LIKE "%%' . $_POST['data']['search'] . '%%") ';

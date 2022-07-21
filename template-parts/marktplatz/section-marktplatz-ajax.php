@@ -8,7 +8,6 @@
                 <div class="form-group">
                 <?php
                     if( $terms = get_terms( array( 'taxonomy' => 'categories_marktplatz', 'orderby' => 'name' ) ) ) : 
-            
                         echo '<select name="categoryfilter"><option value="">KATEGORIE</option>';
                         foreach ( $terms as $term ) :
                             echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option
