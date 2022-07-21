@@ -12,6 +12,7 @@
     &__col
         background-color: #F3F3F3
         padding: 15px
+        min-height: 140px
     &__title
         font-family: $acumin-font
         font-size: 22px
@@ -26,7 +27,7 @@
         color: #1A2338
         text-transform: uppercase
         margin-right: 5px
-    &__cat:not(:nth-last-child(2))::after
+    &__cat:not(:last-child):not(:nth-last-child(2))::after
         content: ","
     &__read-more
         display: block
@@ -44,8 +45,21 @@
         width: 254px
         border-radius: 24px
         border: 1px solid #707070
+        margin-left: 20px
     input[type=submit]
         display: none
+    select
+        width: 254px
+        border-radius: 24px
+        border: 1px solid #707070
+        display: block
+        padding: 0.375rem 0.75rem
+        font-size: 1rem
+        font-weight: 400
+        line-height: 1.5
+        color: #212529
+        background-color: #fff
+        margin-right: 20px
 
 .section-markt-intro
     padding-top: 100px!important

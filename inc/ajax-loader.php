@@ -53,12 +53,15 @@ function demo_load_my_posts() {
                 <h3 class="marktplatz__title active">' . $post->post_title . '</h3>
                 <p class="marktplatz__cat">position</p><br>';
                 $terms = get_the_terms( $post->ID, 'categories_marktplatz' );
+                $checkifpaid = get_field( 'single_page_access', $post->ID );
                 if ($terms) {
                     foreach($terms as $term) {
                     $msg .= '<p class="marktplatz__cat">' . $term->name . '</p>';
                     } 
                 } 
-                $msg .= '<a href="' . get_permalink( $post->ID ) . '" class="marktplatz__read-more m-0">Mehr erfahren</a>';   
+                if ( $checkifpaid ){
+                    $msg .= '<a href="' . get_permalink( $post->ID ) . '" class="marktplatz__read-more m-0">Mehr erfahren</a>';  
+                }
                 $msg .= '</div></div>';     
             endforeach;
            
