@@ -54,3 +54,18 @@ function hi_theme_socials() {
 }
 
 add_action( 'socials', 'hi_theme_socials' );
+
+
+/**
+ * Get youtube video title
+ */
+function hi_get_youtube_title( $video_id ) {
+	$api_key     = 'AIzaSyACB4vCwaS_Z3yr3zO3P1vHPYcZgVw9weo';
+	$video_title = file_get_contents( "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&id={$video_id}&key={$api_key}" );
+	if ( $video_title ) {
+		$json = json_decode( $video_title, true );
+		return $json['items'][0]['snippet']['title'];
+	} else {
+		return false;
+	}
+}
