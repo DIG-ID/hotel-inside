@@ -19,10 +19,8 @@
 							<div class="swiper-slide marktplatz-company">
 								<a href="<?php echo esc_url( get_post_type_archive_link( get_post_type() ) ); ?>">
 									<?php
-									$image = get_field( 'company_logo' );
-									$size = 'full';
-									if ( $image ) :
-										echo wp_get_attachment_image( $image, $size );
+									if ( has_post_thumbnail() ) :
+										the_post_thumbnail( 'full' );
 									endif;
 									?>
 								</a>
