@@ -1,5 +1,5 @@
 <div id="section-marktplatz" class="section section-marktplatz">
-    <div class="container">
+    <div class="custom-container">
         <div class="row marktplatz__row">
         <?php
         $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;

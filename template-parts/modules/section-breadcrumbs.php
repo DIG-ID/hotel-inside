@@ -1,5 +1,5 @@
 <div id="section-breadcrumbs" class="section section-breadcrumbs">
-    <div class="container">
+    <div class="custom-container">
         <div class="row">
             <div class="col">
                 <div class="breadcrumbs__separator-line"></div>

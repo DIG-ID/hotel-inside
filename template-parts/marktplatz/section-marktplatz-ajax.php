@@ -1,5 +1,5 @@
 <div id="section-marktplatz" class="section section-marktplatz">
-    <div class="container p-0">
+    <div class="custom-container p-0">
         <div class="row">
             <form class = "post-list">
                 <input type = "hidden" value = "" />

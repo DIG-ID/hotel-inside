@@ -1,7 +1,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 
 <div id="section-single-post" class="section section-single-post">
-	<div class="container">
+	<div class="custom-container">
 		<div class="row">
 			<div class="col-md-12 col-lg-7">
 				<?php if (has_post_thumbnail( $post->ID ) ): ?>

@@ -1,8 +1,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 	<div id="section-company-content" class="section section-company-content">
-		<div class="container">
+		<div class="custom-container">
 			<div class="row">
-				<div class="col-6">
+				<div class="col-7">
 				<?php the_title( '<h1 class="company-content__title">', '</h1>' ); ?>
 				<?php $banner_image = get_field('company_banner_image'); $banner_size = 'full'; ?>
 				<?php echo wp_get_attachment_image( $banner_image, $banner_size ); ?>
