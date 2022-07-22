@@ -188,6 +188,22 @@ add_action( 'wp_head', 'hi_preload_webfonts' );
 
 add_filter( 'option_show_avatars', '__return_false' );
 
+add_filter( 'allowed_block_types', 'theme_allowed_block_types' );
+ 
+function theme_allowed_block_types($allowed_blocks) {
+	$blocks = array(
+	'core/image',
+	'core/paragraph',
+	'core/heading',
+	'core/cover-image',
+	'core/gallery',
+	'core/video',
+	'core/quote',
+	'core-embed/youtube'
+	);
+	return $blocks;
+}
+
 // Theme custom template tags.
 require get_template_directory() . '/inc/theme-template-tags.php';
 
