@@ -46,6 +46,7 @@ $(function() {
   var clubEventsSwiper = new Swiper('.swiper-club-events', {
     slidesPerView: 1,
     grid: {
+      fill: 'column',
       rows: 2,
     },
     spaceBetween: 30,

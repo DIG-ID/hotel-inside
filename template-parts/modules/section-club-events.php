@@ -13,7 +13,7 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-12 position-relative h-100">
+			<div class="col-12">
 				<div class="swiper swiper-club-events">
 					<div class="swiper-wrapper">
 						<?php
@@ -54,6 +54,7 @@
 						endif;
 						?>
 						</div>
+						<div class="swiper-pagination"></div>
 					</div>
 				</div>
 		</div>

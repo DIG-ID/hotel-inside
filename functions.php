@@ -22,11 +22,9 @@ function hi_theme_setup() {
 
 	add_theme_support( 'post-thumbnails' );
 
-	add_theme_support( 'post-formats', array( 'gallery', 'video' ) );
+	add_theme_support( 'post-formats', array( 'video' ) );
 
 	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
-
-	add_image_size( 'event-gallery-full', 1920, 900, array( 'center', 'center' ) );
 
 	add_image_size( 'club-event-thumnail', 768, 390, array( 'center', 'center' ) );
 
@@ -186,6 +184,9 @@ if ( ! function_exists( 'hi_preload_webfonts' ) ) :
 endif;
 
 add_action( 'wp_head', 'hi_preload_webfonts' );
+
+
+add_filter( 'option_show_avatars', '__return_false' );
 
 // Theme custom template tags.
 require get_template_directory() . '/inc/theme-template-tags.php';
