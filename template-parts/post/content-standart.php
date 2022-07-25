@@ -3,7 +3,7 @@
 <div id="section-single-post" class="section section-single-post">
 	<div class="custom-container">
 		<div class="row">
-			<div class="col-md-12 col-lg-7">
+			<div class="col-md-12 col-lg-7 content">
 				<?php if (has_post_thumbnail( $post->ID ) ): ?>
 				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 					<img src="<?php echo $image[0]; ?>" title="featured image" alt="featured image">
@@ -17,10 +17,12 @@
 					<?php the_content(); ?>
 				</div>
 			</div>
-			<div class="col-md-12 col-lg-5">
+			<div class="col-md-12 col-lg-5 sidebar">
 				<?php get_template_part( 'template-parts/post/single-post', 'sidebar' ); ?>
 			</div>
 		</div>
 	</div>
 </div>
 </article>
+
+
