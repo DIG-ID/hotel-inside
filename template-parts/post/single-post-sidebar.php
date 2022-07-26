@@ -31,7 +31,7 @@ endif;
 </script>
 <script type="text/javascript">
 var sidebar = new StickySidebar('.sidebar', {
-    containerSelector: '#section-single-post > .custom-container > .row',
+    containerSelector: '#section-single-post > .custom-container > .content-row',
     innerWrapperSelector: '.sidebar__inner',
     topSpacing: 200,
     bottomSpacing: 20
