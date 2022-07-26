@@ -34,7 +34,7 @@ var sidebar = new StickySidebar('.sidebar', {
     containerSelector: '#section-single-post > .custom-container > .row',
     innerWrapperSelector: '.sidebar__inner',
     topSpacing: 200,
-    bottomSpacing: 1000
+    bottomSpacing: 20
 });
 jQuery(document).ready(function($) {   
     var h = $('.author__description')[0].scrollHeight;
