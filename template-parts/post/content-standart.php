@@ -9,7 +9,7 @@
 					<img src="<?php echo $image[0]; ?>" title="featured image" alt="featured image">
 				<?php endif; ?>
 				<header class="header single-post__header">
-					<div class="single-post__date"><?php echo get_the_date( 'd-m-Y' ); ?></div>
+					<div class="single-post__date"><i class="icon-clock"></i><?php echo get_the_date( 'd M, Y' ); ?></div>
 					<?php the_title( '<h1 class="title">', '</h1>' ); ?>
 				</header>
 
