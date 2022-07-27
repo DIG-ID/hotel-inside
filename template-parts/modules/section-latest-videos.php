@@ -1,5 +1,5 @@
 <section class="section section-latest-videos">
-	<div class="container">
+	<div class="custom-container">
 		<div class="row">
 			<div class="col-12">
 				<h2 class="section-title"><?php _e( 'Video', 'hotel-inside' ); ?></h2>

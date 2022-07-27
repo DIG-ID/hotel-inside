@@ -185,24 +185,50 @@ endif;
 
 add_action( 'wp_head', 'hi_preload_webfonts' );
 
-
 add_filter( 'option_show_avatars', '__return_false' );
 
-add_filter( 'allowed_block_types', 'theme_allowed_block_types' );
- 
-function theme_allowed_block_types($allowed_blocks) {
-	$blocks = array(
-	'core/image',
-	'core/paragraph',
-	'core/heading',
-	'core/cover-image',
-	'core/gallery',
-	'core/video',
-	'core/quote',
-	'core-embed/youtube'
-	);
-	return $blocks;
-}
+
+if ( ! function_exists( 'hi_custom_titles' ) ) :
+
+	function hi_custom_titles( $title ) {
+		if ( is_category() ) :
+			$title = single_cat_title( '', false );
+		elseif ( is_tag() ) :
+			$title = single_tag_title( '', false );
+		elseif ( is_author() ) :
+			$title = '<span class="vcard">' . get_the_author() . '</span>';
+		elseif ( is_tax() ) : //for custom post types
+			$title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
+		elseif ( is_post_type_archive() ) :
+			$title = post_type_archive_title( '', false );
+		endif;
+		return $title;
+	}
+
+endif;
+
+add_filter( 'get_the_archive_title', 'hi_custom_titles' );
+
+
+if ( ! function_exists( 'hi_allowed_block_types' ) ) :
+
+	function hi_allowed_block_types( $allowed_blocks ) {
+		$blocks = array(
+			'core/image',
+			'core/paragraph',
+			'core/heading',
+			'core/cover-image',
+			'core/gallery',
+			'core/video',
+			'core/quote',
+			'core-embed/youtube',
+		);
+		return $blocks;
+	}
+
+endif;
+
+add_filter( 'allowed_block_types', 'hi_allowed_block_types' );
 
 // Theme custom template tags.
 require get_template_directory() . '/inc/theme-template-tags.php';

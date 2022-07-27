@@ -1,5 +1,5 @@
 <section class="section section-categorie-three-blocks">
-	<div class="container">
+	<div class="custom-container">
 		<div class="row">
 			<?php
 			$myterms = get_field( '2_columns_category' );

@@ -1,5 +1,5 @@
 <section class="section section-featured-marktplatz">
-	<div class="container">
+	<div class="custom-container">
 		<div class="row">
 			<div class="col-12 text-center">
 				<h2 class="section-title"><?php _e( 'Marktplatz', 'hotel-inside' ); ?></h2>

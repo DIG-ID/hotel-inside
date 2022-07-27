@@ -1,7 +1,6 @@
-
 <footer class="main-footer">
 	<div class="footer-content">
-		<div class="container">
+		<div class="custom-container">
 			<div class="row justify-content-between">
 				<?php get_template_part( 'template-parts/footer/branding' ); ?>
 				<?php get_template_part( 'template-parts/footer/navigation' ); ?>
@@ -10,7 +9,7 @@
 		</div><!-- .container -->
 	</div><!-- .footer-content -->
 	<div class="footer-copyright">
-		<div class="container">
+		<div class="custom-container">
 			<div class="row">
 				<div class="col-6">
 					<div class="powered-by">

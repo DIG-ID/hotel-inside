@@ -1,5 +1,5 @@
 <section class="section section-slider-w-sidebar">
-	<div class="container">
+	<div class="custom-container">
 		<div class="row">
 			<?php
 			$args      = array(

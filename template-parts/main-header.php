@@ -1,6 +1,6 @@
 <header id="main-header" class="main-header fixed-top" itemscope itemtype="http://schema.org/WebSite">
 	<div class="top-header">
-		<div class="container">
+		<div class="custom-container">
 			<div class="row align-items-center">
 				<div class="col">
 					<?php if ( is_front_page() && is_home() ) : ?>
@@ -44,7 +44,7 @@
 		</div>
 	</div>
 	<nav class="navbar navbar-expand-lg bg-light" role="navigation">
-		<div class="container">
+		<div class="custom-container">
 			<?php
 			wp_nav_menu(
 				array(

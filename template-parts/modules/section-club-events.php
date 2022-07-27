@@ -1,5 +1,5 @@
 <section class="section section-club-events">
-	<div class="container">
+	<div class="custom-container">
 		<div class="row justify-content-between align-items-center title-w-slider">
 			<div class="col-5">
 				<h2 class="section-title"><?php _e( 'Club', 'hotel-inside' ); ?></h2>

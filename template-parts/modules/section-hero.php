@@ -20,7 +20,7 @@
 									<img src="https://picsum.photos/1920/1080?random=4" alt="example thumbnail">
 								<?php endif; ?>
 							</div>
-							<div class="container">
+							<div class="custom-container">
 								<div class="row">
 									<div class="col-12 col-sm-12 col-md-12 col-lg-7">
 										<a href="<?php get_the_permalink(); ?>">
@@ -41,7 +41,7 @@
 	<?php endif; ?>
 	<?php rewind_posts(); ?>
 	<?php if ( $news_query->have_posts() ) : ?>
-		<div class="swiper hero-swiper-thumbs container">
+		<div class="swiper hero-swiper-thumbs custom-container">
 			<hr>
 			<div class="swiper-wrapper row">
 				<?php	while ( $news_query->have_posts() ) : $news_query->the_post(); ?>

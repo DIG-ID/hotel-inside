@@ -9,7 +9,7 @@ if ( $myterms ) :
 		endif;
 		?>
 		<section class="section section-four-blocks">
-			<div class="container">
+			<div class="custom-container">
 				<div class="row">
 					<div class="col-9">
 						<h2 class="section-title"><?php echo esc_html( $mysingleterm->name ); ?></h2>
