@@ -70,6 +70,16 @@
 
 .section-single-post
     .latest-posts
+        &__single
+            margin-bottom: 30px
+            display: flex
+        &__img-wrapper
+            max-width: 270px
+            min-width: 270px
+            height: 265px
+            img
+                width: 100%
+                height: 100%
         &__title
             font-family: $raj-font
             font-size: 30px
@@ -77,6 +87,31 @@
             text-transform: uppercase
             color: #1A2338
             margin-bottom: 20px
+        &__post-title
+            text-decoration: none
+            h3
+                font-family: $acumin-font
+                font-size: 22px
+                font-weight: 600
+                color: #090036
+        &__content
+            padding: 20px 0 20px 20px
+        &__excerpt
+            font-family: $acumin-font
+            font-size: 16px
+            font-weight: 300
+            color: #1A2338
+        &__backlink
+            font-family: $raj-font
+            font-size: 19px
+            font-weight: 600
+            color: #9C98AE
+            text-decoration: none
+        &__linesep
+            width: 100%
+            height: 2px
+            border-bottom: 1px solid #E1E1E1
+            margin: 15px 0
     .sidebar
         padding: 0
         &__inner
