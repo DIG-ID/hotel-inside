@@ -6,14 +6,14 @@
 				'posts_per_page'      => 6,
 				'orderby'             => 'post_date',
 				'order'               => 'ASC',
-				'post_type'           => 'kommentar',
+				'post_type'           => 'kommentar_by_hans',
 				'post_status'         => 'publish',
 				'ignore_sticky_posts' => 1,
 				'post__not_in'        => get_option( 'sticky_posts' ),
 			);
 			$the_query = new WP_Query( $args );
 			if ( $the_query->have_posts() ) :
-				$cpt_name = get_post_type_object( 'kommentar' );
+				$cpt_name = get_post_type_object( 'kommentar_by_hans' );
 				?>
 				<div class="col-12 col-lg-7 section-slider-w-sidebar-wrapper">
 					<div class="row justify-content-center align-items-center title-w-slider">
