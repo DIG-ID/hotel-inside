@@ -1,4 +1,4 @@
-<a href="<?php get_the_permalink(); ?>" class="card-link swiper-slide">
+<a href="<?php the_permalink(); ?>" class="card-link swiper-slide">
 	<article id="post-<?php the_ID(); ?>" class="card card-block-w-slider">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<figure>

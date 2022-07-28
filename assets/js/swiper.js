@@ -56,4 +56,18 @@ $(function() {
     },
   });
 
+  var sidebarSwiper = new Swiper(".sidebar-swiper", {
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      renderBullet: function (index, className) {
+        var bulletLabels = [];
+        $( '.sidebar-swiper .swiper-wrapper .swiper-slide' ).each(function(i) {
+          bulletLabels.push($(this).attr( 'data-name' ));
+        });
+        return '<span class="' + className + ' swiper-pagination-bullet">' + ( bulletLabels[index] ) + "</span>";
+      },
+    },
+  });
+
 });

@@ -8,10 +8,10 @@
 					?>
 					<div class="col-12 col-lg-6">
 						<div class="row">
-							<div class="col-9">
+							<div class="col-8">
 								<h2 class="section-title"><?php echo esc_html( $myterm->name ); ?></h2>
 							</div>
-							<div class="col-3 text-end">
+							<div class="col-4 text-end">
 								<a href="<?php echo esc_url( get_term_link( $myterm ) ); ?>" class="btn-go-to-overview"><?php _e( 'Alle Beiträge', 'hotel-inside' ); ?> <i class="icon-arrow"></i></a>
 							</div>
 						</div><!-- .row -->

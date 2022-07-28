@@ -1,4 +1,4 @@
-<a href="<?php get_the_permalink(); ?>" class="card-link">
+<a href="<?php the_permalink(); ?>" class="card-link">
 	<article id="post-<?php the_ID(); ?>" class="card">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<figure>
