@@ -5,6 +5,8 @@
 				<div class="breadcrumbs__separator-line"></div>
 				<?php if ( is_singular( 'marktplatz' ) ) : ?>
 					<h2 class="breadcrumbs__title"><?php esc_html_e( 'Marktplatz', 'hotel-inside' ); ?></h2>
+				<?php elseif ( is_singular( 'kommentar_by_hans' ) ) : ?>
+					<h2 class="breadcrumbs__title"><?php esc_html_e( 'Kommentar', 'hotel-inside' ); ?></h2>
 				<?php elseif ( is_single() ) : ?>
 					<h2 class="breadcrumbs__title"><?php echo get_the_category( $id )[0]->name; ?></h2>
 				<?php elseif ( is_archive() ) : ?>
