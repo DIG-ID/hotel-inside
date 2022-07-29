@@ -18,7 +18,7 @@
 						<div class="latest-posts__linesep"></div>
 					</div>
 				</div>
-				<div class="col-md-12 col-lg-5 sidebar">
+				<div class="col-md-12 col-lg-5 sidebar-by-hans">
 					<?php get_template_part( 'template-parts/kommentar-by-hans/kommentar-by-hans-post', 'sidebar' ); ?>
 				</div>
 			</div>
@@ -49,7 +49,7 @@
 											<?php endif; ?>
 										</div>
 										<div class="latest-posts__content">
-											<a href="#" class="latest-posts__post-title"><?php the_title( '<h3>', '</h3>' ); ?></a>
+											<a href="<?php the_permalink(); ?>" class="latest-posts__post-title"><?php the_title( '<h3>', '</h3>' ); ?></a>
 											<div class="card-date">
 												<i class="icon-clock"></i>
 												<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
