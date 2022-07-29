@@ -1,7 +1,7 @@
 <section class="section section-archive-content">
 	<div class="custom-container">
 		<div class="row">
-			<div class="col-12 col-lg-9">
+			<div class="col-12 col-lg-7">
 				<div class="row">
 					<?php
 					$hi_cat    = get_query_var( 'cat' );
@@ -27,7 +27,7 @@
 					?>
 				</div>
 			</div>
-			<div class="col-12 col-lg-3">
+			<div class="col-12 col-lg-5">
 				<?php get_template_part( 'template-parts/modules/archive', 'sidebar' ); ?>
 			</div>
 		</div>
