@@ -4,9 +4,8 @@
 	<div class="custom-container">
 		<div class="row content-row">
 			<div class="col-md-12 col-lg-7 content">
-				<?php if (has_post_thumbnail( $post->ID ) ): ?>
-				<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
-					<img src="<?php echo $image[0]; ?>" title="featured image" alt="featured image">
+				<?php if (the_field('video_link') ): ?>
+					<?php the_field('video_link'); ?>
 				<?php endif; ?>
 				<header class="header single-post__header">
 					<div class="single-post__date"><i class="icon-clock"></i><?php echo get_the_date( 'd M, Y' ); ?></div>
