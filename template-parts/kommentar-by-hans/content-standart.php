@@ -18,7 +18,7 @@
 						<div class="latest-posts__linesep"></div>
 					</div>
 				</div>
-				<div class="col-md-12 col-lg-5 sidebar">
+				<div class="col-md-12 col-lg-5 sidebar-by-hans">
 					<?php get_template_part( 'template-parts/kommentar-by-hans/kommentar-by-hans-post', 'sidebar' ); ?>
 				</div>
 			</div>

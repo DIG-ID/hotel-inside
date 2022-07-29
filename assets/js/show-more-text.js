@@ -1,5 +1,6 @@
 jQuery(document).ready(function($) {   
-    /*var h = $('.author__description')[0].scrollHeight;
+    if( $('body.single').length ){
+    var h = $('.author__description')[0].scrollHeight;
     $('#showmore').click(function(e) {
         e.stopPropagation();
         $('.author__description').animate({
@@ -10,5 +11,6 @@ jQuery(document).ready(function($) {
         $('.author__description').animate({
             'height': '70px'
         })
-    });*/
+    });
+}
 });
