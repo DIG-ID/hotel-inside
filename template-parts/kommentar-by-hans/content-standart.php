@@ -49,7 +49,7 @@
 											<?php endif; ?>
 										</div>
 										<div class="latest-posts__content">
-											<a href="#" class="latest-posts__post-title"><?php the_title( '<h3>', '</h3>' ); ?></a>
+											<a href="<?php the_permalink(); ?>" class="latest-posts__post-title"><?php the_title( '<h3>', '</h3>' ); ?></a>
 											<div class="card-date">
 												<i class="icon-clock"></i>
 												<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
