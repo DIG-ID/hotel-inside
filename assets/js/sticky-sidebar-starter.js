@@ -10,11 +10,11 @@ if( $('body.single-post').length ){
     });
 }
 if( $('body.single-kommentar_by_hans').length ){
-    /*var sidebarbyhans = new StickySidebar('.sidebar-by-hans', {
+    var sidebarbyhans = new StickySidebar('.sidebar-by-hans', {
         containerSelector: '.section > .custom-container > .content-row',
         innerWrapperSelector: '.sidebar-by-hans__inner',
         topSpacing: 200,
-        bottomSpacing: 20
-    });*/
+        bottomSpacing: 200
+    });
 }
 });
