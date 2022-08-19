@@ -10,13 +10,13 @@
           padding: 0
           margin: 0
           li
-            padding-bottom: 20px
             margin-bottom: 20px
             border-bottom: 1px dashed #D1D1D1
             &:last-of-type
-              padding-bottom: 0px
               margin-bottom: 0px
               border-bottom: none
+              .card-sidebar-xs
+                margin-bottom: 0px
     .swiper-pagination
       position: relative
       display: flex
@@ -41,5 +41,10 @@
         color: $main-blue
         background: #fff
         opacity: 1
+        -moz-user-select: none
+        -khtml-user-select: none
+        -webkit-user-select: none
+        -ms-user-select: none
+        user-select: none
       .swiper-pagination-bullet-active
         border: 1px solid $main-blue

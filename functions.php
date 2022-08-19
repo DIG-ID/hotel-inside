@@ -255,3 +255,6 @@ require get_template_directory() . '/inc/custom-nav-walker.php';
 
 // Theme custom ajax loader
 require get_template_directory() . '/inc/ajax-loader.php';
+
+// Theme custom archive ajax loader
+require get_template_directory() . '/template-parts/archive/archive-ajax-loader.php';
