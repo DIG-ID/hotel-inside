@@ -44,7 +44,7 @@
 								<article id="post-<?php the_ID(); ?>" class="latest-posts__single">
 									<div class="latest-posts__img-wrapper">
 										<?php if ( has_post_thumbnail() ) : ?>
-											<?php the_post_thumbnail( 'full' ); ?>
+											<?php the_post_thumbnail( 'card-latest-single-post' ); ?>
 										<?php else : ?>
 											<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/default-1-block-thumbnail.png' ); ?>" alt="default thumbnail">
 										<?php endif; ?>

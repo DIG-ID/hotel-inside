@@ -6,7 +6,7 @@
 			$cat_terms = get_field( 'sidebar_categories', get_queried_object() );
 			if ( $cat_terms ) :
 				foreach ( $cat_terms as $my_cat ) :
-					echo '<div class="swiper-slide" data-name="' , $my_cat->name , '">';
+					echo '<div class="swiper-slide" data-name="' , $my_cat->name , '"><ul>';
 					$args      = array(
 						'cat'                 => $my_cat->term_id,
 						'posts_per_page'      => 4,
@@ -21,14 +21,18 @@
 					if ( $the_query->have_posts() ) :
 						while ( $the_query->have_posts() ) :
 							$the_query->the_post();
-							get_template_part( 'template-parts/components/card', 'xs' );
+							echo '<li>';
+							get_template_part( 'template-parts/components/card', 'sidebar-xs' );
+							echo '</li>';
 						endwhile;
 					endif;
 					wp_reset_postdata();
-					echo '</div>';
+					echo '</ul></div>';
 				endforeach;
 			endif;
 			?>
 		</div>
-		</div>
+	</div>
+	<?php get_template_part( 'template-parts/modules/ads', 'sidebar' ); ?>
+
 </aside>

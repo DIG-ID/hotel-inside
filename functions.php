@@ -26,7 +26,22 @@ function hi_theme_setup() {
 
 	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
 
-	add_image_size( 'club-event-thumnail', 768, 390, array( 'center', 'center' ) );
+	add_image_size( 'card-club-event', 768, 390, array( 'center', 'center' ) );
+
+	add_image_size( 'card-slider', 670, 454, array( 'center', 'center' ) );
+
+	add_image_size( 'card-wide', 670, 675, array( 'center', 'center' ) );
+
+	add_image_size( 'card-sidebar-xs', 100, 100, array( 'center', 'center' ) );
+
+	add_image_size( 'card-latest-single-post', 270, 265, array( 'center', 'center' ) );
+
+	add_image_size( 'card-archive-sm', 270, 179, array( 'center', 'center' ) );
+
+	add_image_size( 'card-archive-md', 570, 417, array( 'center', 'center' ) );
+
+	add_image_size( 'card-default', 570, 300, array( 'center', 'center' ) );
+
 
 }
 

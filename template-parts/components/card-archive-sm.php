@@ -2,7 +2,7 @@
 	<article id="post-<?php the_ID(); ?>" class="card">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<figure>
-				<?php the_post_thumbnail( 'card-default' ); ?>
+				<?php the_post_thumbnail( 'card-archive-sm' ); ?>
 			</figure>
 		<?php else : ?>
 			<figure>

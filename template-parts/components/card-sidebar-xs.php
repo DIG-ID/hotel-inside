@@ -1,8 +1,8 @@
 <a href="<?php the_permalink(); ?>" class="card-link">
-	<article id="post-<?php the_ID(); ?>" class="card card-sidebar">
+	<article id="post-<?php the_ID(); ?>" class="card card-sidebar-xs">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<figure>
-				<?php the_post_thumbnail( 'thumbnail' ); ?>
+				<?php the_post_thumbnail( 'card-sidebar-xs' ); ?>
 			</figure>
 		<?php else : ?>
 			<figure>

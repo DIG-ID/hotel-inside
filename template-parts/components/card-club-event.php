@@ -2,7 +2,7 @@
 	<article id="post-<?php the_ID(); ?>" class="card card-club-event">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<figure>
-				<?php the_post_thumbnail( 'club-event-thumnail' ); ?>
+				<?php the_post_thumbnail( 'card-club-event' ); ?>
 			</figure>
 		<?php else : ?>
 			<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/default-1-block-thumbnail.png' ); ?>" alt="default thumbnail">

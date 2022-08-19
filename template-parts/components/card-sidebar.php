@@ -2,7 +2,7 @@
 	<article id="post-<?php the_ID(); ?>" class="card card-sidebar">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<figure>
-				<?php the_post_thumbnail( 'thumbnail' ); ?>
+				<?php the_post_thumbnail( 'card-sidebar-xs' ); ?>
 			</figure>
 		<?php else : ?>
 			<figure>

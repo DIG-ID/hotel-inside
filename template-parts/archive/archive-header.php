@@ -20,23 +20,23 @@
 					switch ( $i ) :
 						case 1:
 							echo '<div class="col-3">';
-							get_template_part( 'template-parts/components/card' );
+							get_template_part( 'template-parts/components/card', 'archive-sm' );
 							break;
 						case 2:
-							get_template_part( 'template-parts/components/card' );
+							get_template_part( 'template-parts/components/card', 'archive-sm' );
 							echo '</div>';
 							break;
 						case 3:
 							echo '<div class="col-6">';
-							get_template_part( 'template-parts/components/card' );
+							get_template_part( 'template-parts/components/card', 'archive-md' );
 							echo '</div>';
 							break;
 						case 4:
 							echo '<div class="col-3">';
-							get_template_part( 'template-parts/components/card' );
+							get_template_part( 'template-parts/components/card', 'archive-sm' );
 							break;
 						case 5:
-							get_template_part( 'template-parts/components/card' );
+							get_template_part( 'template-parts/components/card', 'archive-sm' );
 							echo '</div>';
 							break;
 					endswitch;

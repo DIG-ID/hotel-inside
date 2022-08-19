@@ -19,7 +19,7 @@
 						while ( $cat_query->have_posts() ) :
 							$cat_query->the_post();
 							echo '<div class="col-12">';
-								get_template_part( 'template-parts/components/card' );
+								get_template_part( 'template-parts/components/card', 'wide' );
 							echo '</div>';
 						endwhile;
 					endif;
@@ -28,7 +28,7 @@
 				</div>
 			</div>
 			<div class="col-12 col-lg-5">
-				<?php get_template_part( 'template-parts/modules/archive', 'sidebar' ); ?>
+				<?php get_template_part( 'template-parts/archive/archive', 'sidebar' ); ?>
 			</div>
 		</div>
 	</div>

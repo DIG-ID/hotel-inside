@@ -1,8 +1,8 @@
 <a href="<?php the_permalink(); ?>" class="card-link">
-	<article id="post-<?php the_ID(); ?>" class="card">
+	<article id="post-<?php the_ID(); ?>" class="card card-wide">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<figure>
-				<?php the_post_thumbnail( 'card-default' ); ?>
+				<?php the_post_thumbnail( 'card-wide' ); ?>
 			</figure>
 		<?php else : ?>
 			<figure>
@@ -12,6 +12,7 @@
 		<?php endif; ?>
 		<div class="card-content">
 			<?php the_title( '<h3 class="card-title">', '</h3>' ); ?>
+			<div class="card-description"><?php the_excerpt(); ?></div>
 			<div class="card-date">
 				<i class="icon-clock"></i>
 				<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
