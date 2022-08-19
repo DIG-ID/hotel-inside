@@ -234,7 +234,6 @@ if ( ! function_exists( 'hi_allowed_block_types' ) ) :
 			'core/heading',
 			'core/cover-image',
 			'core/gallery',
-			'core/video',
 			'core/quote',
 			'core-embed/youtube',
 		);
