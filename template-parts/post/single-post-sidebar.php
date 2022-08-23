@@ -1,8 +1,11 @@
 <div class="sidebar__inner">
-    <div class="container p-0">
+    <?php 
+    $author_id = get_the_author_meta('ID');
+    $author_nickname = get_the_author_meta('nickname'); ?>
+    <?php if ( $author_nickname != 'editorial.team') : ?>
+    <div class="container p-0 sidebar__content">
         <div class="author__img-wrapper">
         <?php
-        $author_id = get_the_author_meta('ID');
         $author_badge = get_field('profile_picture', 'user_'. $author_id ); $authorimg_size = 'full'; 
         echo wp_get_attachment_image( $author_badge, $authorimg_size ); 
         ?>
@@ -14,7 +17,8 @@
             <p class="author__description"><?php echo get_the_author_meta('user_description', $author_id); ?></p>
             <a id="showmore" class="author__showmore"><?php _e( 'Weiterlesen...', 'hotel-inside' ); ?></a>
         </div><!-- .row -->
-    </div><!-- .content -->
+    </div><!-- .container -->
+    <?php endif; ?>
         <?php
         $ads_img  = get_theme_mod( 'ads_sidebar_image' );
         $ads_link = get_theme_mod( 'ads_sidebar_link' );
