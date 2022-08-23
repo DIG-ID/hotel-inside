@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying kommentar by hans archive pages
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  */

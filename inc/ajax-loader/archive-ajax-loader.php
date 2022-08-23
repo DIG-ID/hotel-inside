@@ -9,8 +9,6 @@ add_action( 'wp_ajax_nopriv_hi_archive_pagination_load_posts', 'hi_archive_pagin
 
 function hi_archive_pagination_load_posts( ) {
 	$current_cat_ID = $_SESSION['current_cat_ID'];
-	$sticky = get_option( 'sticky_posts' );
-	$stringSticky = implode(",", $sticky);
 
 	global $wpdb;
 	// Set default variables
@@ -35,10 +33,9 @@ function hi_archive_pagination_load_posts( ) {
 		// Query the posts
 		/*$all_blog_posts = $wpdb->get_results($wpdb->prepare("
 			SELECT * FROM " . $table_name . " WHERE post_type = 'post' AND post_status = 'publish' ORDER BY post_date ASC LIMIT %d, %d", $start, $per_page ) );*/
-
 		/*$all_blog_posts = $wpdb->get_results($wpdb->prepare("
 			SELECT 
-			ID, post_title, post_excerpt FROM $wpdb->posts p
+			* FROM $wpdb->posts p
 			JOIN $wpdb->options o ON (p.ID = o.option_value)
 			JOIN $wpdb->term_relationships tr ON (p.ID = tr.object_id)
 			JOIN $wpdb->term_taxonomy tt ON (tr.term_taxonomy_id = tt.term_taxonomy_id)
@@ -46,11 +43,13 @@ function hi_archive_pagination_load_posts( ) {
 			WHERE p.post_type='post'
 			AND p.post_status = 'publish'
 			AND tt.taxonomy = 'category'
-			AND t.term_id = " . $current_cat_ID . "
+			AND t.term_id = " . $current_cat_ID . "~
+			AND NOT IN SUBSTRING_INDEX( 
+				SUBSTRING_INDEX( 
+					SUBSTRING())
+					SUBSTRING_INDEX(str,delim,count)
 			ORDER BY post_date ASC LIMIT %d, %d
 		", $start, $per_page ) );*/
-
-
 		// At the same time, count the number of queried posts
 			/*$count = $wpdb->get_var($wpdb->prepare("
 			SELECT
@@ -78,61 +77,44 @@ function hi_archive_pagination_load_posts( ) {
 					'offset'              => $start,
 				)
 			);
-
 			$count = new WP_Query(
 				array(
 					'cat'                 => $current_cat_ID,
 					'post_type'           => 'post',
-					'post_status'         => 'publish',
+					'post_status '        => 'publish',
+					'posts_per_page'      => -1,
 					'ignore_sticky_posts' => 1,
 					'post__not_in'        => get_option( 'sticky_posts' ),
-					'posts_per_page'     => -1,
 				)
-		);
-
+			);
+			$count = $count->post_count;
 		// Loop into all the posts
-		/*foreach ( $all_blog_posts as $key => $post ) :
-			setup_postdata( $post );
-			$count++
-			$article_id = $post->ID;
-			$msg .= '<a href="' . get_permalink( $article_id ) . '" class="card-link">
-			<article id="post-' . $article_id . '" class="card card-wide">';
-			if ( has_post_thumbnail( $article_id ) ) :
-				$msg .= '<figure>' . get_the_post_thumbnail( $article_id, 'card-wide' ) . '</figure>';
-			else :
-				$msg .= '<figure>
-									<img src="' . esc_url( get_template_directory_uri() . '/assets/images/default-1-block-thumbnail.png' ) . '" alt="default thumbnail">
-								</figure>';
-			endif; 
-			$msg .= '<div class="card-content"><h3 class="card-title">
-								' . get_the_title( $article_id ) . '</h3>
-								<div class="card-description">' . get_the_excerpt( $article_id ) . '</div>
-								<div class="card-date">
-									<i class="icon-clock"></i>
-									<time datetime="' . get_the_date( 'c', $article_id ) .'" itemprop="datePublished">' . get_the_date( $article_id ) .'</time>
-								</div>
-							</div>
-						</article>
-					</a>';
-		endforeach;*/
 		if ( $all_blog_posts->have_posts() ) :
 			while ( $all_blog_posts->have_posts() ) :
 				$all_blog_posts->the_post();
-				$article_id = $post->ID;
 				$msg .= '
-				<a href="' . get_the_permalink( $article_id ) . '" class="card-link">
-				<article id="post-<?php the_ID(); ?>" class="card card-wide">
-
-					<div class="card-content">
-					<h3 class="card-title">' . get_the_title( $article_id ) . '</h3>
-						<div class="card-description">' . get_the_excerpt( $article_id ) . '</div>
-						<div class="card-date">
-							<i class="icon-clock"></i>
-							<time datetime="' . get_the_date( 'c', $article_id ) . '" itemprop="datePublished">' . get_the_date( $article_id ) . '</time>
+				<div class="col-12">
+				<a href="' . get_the_permalink() . '" class="card-link">
+					<article id="post-' . get_the_ID() . '" class="card card-wide">';
+						if ( has_post_thumbnail() ) :
+							$msg .= '<figure>' . get_the_post_thumbnail( 'card-wide' ) . '</figure>';
+						else :
+							$msg .= '<figure>
+												<img src="' . esc_url( get_template_directory_uri() . '/assets/images/default-1-block-thumbnail.png' ) . '" alt="default thumbnail">
+											</figure>';
+						endif;
+						$msg .= '
+						<div class="card-content">
+						<h3 class="card-title">' . get_the_title() . '</h3>
+							<div class="card-description">' . get_the_excerpt() . '</div>
+							<div class="card-date">
+								<i class="icon-clock"></i>
+								<time datetime="' . get_the_date( 'c' ) . '" itemprop="datePublished">' . get_the_date() . '</time>
+							</div>
 						</div>
-					</div>
-				</article>
-			</a>
+					</article>
+				</a>
+				</div>
 				';
 			endwhile;
 		endif;
@@ -163,12 +145,12 @@ function hi_archive_pagination_load_posts( ) {
 		endif;
 
 		// Pagination Buttons logic    
-		$pag_container = "";
+		$pag_container  = "";
 		$pag_container .= "
 		<div class='cvf-universal-pagination'>
 				<ul>";
 
-		if ( $first_btn && $cur_page > 1) :
+		if ( $first_btn && $cur_page > 1 ) :
 			$pag_container .= "<li p='1' class='active'>First</li>";
 		elseif ( $first_btn ) :
 			$pag_container .= "<li p='1' class='inactive'>First</li>";
