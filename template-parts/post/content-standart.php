@@ -15,7 +15,8 @@
 
 				<div class="single-post__content">
 					<?php the_content(); ?>
-					<a href="#" class="latest-posts__backlink"><?php _e( 'zur Übersicht', 'hotel-inside' ); ?></a>
+					<?php $categories = get_the_category( $id )[0]->slug; ?>
+					<a href="<?php echo home_url(); ?>/category/<?php echo $categories; ?>" class="latest-posts__backlink"><?php _e( 'zur Übersicht', 'hotel-inside' ); ?></a>
 					<div class="latest-posts__linesep"></div>
 				</div>
 			</div>

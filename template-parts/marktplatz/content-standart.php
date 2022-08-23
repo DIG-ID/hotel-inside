@@ -49,6 +49,8 @@
 					</div>
 				</div>
 				<div class="company-content__text-content"><p class="company-content__text"><?php the_field('company_text_content'); ?></p></div>
+				<?php $categories = get_the_category( $id )[0]->slug; ?>
+				<a href="<?php echo home_url(); ?>/marktplatz/" class="latest-posts__backlink"><?php _e( 'zur Übersicht', 'hotel-inside' ); ?></a>
 				<a href="#" class="btn btn__orange" target="_blank"><?php esc_html_e( 'Zur Webseite', 'hotel-inside' ); ?></a>
 				</div>
 			</div>
