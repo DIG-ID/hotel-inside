@@ -1,16 +1,13 @@
 <?php
 
-session_start(); // this NEEDS TO BE AT THE TOP of the page before any output etc
-
 /* Receive the Request post that came from AJAX */
-add_action( 'wp_ajax_hi_archive_pagination_load_posts', 'hi_archive_pagination_load_posts' );
+add_action( 'wp_ajax_hi_kommentar_pagination_load_posts', 'hi_kommentar_pagination_load_posts' );
 // We allow non-logged in users to access our pagination
-add_action( 'wp_ajax_nopriv_hi_archive_pagination_load_posts', 'hi_archive_pagination_load_posts' );
+add_action( 'wp_ajax_nopriv_hi_kommentar_pagination_load_posts', 'hi_kommentar_pagination_load_posts' );
 
-function hi_archive_pagination_load_posts() {
-	$current_cat_ID = $_SESSION['current_cat_ID'];
+function hi_kommentar_pagination_load_posts() {
 
-	// Set default variables
+
 	$msg           = '';
 	$pag_container = '';
 
@@ -20,70 +17,28 @@ function hi_archive_pagination_load_posts() {
 		$cur_page = $page;
 		$page    -= 1;
 		// Set the number of results to display
-		$per_page     = 3;
+		$per_page     = 5;
 		$previous_btn = true;
 		$next_btn     = true;
 		$first_btn    = false;
 		$last_btn     = false;
 		$start        = $page * $per_page;
 
-		// Set the table where we will be querying data
-		//$table_name = $wpdb->prefix . "posts";
-		// Query the posts
-		/*$all_blog_posts = $wpdb->get_results($wpdb->prepare("
-			SELECT * FROM " . $table_name . " WHERE post_type = 'post' AND post_status = 'publish' ORDER BY post_date ASC LIMIT %d, %d", $start, $per_page ) );*/
-		/*$all_blog_posts = $wpdb->get_results($wpdb->prepare("
-			SELECT 
-			* FROM $wpdb->posts p
-			JOIN $wpdb->options o ON (p.ID = o.option_value)
-			JOIN $wpdb->term_relationships tr ON (p.ID = tr.object_id)
-			JOIN $wpdb->term_taxonomy tt ON (tr.term_taxonomy_id = tt.term_taxonomy_id)
-			JOIN $wpdb->terms t ON (tt.term_id = t.term_id)
-			WHERE p.post_type='post'
-			AND p.post_status = 'publish'
-			AND tt.taxonomy = 'category'
-			AND t.term_id = " . $current_cat_ID . "~
-			AND NOT IN SUBSTRING_INDEX( 
-				SUBSTRING_INDEX( 
-					SUBSTRING())
-					SUBSTRING_INDEX(str,delim,count)
-			ORDER BY post_date ASC LIMIT %d, %d
-		", $start, $per_page ) );*/
-		// At the same time, count the number of queried posts
-			/*$count = $wpdb->get_var($wpdb->prepare("
-			SELECT
-			COUNT(ID), post_title AS title, post_excerpt AS excerpt FROM $wpdb->posts p
-			JOIN $wpdb->term_relationships tr ON (p.ID = tr.object_id)
-			JOIN $wpdb->term_taxonomy tt ON (tr.term_taxonomy_id = tt.term_taxonomy_id)
-			JOIN $wpdb->terms t ON (tt.term_id = t.term_id)
-			WHERE p.post_type = 'post'
-			AND p.post_status = 'publish'
-			AND tt.taxonomy = 'category'
-			AND t.term_id = " . $current_cat_ID . "
-			", array() ) );*/
-
-
 			$all_blog_posts = new WP_Query(
 				array(
-					'cat'                 => $current_cat_ID,
-					'post_type'           => 'post',
-					'post_status'         => 'publish',
-					'ignore_sticky_posts' => 1,
-					'post__not_in'        => get_option( 'sticky_posts' ),
-					'posts_per_page'      => $per_page,
-					'offset'              => $start,
-					'orderby'             => 'post_date',
-					'order'               => 'ASC',
+					'post_type'      => 'kommentar_by_hans',
+					'post_status'    => 'publish',
+					'posts_per_page' => $per_page,
+					'offset'         => $start,
+					'orderby'        => 'post_date',
+					'order'          => 'ASC',
 				)
 			);
 			$count = new WP_Query(
 				array(
-					'cat'                 => $current_cat_ID,
-					'post_type'           => 'post',
-					'post_status '        => 'publish',
-					'posts_per_page'      => -1,
-					'ignore_sticky_posts' => 1,
-					'post__not_in'        => get_option( 'sticky_posts' ),
+					'post_type'      => 'kommentar_by_hans',
+					'post_status '   => 'publish',
+					'posts_per_page' => -1,
 				)
 			);
 			$count = $count->post_count;
@@ -91,7 +46,7 @@ function hi_archive_pagination_load_posts() {
 		if ( $all_blog_posts->have_posts() ) :
 			while ( $all_blog_posts->have_posts() ) :
 				$all_blog_posts->the_post();
-				$msg .= get_template_part( 'template-parts/components/card', 'wide' );
+				$msg .= get_template_part( 'template-parts/components/card', 'archive-kommentar' );
 			endwhile;
 		endif;
 		wp_reset_postdata();

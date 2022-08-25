@@ -1,8 +1,8 @@
 <a href="<?php the_permalink(); ?>" class="card-link">
-	<article id="post-<?php the_ID(); ?>" class="card card-sm">
+	<article id="post-<?php the_ID(); ?>" class="card card-archive-kommentar">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<figure>
-				<?php the_post_thumbnail( 'card-archive-sm' ); ?>
+				<?php the_post_thumbnail( 'card-archive-kommentar' ); ?>
 			</figure>
 		<?php else : ?>
 			<figure>
@@ -16,6 +16,8 @@
 				<i class="icon-clock"></i>
 				<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished"><?php echo get_the_date(); ?></time>
 			</div>
+			<hr>
+			<div class="card-description"><?php the_excerpt(); ?></div>
 		</div>
 	</article>
 </a>

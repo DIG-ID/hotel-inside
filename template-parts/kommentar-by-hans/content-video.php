@@ -13,8 +13,7 @@
 					</header>
 					<div class="single-post__content">
 						<?php the_content(); ?>
-						<?php $categories = get_the_category( $id )[0]->slug; ?>
-						<a href="<?php echo home_url(); ?>/category/<?php echo $categories; ?>" class="latest-posts__backlink"><?php _e( 'zur Übersicht', 'hotel-inside' ); ?></a>
+						<a href="<?php echo esc_url( get_post_type_archive_link( 'kommentar_by_hans' ) ); ?>" class="latest-posts__backlink"><?php _e( 'zur Übersicht', 'hotel-inside' ); ?></a>
 						<div class="latest-posts__linesep"></div>
 					</div>
 				</div>

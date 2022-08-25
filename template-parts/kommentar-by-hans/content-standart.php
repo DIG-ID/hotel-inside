@@ -4,7 +4,7 @@
 		<div class="custom-container">
 			<div class="row content-row">
 				<div class="col-md-12 col-lg-7 content">
-					<?php if (has_post_thumbnail( $post->ID ) ): ?>
+					<?php if ( has_post_thumbnail( $post->ID ) ) : ?>
 					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
 						<img src="<?php echo $image[0]; ?>" title="featured image" alt="featured image">
 					<?php endif; ?>
@@ -14,8 +14,7 @@
 					</header>
 					<div class="single-post__content">
 						<?php the_content(); ?>
-						<?php $categories = get_the_category( $id )[0]->slug; ?>
-						<a href="<?php echo home_url(); ?>/category/<?php echo $categories; ?>" class="latest-posts__backlink"><?php _e( 'zur Übersicht', 'hotel-inside' ); ?></a>
+						<a href="<?php echo esc_url( get_post_type_archive_link( 'kommentar_by_hans' ) ); ?>" class="latest-posts__backlink"><?php _e( 'zur Übersicht', 'hotel-inside' ); ?></a>
 						<div class="latest-posts__linesep"></div>
 					</div>
 				</div>

@@ -4,12 +4,13 @@
 			<?php
 			$hi_cat    = get_query_var( 'cat' );
 			$cat_args  = array(
+				'post_type'      => 'post',
+				'post_status'    => 'publish',
+				'post__in'       => get_option( 'sticky_posts' ),
 				'posts_per_page' => 5,
 				'cat'            => $hi_cat,
 				'orderby'        => 'post_date',
 				'order'          => 'ASC',
-				'post_type'      => 'post',
-				'post_status'    => 'publish',
 			);
 			$cat_query = new WP_Query( $cat_args );
 			if ( $cat_query->have_posts() ) :

@@ -1,7 +1,14 @@
 <div class="section section-breadcrumbs">
 	<div class="custom-container">
 		<div class="row">
-			<div class="col">
+			<div class="col-12">
+				<?php
+				if ( function_exists( 'yoast_breadcrumb' ) ) :
+					yoast_breadcrumb( '<p id="breadcrumbs">','</p>' );
+				endif;
+				?>
+			</div>
+			<div class="col-12">
 				<div class="breadcrumbs__separator-line"></div>
 				<?php if ( is_singular( 'marktplatz' ) ) : ?>
 					<h2 class="breadcrumbs__title"><?php esc_html_e( 'Marktplatz', 'hotel-inside' ); ?></h2>

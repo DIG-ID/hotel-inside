@@ -1,8 +1,15 @@
 <section class="section section-hero">
 	<?php
 	$args = array(
-		'posts_per_page' => 4,
-		'post__in'       => get_option( 'sticky_posts' ),
+		'ignore_sticky_posts' => 1,
+		'meta_query' => array(
+			array(
+				'key'   => 'show_on_the_hero_section',
+				'value' => '1',
+			),
+		),
+		'orderby'             => 'post_date',
+		'order'               => 'ASC',
 	);
 	$news_query = new WP_Query( $args );
 	?>

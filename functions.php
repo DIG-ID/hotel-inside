@@ -40,7 +40,11 @@ function hi_theme_setup() {
 
 	add_image_size( 'card-archive-md', 570, 417, array( 'center', 'center' ) );
 
+	add_image_size( 'card-archive-kommentar', 570, 273, array( 'center', 'center' ) );
+
 	add_image_size( 'card-default', 570, 300, array( 'center', 'center' ) );
+
+	add_image_size( 'kommentar-author-avatar', 370, 443, array( 'center', 'center' ) );
 
 
 }

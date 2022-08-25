@@ -4,7 +4,7 @@
         &__title
             font-family: $raj-font
             font-size: 30px
-            font-weight: 500
+            font-weight: 600
             color: #F9F9F9
             text-transform: uppercase
         &__separator-line
@@ -17,3 +17,36 @@
         width: 96px
         border-bottom: 6px solid $main-orange
         margin-bottom: 10px
+
+
+#breadcrumbs
+    font-family: $montserrat-font
+    font-weight: 700
+    font-size: 12px
+    text-transform: uppercase
+    margin-bottom: 30px
+    color: #fff
+    span
+        display: flex
+    a
+        font-family: $montserrat-font
+        font-weight: 700
+        font-size: 12px
+        text-transform: uppercase
+        text-decoration: none
+        transition: all .3s ease-in-out
+        color: #fff
+        &:hover
+            color: $main-orange
+        &:first-of-type
+            margin-right: 5px
+        &:last-of-type
+            margin-right: 5px
+            margin-left: 5px
+    .breadcrumb_last
+        text-decoration: underline
+        white-space: nowrap
+        overflow: hidden
+        text-overflow: ellipsis
+        max-width: 200px
+        margin-left: 5px

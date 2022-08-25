@@ -15,12 +15,13 @@
 								var ajaxurl = '<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>';
 								function cvf_load_all_archive_posts(page){
 									// Start the transition
-									$(".cvf_pag_loading").fadeIn().css('background','#ccc');
+									$(".cvf_pag_loading").fadeIn().css('background','#fff');
 									// Data to receive from our server
 									// the value in 'action' is the key that will be identified by the 'wp_ajax_' hook
+									var currentCat = {};
 									var data = {
 										page: page,
-										action: "hi_archive_pagination_load_posts"
+										action: "hi_archive_pagination_load_posts",
 									};
 									// Send the data
 									$.post(ajaxurl, data, function(response) {
@@ -33,7 +34,7 @@
 								// Load page 1 as the default
 								cvf_load_all_archive_posts(1);
 								// Handle the clicks
-								$(document).on( 'click', '.cvf-universal-pagination ul li', function(){
+								$(document).on( 'click', '.cvf_universal_container .cvf-universal-pagination li.active', function(e){
 									var page = $(this).attr('p');
 									cvf_load_all_archive_posts(page);
 								});

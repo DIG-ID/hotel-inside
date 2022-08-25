@@ -102,6 +102,7 @@
     .card-title
       font-size: 18px
 
+
   &-club-event
     flex-direction: row
     align-items: center
@@ -122,11 +123,18 @@
     .card-description
       margin-bottom: 40px
 
+  &-wide-cat
+    .card-content
+      hr
+        max-width: 60%
+        background-color: $main-blue
+        opacity: 1
   &-wide
     background-color: #FCFCFC
     box-shadow: 0px 3px 6px #00000029
     .card-content
       padding: 30px 30px 40px
+
     .card-description
       margin-bottom: 20px
       p
@@ -141,3 +149,17 @@
         -webkit-line-clamp: 4
         -webkit-box-orient: vertical
         white-space: normal
+  &-sm
+    .card-title
+      font-size: 18px
+
+  &-archive-kommentar
+    flex-direction: row
+    align-items: center
+    background-color: #FCFCFC
+    box-shadow: 0px 3px 6px #00000029
+    figure
+      margin-bottom: 0
+      min-width: 570px
+    .card-content
+      padding: 40px 30px
