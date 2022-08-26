@@ -38,7 +38,7 @@
       text-transform: uppercase
   &-description
     font-family: $acumin-font
-    font-weight: 300
+    font-weight: 400
     font-size: 16px
     color: $main-blue
     // Addition lines for 2 line or multiline ellipsis
@@ -101,7 +101,6 @@
     figure
       margin-bottom: 0px
       img
-        max-width: 150px
         min-width: 150px
     .card-content
       padding: 0px 20px
@@ -125,6 +124,18 @@
         padding: 0px 20px
       .card-title
         font-size: 18px
+    &__lg
+      figure
+        img
+          min-width: 270px
+      hr
+        background-color: #E1E1E1
+      .card-title
+        font-size: 18px
+        -webkit-line-clamp: 2
+      .card--description
+        -webkit-line-clamp: 4
+
 
 
   &--club-event

@@ -88,3 +88,25 @@ if ( ! function_exists( 'hi_post_badges' ) ) :
 	add_action( 'post_badges', 'hi_post_badges' );
 
 endif;
+
+/**
+ * This function add the button back to overiew to an post.
+ */
+
+if ( ! function_exists( 'hi_back_to_overview' ) ) :
+
+	function hi_back_to_overview() {
+		$post_type = get_post_type( get_the_ID() );
+		if ( 'post' === $post_type && is_single() && has_category() ) :
+			$cat = get_the_category();
+			if ( ! empty( $cat ) ) :
+				echo '<a href="' . esc_url( get_category_link( $cat[0]->term_id ) ) . '" class="latest-posts__backlink"><svg xmlns="http://www.w3.org/2000/svg" width="37.305" height="13.055" viewBox="0 0 37.305 13.055"><defs><style>.a,.b{fill:none;stroke:#9c98ae;stroke-width:2px;}.b{stroke-linecap:square;}</style></defs><g transform="translate(521.915 4663.047) rotate(180)"><line class="a" x2="35.634" transform="translate(484.61 4656.426)"/><line class="b" x2="7.259" transform="translate(515.368 4661.632) rotate(-45)"/><line class="b" x2="7.259" transform="translate(515.368 4651.405) rotate(45)"/></g></svg>' . esc_html__( ' zur Übersicht', 'hotel-inside' ) . '</a>';
+			endif;
+		elseif ( 'kommentar_by_hans' === $post_type && is_single() ) :
+			echo '<a href="' . esc_url( get_post_type_archive_link( 'kommentar_by_hans' ) ) . '" class="latest-posts__backlink"><svg xmlns="http://www.w3.org/2000/svg" width="37.305" height="13.055" viewBox="0 0 37.305 13.055"><defs><style>.a,.b{fill:none;stroke:#9c98ae;stroke-width:2px;}.b{stroke-linecap:square;}</style></defs><g transform="translate(521.915 4663.047) rotate(180)"><line class="a" x2="35.634" transform="translate(484.61 4656.426)"/><line class="b" x2="7.259" transform="translate(515.368 4661.632) rotate(-45)"/><line class="b" x2="7.259" transform="translate(515.368 4651.405) rotate(45)"/></g></svg>' . esc_html__( 'zur Übersicht', 'hotel-inside' ) . '</a>';
+		endif;
+	}
+
+	add_action( 'back_button', 'hi_back_to_overview' );
+
+endif;
