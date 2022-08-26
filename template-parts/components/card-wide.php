@@ -1,5 +1,5 @@
 <a href="<?php the_permalink(); ?>" class="card-link">
-	<article id="post-<?php the_ID(); ?>" class="card card-wide">
+	<article id="post-<?php the_ID(); ?>" class="card card--wide">
 		<?php if ( has_post_thumbnail() ) : ?>
 			<figure>
 				<?php the_post_thumbnail( 'card-wide' ); ?>

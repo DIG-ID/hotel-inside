@@ -22,9 +22,7 @@
 					if ( $the_query1->have_posts() ) :
 						while ( $the_query1->have_posts() ) :
 							$the_query1->the_post();
-							?><div class="col-12"><?php
-								get_template_part( 'template-parts/components/card', 'youtube' );
-							?></div><?php
+							get_template_part( 'template-parts/components/card', 'youtube' );
 						endwhile;
 					endif;
 					wp_reset_postdata();
@@ -48,9 +46,7 @@
 					if ( $the_query2->have_posts() ) :
 						while ( $the_query2->have_posts() ) :
 							$the_query2->the_post();
-							?><div class="col-12"><?php
-								get_template_part( 'template-parts/components/card', 'youtube' );
-							?></div><?php
+							get_template_part( 'template-parts/components/card', 'youtube-sm' );
 						endwhile;
 					endif;
 					wp_reset_postdata();

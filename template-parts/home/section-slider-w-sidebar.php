@@ -32,7 +32,7 @@
 									<?php
 									while ( $the_query->have_posts() ) :
 										$the_query->the_post();
-										get_template_part( 'template-parts/components/card', 'slider' );
+										get_template_part( 'template-parts/components/card', 'kommentar-slider' );
 									endwhile;
 									?>
 								</div>
@@ -62,23 +62,12 @@
 							'post_status'         => 'publish',
 							'ignore_sticky_posts' => 1,
 							'post__not_in'        => get_option( 'sticky_posts' ),
-							/*'tax_query'           => array(
-								array(
-									'taxonomy' => 'post_format',
-									'field'    => 'slug',
-									'terms'    => array(
-										'post-format-gallery',
-										'post-format-video',
-									),
-									'operator' => 'NOT IN',
-								),
-							),*/
 						);
 						$the_query = new WP_Query( $args );
 						if ( $the_query->have_posts() ) :
 							while ( $the_query->have_posts() ) :
 								$the_query->the_post();
-								get_template_part( 'template-parts/components/card', 'sidebar' );
+								get_template_part( 'template-parts/components/card', 'horizontal' );
 							endwhile;
 						endif;
 						wp_reset_postdata();

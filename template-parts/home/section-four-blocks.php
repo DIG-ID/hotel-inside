@@ -35,7 +35,7 @@ if ( $myterms ) :
 						while ( $the_query->have_posts() ) :
 							$the_query->the_post();
 							?><div class="col-12 col-md-6 col-lg-3"><?php
-								get_template_part( 'template-parts/components/card' );
+								get_template_part( 'template-parts/components/card', 'sm' );
 							?></div><?php
 						endwhile;
 					endif;

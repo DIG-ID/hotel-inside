@@ -22,7 +22,7 @@
 						while ( $the_query->have_posts() ) :
 							$the_query->the_post();
 							echo '<li>';
-							get_template_part( 'template-parts/components/card', 'sidebar-xs' );
+							get_template_part( 'template-parts/components/card', 'horizontal-xs' );
 							echo '</li>';
 						endwhile;
 					endif;
