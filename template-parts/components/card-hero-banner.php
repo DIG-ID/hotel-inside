@@ -11,7 +11,7 @@
 		<div class="custom-container">
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-7">
-					<a href="<?php get_the_permalink(); ?>">
+					<a href="<?php the_permalink(); ?>">
 						<?php the_title( '<h2>', '</h2>' ); ?>
 					</a>
 					<div class="post-date">
