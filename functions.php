@@ -241,6 +241,7 @@ if ( ! function_exists( 'hi_allowed_block_types' ) ) :
 			'core/gallery',
 			'core/quote',
 			'core-embed/youtube',
+			'core/list',
 		);
 		return $blocks;
 	}
