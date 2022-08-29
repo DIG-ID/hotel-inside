@@ -45,8 +45,6 @@
 			wp_reset_postdata();
 			?>
 			<div class="col-12 col-lg-5">
-				<?php $myterm = get_field( 'home_page_sidebar_categorie' ); ?>
-				<?php if ( $myterm ) : ?>
 				<div class="row">
 					<div class="col-12">
 						<h2 class="section-title"><?php the_field( 'home_page_sidebar_title' ); ?></h2>
@@ -54,7 +52,6 @@
 					<div class="col-12">
 						<?php
 						$args      = array(
-							'cat'                 => $myterm,
 							'posts_per_page'      => 3,
 							'orderby'             => 'post_date',
 							'order'               => 'ASC',
@@ -74,7 +71,6 @@
 						?>
 					</div><!-- .col -->
 				</div><!-- .row -->
-				<?php endif; ?>
 				<?php get_template_part( 'template-parts/modules/ads', 'sidebar' ); ?>
 			</div><!-- .col -->
 		</div><!-- .row -->
