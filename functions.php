@@ -253,7 +253,7 @@ add_filter( 'allowed_block_types', 'hi_allowed_block_types' );
 
 function hi_my_dropdown_users_args( $query_args ) {
 	$query_args['capability'] = [];
-	$query_args['roles__in']  = [ "Author", "Contributor" ];
+	$query_args['roles__in']  = [ 'Author' ];
 	return $query_args;
 }
 
