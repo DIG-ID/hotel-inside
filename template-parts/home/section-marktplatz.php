@@ -20,7 +20,7 @@
 								<a href="<?php echo esc_url( get_post_type_archive_link( get_post_type() ) ); ?>">
 									<?php
 									if ( has_post_thumbnail() ) :
-										the_post_thumbnail( 'full' );
+										the_post_thumbnail( 'markplatz-avatar' );
 									endif;
 									?>
 								</a>
