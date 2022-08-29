@@ -64,7 +64,7 @@
 						if ( $the_query->have_posts() ) :
 							while ( $the_query->have_posts() ) :
 								$the_query->the_post();
-								get_template_part( 'template-parts/components/card', 'horizontal' );
+								get_template_part( 'template-parts/components/card', 'horizontal-xs' );
 							endwhile;
 						endif;
 						wp_reset_postdata();
