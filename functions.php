@@ -249,6 +249,16 @@ endif;
 
 add_filter( 'allowed_block_types', 'hi_allowed_block_types' );
 
+
+
+function hi_my_dropdown_users_args( $query_args ) {
+	$query_args['capability'] = [];
+	$query_args['roles__in']  = [ "Author", "Contributor" ];
+	return $query_args;
+}
+
+add_filter( 'wp_dropdown_users_args', 'hi_my_dropdown_users_args', 10, 1 );
+
 // Theme custom template tags.
 require get_template_directory() . '/inc/theme-template-tags.php';
 
