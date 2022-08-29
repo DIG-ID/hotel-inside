@@ -19,7 +19,7 @@
 				<?php elseif ( is_archive() ) : ?>
 					<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
 				<?php else : ?>
-					<h1 class="page-title"><?php the_title(); ?></h1>
+					<h2 class="page-title"><?php the_title(); ?></h2>
 				<?php endif; ?>
 			</div>
 		</div>

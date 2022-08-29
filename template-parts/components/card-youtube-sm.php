@@ -2,7 +2,7 @@
 <?php if ( $video_id ) : ?>
 	<div class="col-12">
 		<a data-fancybox data-small-btn="true" href="https://youtu.be/<?php echo esc_html( $video_id ); ?>" class="card-link">
-			<article id="post-<?php the_ID(); ?>" class="card card-youtube card--youtube__sm">
+			<article id="post-<?php the_ID(); ?>" class="card card--youtube card--youtube__sm">
 				<figure>
 					<img src="http://img.youtube.com/vi/<?php echo esc_html( $video_id ); ?>/maxresdefault.jpg" />
 					<span class="play-icon">
