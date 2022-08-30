@@ -15,7 +15,10 @@ registerBlockType('hotelinside/intro-text', {
   // custom functions
 
   // built-in functions
-  edit() {},
+  edit() {
+    // JSX
+    return <div>Hello World</div>;
+  },
 
   save() {}
 

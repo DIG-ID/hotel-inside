@@ -2,53 +2,100 @@
 /**
  * Setup theme
  */
-function hi_theme_setup() {
 
-	register_nav_menus(
-		array(
-			'top'         	=> __( 'Top Menu', 'hotel-inside' ),
-			'top-secondary' => __( 'Top Secondary Menu', 'hotel-inside' ),
-			'main'        	=> __( 'Main Menu', 'hotel-inside' ),
-			'footer'      	=> __( 'Footer Menu', 'hotel-inside' ),
-			'copy-footer' 	=> __( 'Copyright Menu', 'hotel-inside' ),
-		)
-	);
+if ( ! function_exists( 'hi_add_user_editor_caps' ) ) :
 
-	add_theme_support( 'menus' );
+	/**
+	 * Add capabilities to the Editor user.
+	 */
+	function hi_add_user_editor_caps() {
 
-	add_theme_support( 'custom-logo' );
+		$theme = wp_get_theme();
 
-	add_theme_support( 'title-tag' );
+		if ( 'Hotel Inside' === $theme->name || 'Hotel Inside' === $theme->parent_theme ) : // Test if theme is active
+			// Theme is active
+			// gets the editor role
+			$role = get_role( 'editor' );
 
-	add_theme_support( 'post-thumbnails' );
+			// This only works, because it accesses the class instance.
+			// would allow the author to edit others' posts for current theme only
+			$role->add_cap( 'promote_users' );
+			$role->add_cap( 'list_users' );
+			$role->add_cap( 'edit_users' );
+			$role->add_cap( 'create_users' );
+			$role->add_cap( 'delete_users' );
+			$role->add_cap( 'remove_users' );
+		else :
+			// Theme is deactivated
+			// Remove the capacity when theme is deactivate
+			$role->remove_cap( 'promote_users' );
+			$role->remove_cap( 'list_users' );
+			$role->remove_cap( 'edit_users' );
+			$role->remove_cap( 'create_users' );
+			$role->remove_cap( 'delete_users' );
+			$role->remove_cap( 'remove_users' );
+		endif;
 
-	add_theme_support( 'post-formats', array( 'video' ) );
+	}
 
-	add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
+endif;
 
-	add_image_size( 'card-club-event', 768, 390, array( 'center', 'center' ) );
+if ( ! function_exists( 'hi_theme_setup' ) ) :
 
-	add_image_size( 'card-slider', 670, 454, array( 'center', 'center' ) );
+	/**
+	 * Setup theme
+	 */
+	function hi_theme_setup() {
 
-	add_image_size( 'card-wide', 670, 675, array( 'center', 'center' ) );
+		register_nav_menus(
+			array(
+				'top'           => __( 'Top Menu', 'hotel-inside' ),
+				'top-secondary' => __( 'Top Secondary Menu', 'hotel-inside' ),
+				'main'          => __( 'Main Menu', 'hotel-inside' ),
+				'footer'        => __( 'Footer Menu', 'hotel-inside' ),
+				'copy-footer'   => __( 'Copyright Menu', 'hotel-inside' ),
+			)
+		);
 
-	add_image_size( 'card-sidebar-xs', 100, 100, array( 'center', 'center' ) );
+		add_theme_support( 'menus' );
 
-	add_image_size( 'card-related-posts', 270, 265, array( 'center', 'center' ) );
+		add_theme_support( 'custom-logo' );
 
-	add_image_size( 'card-archive-sm', 270, 179, array( 'center', 'center' ) );
+		add_theme_support( 'title-tag' );
 
-	add_image_size( 'card-archive-md', 570, 417, array( 'center', 'center' ) );
+		add_theme_support( 'post-thumbnails' );
 
-	add_image_size( 'card-archive-kommentar', 570, 273, array( 'center', 'center' ) );
+		add_theme_support( 'post-formats', array( 'video' ) );
 
-	add_image_size( 'card-default', 570, 300, array( 'center', 'center' ) );
+		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption', 'style', 'script' ) );
 
-	add_image_size( 'kommentar-author-avatar', 370, 443, array( 'center', 'center' ) );
+		add_image_size( 'card-club-event', 768, 390, array( 'center', 'center' ) );
 
-	add_image_size( 'markplatz-avatar', 150, 150, array( 'center', 'center' ) );
+		add_image_size( 'card-slider', 670, 454, array( 'center', 'center' ) );
 
-}
+		add_image_size( 'card-wide', 670, 675, array( 'center', 'center' ) );
+
+		add_image_size( 'card-sidebar-xs', 100, 100, array( 'center', 'center' ) );
+
+		add_image_size( 'card-related-posts', 270, 265, array( 'center', 'center' ) );
+
+		add_image_size( 'card-archive-sm', 270, 179, array( 'center', 'center' ) );
+
+		add_image_size( 'card-archive-md', 570, 417, array( 'center', 'center' ) );
+
+		add_image_size( 'card-archive-kommentar', 570, 273, array( 'center', 'center' ) );
+
+		add_image_size( 'card-default', 570, 300, array( 'center', 'center' ) );
+
+		add_image_size( 'kommentar-author-avatar', 370, 443, array( 'center', 'center' ) );
+
+		add_image_size( 'markplatz-avatar', 150, 150, array( 'center', 'center' ) );
+
+		hi_add_user_editor_caps();
+
+	}
+
+endif;
 
 add_action( 'after_setup_theme', 'hi_theme_setup' );
 
@@ -205,11 +252,11 @@ endif;
 
 add_action( 'wp_head', 'hi_preload_webfonts' );
 
-add_filter( 'option_show_avatars', '__return_false' );
-
-
 if ( ! function_exists( 'hi_custom_titles' ) ) :
 
+	/**
+	 * Change the default wordpress titles
+	 */
 	function hi_custom_titles( $title ) {
 		if ( is_category() ) :
 			$title = single_cat_title( '', false );
@@ -232,6 +279,9 @@ add_filter( 'get_the_archive_title', 'hi_custom_titles' );
 
 if ( ! function_exists( 'hi_allowed_block_types' ) ) :
 
+	/**
+	 * Limit the number of blocks available
+	 */
 	function hi_allowed_block_types( $allowed_blocks ) {
 		$blocks = array(
 			'core/image',
@@ -251,14 +301,76 @@ endif;
 add_filter( 'allowed_block_types', 'hi_allowed_block_types' );
 
 
+if ( ! function_exists( 'hi_my_dropdown_users_args' ) ) :
 
-function hi_my_dropdown_users_args( $query_args ) {
-	$query_args['capability'] = [];
-	$query_args['roles__in']  = [ 'Author' ];
-	return $query_args;
-}
+	/**
+	 * Only show the author in the Author dropdown in a post
+	 */
+	function hi_my_dropdown_users_args( $query_args ) {
+		$query_args['capability'] = [];
+		$query_args['roles__in']  = [ 'Author' ];
+		return $query_args;
+	}
+
+endif;
 
 add_filter( 'wp_dropdown_users_args', 'hi_my_dropdown_users_args', 10, 1 );
+
+
+if ( ! function_exists( 'hi_user_profile_update_errors' ) ) :
+
+	/**
+	 * This will suppress empty email errors when submitting the user form
+	 */
+	function hi_user_profile_update_errors( $errors, $update, $user ) {
+		$errors->remove( 'empty_email' );
+	}
+
+endif;
+
+add_action( 'user_profile_update_errors', 'hi_user_profile_update_errors', 10, 3 );
+
+if ( ! function_exists( 'hi_user_new_form' ) ) :
+
+	/**
+	 * Work for new user , user profile and edit user forms
+	 */
+	function hi_user_new_form( $form_type ) {
+		// This will remove javascript required validation for email input
+		// It will remove the '(required)' textin the label
+		?>
+		<script type= "text/javascript">
+			jQuery('#email').closest('tr').removeClass('form-required').find('.description').remove();
+			// Uncheck send new user email option by default
+			<?php if ( isset( $form_type ) && 'add-new-user' === $form_type ) : ?>
+				jQuery ('#send_user_notification').removeAttr('checked');
+			<?php endif; ?>
+		</script>
+		<?php
+	}
+
+endif;
+
+
+if ( ! function_exists( 'hi_insert_new_user' ) ) :
+
+	/**
+	 * Calls the user actions on the admin panel
+	 */
+	function hi_insert_new_user() {
+		add_action( 'user_new_form', 'hi_user_new_form', 10, 1 );
+		add_action( 'show_user_profile', 'hi_user_new_form', 10, 1 );
+		add_action( 'edit_user_profile', 'hi_user_new_form', 10, 1 );
+	}
+
+
+endif;
+
+add_action( 'admin_init', 'hi_insert_new_user' );
+
+
+// Hide users avatars.
+add_filter( 'option_show_avatars', '__return_false' );
 
 // Theme custom template tags.
 require get_template_directory() . '/inc/theme-template-tags.php';
