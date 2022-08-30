@@ -271,4 +271,3 @@ require get_template_directory() . '/inc/custom-nav-walker.php';
 
 // Theme custom ajax loader
 require get_template_directory() . '/inc/ajax-loader/ajax-loader.php';
-
