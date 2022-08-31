@@ -7,11 +7,11 @@
 					the_post_thumbnail( 'single-post-thumbnail' );
 				endif;
 				?>
-				<header class="header single-post__header">
-					<div class="single-post__date"><i class="icon-clock"></i><?php echo get_the_date( 'd M, Y' ); ?></div>
-					<?php the_title( '<h1 class="title">', '</h1>' ); ?>
+				<header class="post-header">
+					<div class="post-date"><i class="icon-clock"></i><?php echo get_the_date( 'd M, Y' ); ?></div>
+					<?php the_title( '<h1 class="post-title">', '</h1>' ); ?>
 				</header>
-				<div class="single-post__content">
+				<div class="post-content">
 					<?php the_content(); ?>
 					<?php do_action( 'back_button' ); ?>
 					<hr>
@@ -21,6 +21,6 @@
 				<?php get_template_part( 'template-parts/post/content', 'sidebar' ); ?>
 			</aside>
 		</div><!-- .row -->
-		<?php get_template_part( 'template-parts/post/related-posts' ); ?>
 	</div>
+	<?php get_template_part( 'template-parts/post/related-posts' ); ?>
 </article>
