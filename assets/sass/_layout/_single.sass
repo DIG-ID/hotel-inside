@@ -1,5 +1,5 @@
 .post-template-default
-  .section-single-post
+  .type-post
     .content
       img
         max-width: 100%
@@ -97,7 +97,27 @@
           line-height: 28px
           color: $font-grey
           margin-top: 10px
-
+      ul,
+      ol,
+      dl
+        font-family: $acumin-font
+        font-weight: 300
+        font-size: 16px
+        line-height: 28px
+        color: $dark-blue
+        li
+          p
+            line-height: 28px
+      ul
+        list-style: none
+        li
+          &::before
+            content: '\2022'
+            color: $main-orange
+            font-weight: bold
+            display: inline-block
+            width: 1em
+            margin-left: -1em
       .wp-block-gallery
         .blocks-gallery-grid
           .blocks-gallery-item
@@ -128,6 +148,19 @@
             font-size: 14px
             transition: all .3s ease-in-out
             transform: translateY(60px)
+      hr
+        background-color: #BABABA
+        margin: 15px 0
+      .back-to-overview
+        font-family: $raj-font
+        font-size: 19px
+        font-weight: 600
+        color: #9C98AE
+        text-decoration: none
+        margin-top: 20px
+        display: inline-block
+        svg
+          margin-right: 5px
 
 .author
   &__username
