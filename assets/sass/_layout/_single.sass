@@ -10,7 +10,8 @@
         font-family: $acumin-font
         font-weight: 300
         font-size: 16px
-        line-height: 26px
+        line-height: 28px
+        color: $dark-blue
         strong
           font-weight: 700
         a
@@ -19,37 +20,74 @@
           transition: all .3s ease-in-out
           &:hover
             color: $main-blue
-      h2,
-      h3,
+      p.has-large-font-size
+        line-height: 45px
+      //p.font-size:46px
+        line-height: 60px
+
       h4,
       h5,
       h6
         font-family: $raj-font
         font-weight: bold
-        margin-top: 30px
-        margin-bottom: 30px
-        color: $main-blue
+        margin: 20px 0px
+        color: $dark-blue
       h2
-        font-size: 28px
-      h3
-        font-size: 24px
-      h4
+        font-family: $acumin-font
         font-size: 20px
-      h5
+        font-weight: 600
+        line-height: 32px
+        color: #565463
+        margin: 20px 0px
+      h3
+        font-family: $acumin-font
+        font-size: 18px
+        font-weight: 600
+        line-height: 30px
+        color: $dark-blue
+        margin: 20px 0px
+      h4
         font-size: 17px
+      h5
+        font-size: 16px
       h6
-        font-size: 14px
+        font-size: 15px
 
       blockquote
-        background-color: $main-orange
+        position: relative
+        background-color: $background-grey
+        border-left: 4px solid $main-orange
         padding: 40px
         margin: 50px 0
+        quotes: "“" "”" "‘" "’"
+        &::before
+          content: open-quote
+          display: block
+          padding-left: 10px
+          content: "\201C"
+          font-size: 80px
+          position: absolute
+          left: -20px
+          top: -20px
+          color: #7a7a7a
+        &::after
+          content: close-quote
         p
-            font-family: $raj-font
-            font-size: 24px
-            font-weight: 400
-            color: #FFFFFF
-            margin: 0
+          font-family: $raj-font
+          font-size: 18px
+          font-weight: 600
+          line-height: 28px
+          color: $dark-blue
+          margin: 0
+        cite
+          display: block
+          font-family: $raj-font
+          font-size: 18px
+          font-weight: 600
+          font-style: normal
+          line-height: 28px
+          color: $font-grey
+          margin-top: 10px
 
       .wp-block-gallery
         .blocks-gallery-grid
