@@ -108,6 +108,7 @@ function hi_allowed_block_types( $allowed_blocks ) {
 				'core/quote',
 				'core-embed/youtube',
 				'core/list',
+				'core/spacer',
 			);
 			return $blocks;
 		endif;
