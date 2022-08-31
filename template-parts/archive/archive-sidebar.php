@@ -34,5 +34,4 @@
 		</div>
 	</div>
 	<?php get_template_part( 'template-parts/modules/ads', 'sidebar' ); ?>
-
 </aside>

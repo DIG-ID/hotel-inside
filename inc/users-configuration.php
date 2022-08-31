@@ -13,12 +13,20 @@ function hi_add_user_editor_caps() {
 
 		// This only works, because it accesses the class instance.
 		// would allow the author to edit others' posts for current theme only
+		$role->add_cap( 'create_users' );
+		$role->add_cap( 'delete_users' );
+		$role->add_cap( 'edit_users' );
+		$role->add_cap( 'remove_users' );
 		$role->add_cap( 'promote_users' );
 		$role->add_cap( 'list_users' );
 		$role->add_cap( 'customize' );
 	else :
 		// Theme is deactivated
 		// Remove the capacity when theme is deactivate
+		$role->remove_cap( 'create_users' );
+		$role->remove_cap( 'delete_users' );
+		$role->remove_cap( 'edit_users' );
+		$role->remove_cap( 'remove_users' );
 		$role->remove_cap( 'promote_users' );
 		$role->remove_cap( 'list_users' );
 		$role->remove_cap( 'customize' );
@@ -80,11 +88,11 @@ add_action( 'edit_user_profile', 'hi_user_new_form', 10, 1 );
  * 
  */
 
-function hi_add_site_health_roles( $roles ) {
+function hi_add_wpseo_manage_options_roles( $roles ) {
 	return array_merge( $roles, [ 'editor', 'wpseo_editor' ] );
 }
 
-add_filter( 'wpseo_manage_options_roles', 'hi_add_site_health_roles' );
+add_filter( 'wpseo_manage_options_roles', 'hi_add_wpseo_manage_options_roles' );
 
 //add_filter( 'wpseo_edit_advanced_metadata_roles', 'hi_add_site_health_roles' );
 

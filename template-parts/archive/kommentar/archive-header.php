@@ -8,8 +8,8 @@ if ( $author_id ) :
 			<div class="row justify-content-between">
 				<div class="col-12 col-lg-7">
 					<p class="author__description"><?php the_author_meta( 'user_description', $author_id ); ?></p>
-					<h3>Hans Amrein</h3>
-					<p>Founder of Hotel Inside</p>
+					<h3 class="author__name">Hans Amrein</h3>
+					<p class="author__position">Founder of Hotel Inside</p>
 					<hr>
 				</div>
 				<div class="col-12 col-lg-4">

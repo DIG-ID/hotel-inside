@@ -16,7 +16,7 @@
 				$cpt_name = get_post_type_object( 'kommentar_by_hans' );
 				?>
 				<div class="col-12 col-lg-7 section-slider-w-sidebar-wrapper">
-					<div class="row justify-content-center align-items-center title-w-slider">
+					<div class="row justify-content-center align-items-start title-w-slider">
 						<div class="col-10">
 							<h2 class="section-title"><?php echo esc_html( $cpt_name->labels->singular_name ); ?></h2>
 						</div>
