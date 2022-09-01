@@ -117,6 +117,7 @@ function hi_allowed_block_types( $allowed_blocks ) {
 				'core-embed/youtube',
 				'core/list',
 				'core/spacer',
+				'core/group',
 			);
 			return $blocks;
 		endif;
