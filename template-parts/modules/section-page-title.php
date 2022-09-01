@@ -23,7 +23,7 @@
 						<?php
 						printf(
 							/* translators: %s: search term. */
-							esc_html__( 'Results for "%s"', 'hotel-inside' ),
+							esc_html__( 'Resultate für "%s"', 'hotel-inside' ),
 							'<span class="page-description search-term">' . esc_html( get_search_query() ) . '</span>'
 						);
 						?>

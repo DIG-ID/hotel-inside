@@ -16,8 +16,8 @@ if ( have_posts() ) :
 								esc_html(
 									/* translators: %d: the number of search results. */
 									_n(
-										'We found %d result for your search.',
-										'We found %d results for your search.',
+										'Wir haben %d Resultate für Ihre Suche gefunden.',
+										'Wir haben %d Resultate für Ihre Suche gefunden.',
 										(int) $wp_query->found_posts,
 										'hotel-inside'
 									)
