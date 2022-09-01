@@ -48,6 +48,8 @@ function hi_theme_setup() {
 
 	add_image_size( 'kommentar-author-avatar', 370, 443, array( 'center', 'center' ) );
 
+	add_image_size( 'author-avatar', 180, 180, array( 'center', 'center' ) );
+
 	add_image_size( 'markplatz-avatar', 150, 150, array( 'center', 'center' ) );
 
 }

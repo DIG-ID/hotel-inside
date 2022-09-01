@@ -55,7 +55,7 @@
         font-family: $acumin-font
         font-weight: 300
         font-size: 16px
-        line-height: 28px
+        line-height: 26px
         color: $dark-blue
         strong
           font-weight: 700
@@ -277,29 +277,32 @@
     font-family: $raj-font
     font-size: 24px
     font-weight: 400
-    margin-bottom: 30px
+    margin-bottom: 10px
     color: #9D9D9D
-    &::before
-      position: absolute
-      top: -15px
-      left: 0px
-      content: ''
-      display: block
-      width: 100px
-      height: 6px
-      background-color: $main-orange
+
+.sidebar
+  .separator-line
+    display: block
+    width: 100px
+    height: 6px
+    background-color: $main-orange
+    margin-bottom: 20px
 
 .post-template-default
   .author
     &__img-wrapper
+      margin-bottom: 40px
       img
         border-radius: 50%
         max-width: 173px
         max-height: 173px
+  .no-author
+    .ads-sidebar
+      margin-top: 0px
 
 .kommentar_by_hans-template-default
   .author
     &__img-wrapper
-      margin-bottom: 20px
+      margin-bottom: 40px
       img
         max-width: 100%

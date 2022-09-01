@@ -1,17 +1,20 @@
 <div class="sidebar-by-hans__inner">
 	<div class="container p-0">
 		<div class="row">
-			<div class="author__img-wrapper">
-				<?php
-				$author_id      = get_the_author_meta( 'ID' );
-				$author_badge   = get_field( 'profile_picture', 'user_'. $author_id );
-				$authorimg_size = 'full';
-				echo wp_get_attachment_image( $author_badge, $authorimg_size );
-				?>
+			<div class="col-12">
+				<div class="author__img-wrapper">
+					<?php
+					$author_id      = get_the_author_meta( 'ID' );
+					$author_badge   = get_field( 'profile_picture', 'user_'. $author_id );
+					$authorimg_size = 'full';
+					echo wp_get_attachment_image( $author_badge, $authorimg_size );
+					?>
+				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-12">
+				<span class="separator-line"></span>
 				<p class="author__title"><?php esc_html_e( 'Über den Autor', 'hotel-inside' ); ?></p>
 				<p class="author__username"><?php echo get_the_author_meta( 'display_name', $author_id ); ?></p>
 				<p class="author__description"><?php echo get_the_author_meta( 'user_description', $author_id ); ?></p>
