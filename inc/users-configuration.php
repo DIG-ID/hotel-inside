@@ -2,7 +2,7 @@
 /**
  * Add capabilities to the editor user.
  */
-/*function hi_add_user_editor_caps() {
+function hi_add_user_editor_caps() {
 
 	$theme = wp_get_theme();
 
@@ -32,7 +32,7 @@
 
 }
 
-add_action( 'init', 'hi_add_user_editor_caps' );*/
+add_action( 'init', 'hi_add_user_editor_caps' );
 
 /**
  * Only show the author in the Author dropdown in a post
@@ -86,11 +86,11 @@ add_action( 'edit_user_profile', 'hi_user_new_form', 10, 1 );
  * 
  */
 
-/*function hi_add_wpseo_manage_options_roles( $roles ) {
+function hi_add_wpseo_manage_options_roles( $roles ) {
 	return array_merge( $roles, [ 'editor', 'wpseo_editor' ] );
 }
 
-add_filter( 'wpseo_manage_options_roles', 'hi_add_wpseo_manage_options_roles' );*/
+add_filter( 'wpseo_manage_options_roles', 'hi_add_wpseo_manage_options_roles' );
 
 //add_filter( 'wpseo_edit_advanced_metadata_roles', 'hi_add_site_health_roles' );
 
@@ -103,7 +103,7 @@ add_filter( 'option_show_avatars', '__return_false' );
 function hi_allowed_block_types( $allowed_blocks ) {
 	if ( is_user_logged_in() ) :
 		$current_user  = wp_get_current_user();
-		$allowed_roles = array( 'editor', 'author', 'editorial' );
+		$allowed_roles = array( 'editor', 'author' );
 		if ( array_intersect( $allowed_roles, $current_user->roles ) ) :
 			$blocks = array(
 				'core/image',
@@ -116,6 +116,7 @@ function hi_allowed_block_types( $allowed_blocks ) {
 				'core/list',
 				'core/spacer',
 				'core/group',
+				'core/block',
 			);
 			return $blocks;
 		endif;
