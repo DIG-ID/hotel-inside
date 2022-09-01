@@ -18,6 +18,16 @@
 					<h2 class="page-title"><?php echo get_the_category( $id )[0]->name; ?></h2>
 				<?php elseif ( is_archive() ) : ?>
 					<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+				<?php elseif ( is_search() ) : ?>
+					<h1 class="page-title">
+						<?php
+						printf(
+							/* translators: %s: search term. */
+							esc_html__( 'Results for "%s"', 'hotel-inside' ),
+							'<span class="page-description search-term">' . esc_html( get_search_query() ) . '</span>'
+						);
+						?>
+					</h1>
 				<?php else : ?>
 					<h2 class="page-title"><?php the_title(); ?></h2>
 				<?php endif; ?>

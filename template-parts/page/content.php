@@ -1,5 +1,5 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
-	<div class="content-wrapper">
+<section class="section section-content">
+	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 		<div class="custom-container">
 			<div class="row">
 				<div class="col-12 col-lg-7">
@@ -7,5 +7,5 @@
 				</div>
 			</div><!-- .row -->
 		</div>
-	</div>
-</article>
+	</article>
+</section>

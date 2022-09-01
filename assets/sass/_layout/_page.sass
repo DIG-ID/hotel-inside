@@ -1,5 +1,7 @@
-.page-template-default
-  .content-wrapper
+.page-template-default,
+.page-template
+  .content-wrapper,
+  .section-content
     padding-top: 100px
     padding-bottom: 100px
     .title
@@ -20,52 +22,146 @@
         width: 100px
         height: 6px
         background-color: $main-orange
+    img
+      max-width: 100%
+      width: 100%
+      height: auto
+      object-fit: cover
     p
       font-family: $acumin-font
       font-weight: 300
       font-size: 16px
       line-height: 26px
+      color: $dark-blue
       strong
         font-weight: 700
-    h2,
-    h3,
+      a
+        color: $main-orange
+        text-decoration: none
+        transition: all .3s ease-in-out
+        &:hover
+          color: $main-blue
+    p.has-large-font-size
+      line-height: 45px
+    //p.font-size:46px
+      line-height: 60px
+
     h4,
     h5,
     h6
       font-family: $raj-font
       font-weight: bold
-      margin-bottom: 20px
+      margin: 20px 0px
+      color: $dark-blue
     h2
-      font-size: 28px
-      color: $main-orange
-    h3
-      font-size: 22px
-      color: #565463
-    h4
-      font-size: 20px
-      color: #565463
-    h5
+      font-family: $acumin-font
       font-size: 18px
-      color: #9D9D9D
-    h6
+      font-weight: 600
+      line-height: 30px
+      color: #565463
+      margin: 30px 0px
+    h3
+      font-family: $acumin-font
+      font-size: 18px
+      font-weight: 600
+      line-height: 30px
+      color: $dark-blue
+      margin: 20px 0px
+    h4
+      font-size: 17px
+    h5
       font-size: 16px
-      color: #9D9D9D
-
-    a
-      color: $main-orange
-      text-decoration: none
-      transition: all .3s ease-in-out
-      &:hover
-        color: $main-blue
+    h6
+      font-size: 15px
 
     blockquote
-      background-color: $main-orange
+      position: relative
+      background-color: #F3F3F3
+      border-left: 5px solid $main-orange
       padding: 40px
       margin: 50px 0
+      &::before
+        font-family: arial, open-sans
+        text-transform: uppercase
+        display: block
+        padding-left: 10px
+        content: "\201C"
+        font-size: 70px
+        position: absolute
+        left: 0px
+        top: 0px
+        color: $font-grey
+      &::after
+        font-family: arial, open-sans
+        text-transform: uppercase
+        display: block
+        padding-right: 10px
+        content: "\201D"
+        font-size: 70px
+        position: absolute
+        right: 0px
+        bottom: 0px
+        color: $font-grey
       p
-          font-family: $raj-font
-          font-size: 24px
-          font-weight: 400
-          color: #FFFFFF
-          margin: 0
-    
+        font-family: $raj-font
+        font-size: 18px
+        font-weight: 600
+        line-height: 28px
+        color: $dark-blue
+        margin: 0
+      cite
+        display: block
+        font-family: $raj-font
+        font-size: 18px
+        font-weight: 600
+        font-style: normal
+        line-height: 28px
+        color: $font-grey
+        margin-top: 10px
+    ul,
+    ol,
+    dl
+      font-family: $acumin-font
+      font-weight: 300
+      font-size: 16px
+      line-height: 28px
+      color: $dark-blue
+      li
+        font-family: $acumin-font
+        font-weight: 300
+        font-size: 16px
+        line-height: 28px
+        color: $dark-blue
+        p
+          line-height: 28px
+    ul
+      list-style: none
+      li
+        &::before
+          content: '\2022'
+          color: $main-orange
+          font-weight: bold
+          display: inline-block
+          width: 1em
+          margin-left: -1em
+
+.page-template
+  .section-content
+    padding-bottom: 10px
+  .sidebar__page
+    .sidebar__box
+      padding: 30px
+      background-color: $main-blue
+      color: #F3F3F3
+      h3
+        font-family: $raj-font
+        font-size: 30px
+        font-weight: 700
+        text-transform: uppercase
+        color: $main-orange
+        margin-top: 0px
+        margin-bottom: 10px
+      p
+        color: #F3F3F3
+        &:last-of-type
+          margin-bottom: 0px
