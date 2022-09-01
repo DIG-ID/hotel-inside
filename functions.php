@@ -30,15 +30,17 @@ function hi_theme_setup() {
 
 	add_image_size( 'card-slider', 670, 454, array( 'center', 'center' ) );
 
-	add_image_size( 'card-wide', 670, 675, array( 'center', 'center' ) );
+	add_image_size( 'card-wide', 690, 369, array( 'center', 'center' ) );
 
-	add_image_size( 'card-sidebar-xs', 100, 100, array( 'center', 'center' ) );
+	add_image_size( 'card-sidebar-xs', 150, 150, array( 'center', 'center' ) );
 
-	add_image_size( 'card-related-posts', 270, 265, array( 'center', 'center' ) );
+	add_image_size( 'card-related-posts', 290, 285, array( 'center', 'center' ) );
 
 	add_image_size( 'card-archive-sm', 270, 179, array( 'center', 'center' ) );
 
 	add_image_size( 'card-archive-md', 570, 417, array( 'center', 'center' ) );
+
+	add_image_size( 'card-archive-xl', 580, 400, array( 'center', 'center' ) );
 
 	add_image_size( 'card-archive-kommentar', 570, 273, array( 'center', 'center' ) );
 

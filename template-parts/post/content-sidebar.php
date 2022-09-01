@@ -22,6 +22,12 @@
 			<?php get_template_part( 'template-parts/modules/ads', 'sidebar' ); ?>
 		</div><!-- .container -->
 		<?php
+	else :
+		?>
+		<div class="container p-0 sidebar__content no-author">
+			<?php get_template_part( 'template-parts/modules/ads', 'sidebar' ); ?>
+		</div>
+		<?php
 	endif;
 	?>
 </div>

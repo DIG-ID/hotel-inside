@@ -36,7 +36,7 @@
 									if ( 1 === $i ) :
 										?>
 										<div class="col-12 col-md-12 col-lg-12">
-											<?php get_template_part( 'template-parts/components/card' ); ?>
+											<?php get_template_part( 'template-parts/components/card', 'xl' ); ?>
 										</div>
 										<?php
 									else :

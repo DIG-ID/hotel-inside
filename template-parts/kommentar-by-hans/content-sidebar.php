@@ -1,12 +1,14 @@
 <div class="sidebar-by-hans__inner">
 	<div class="container p-0">
-		<div class="author__img-wrapper">
-			<?php
-			$author_id      = get_the_author_meta( 'ID' );
-			$author_badge   = get_field( 'profile_picture', 'user_'. $author_id );
-			$authorimg_size = 'full';
-			echo wp_get_attachment_image( $author_badge, $authorimg_size );
-			?>
+		<div class="row">
+			<div class="author__img-wrapper">
+				<?php
+				$author_id      = get_the_author_meta( 'ID' );
+				$author_badge   = get_field( 'profile_picture', 'user_'. $author_id );
+				$authorimg_size = 'full';
+				echo wp_get_attachment_image( $author_badge, $authorimg_size );
+				?>
+			</div>
 		</div>
 		<div class="row">
 			<div class="col-12">
