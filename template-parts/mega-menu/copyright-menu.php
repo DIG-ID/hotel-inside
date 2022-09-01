@@ -1,4 +1,4 @@
-<div class="col-lg-12">
+<div class="col-lg-12 mega-menu__copyright-col">
 	<ul class="mega-menu__copyright-navigation-wrapper">
 		<?php
 		wp_nav_menu(

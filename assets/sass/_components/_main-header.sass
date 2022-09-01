@@ -150,8 +150,24 @@
     .top-header
       padding: 4px 0
 
-  #mega-menu
+  .mega-menu
     top: 60px
+    padding: 20px 0 0 0
+    background-color: $main-blue
+    &__socials-col, &__copyright-col
+      display: none
+    &__secondary-col
+      margin-top: 20px
+    #navbarSupportedContent, &__bottom-row
+      border-top: none
+    .navbar-cols-2
+      column-count: 1
+    #top-nav, #top-sec-nav
+      li
+        font-size: 16px
+        line-height: 32px
+        a
+          color: #F3F3F3
 
 @include media-breakpoint-down(sm)
   .main-header
