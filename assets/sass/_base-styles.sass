@@ -42,3 +42,14 @@ body
 
 .grecaptcha-badge
   visibility: hidden
+
+/*Responsive*/
+@include media-breakpoint-down(lg)
+  .navbar.navbar-expand-lg.bg-light
+    display: none
+  .main-content
+    padding-top: 100px
+
+@include media-breakpoint-down(md)
+  .main-content
+    padding-top: 60px

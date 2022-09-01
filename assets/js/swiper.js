@@ -3,8 +3,26 @@ import Swiper from 'swiper/bundle';
 $(function() {
 
   var heroSwiperThumbs = new Swiper('.hero-swiper-thumbs', {
+    breakpoints: {
+      576: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 0,
+      },
+      1200: {
+        slidesPerView: 4,
+        spaceBetween: 0,
+      },
+    },
     spaceBetween: 0,
-    slidesPerView: 4,
+    slidesPerView: 1,
   });
 
   var heroSwiper = new Swiper('.hero-swiper', {
