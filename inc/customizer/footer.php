@@ -80,3 +80,26 @@ $wp_customize->add_control(
 		)
 	)
 );
+
+$wp_customize->add_setting(
+	'footer_newsletter_sentence',
+	array(
+		'default'           => '',
+		'type'              => 'theme_mod',
+		'capability'        => 'edit_theme_options',
+		'transport'         => 'refresh',
+		'sanitize_callback' => 'wp_kses_post',
+	)
+);
+$wp_customize->add_control(
+	new WP_Customize_Control(
+		$wp_customize,
+		'footer_newsletter_sentence',
+		array(
+			'label'   => __( 'Newsletter sentence', 'hotel-inside' ),
+			'type'    => 'text',
+			'section' => 'footer_section',
+		)
+	)
+);
+
