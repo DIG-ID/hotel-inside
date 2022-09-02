@@ -16,7 +16,7 @@
 						'post_status'         => 'publish',
 						'ignore_sticky_posts' => 1,
 						'post__not_in'        => get_option( 'sticky_posts' ),
-						'ignore_custom_sort'  => true,
+						//'ignore_custom_sort'  => true,
 					);
 					$the_query = new WP_Query( $args );
 					if ( $the_query->have_posts() ) :
