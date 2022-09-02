@@ -4,7 +4,7 @@
 		<div class="swiper-wrapper">
 			<?php
 			$cat_terms = get_field( 'sidebar_categories', get_queried_object() );
-			var_dump($cat_terms);
+			//var_dump($cat_terms);
 			if ( $cat_terms ) :
 				foreach ( $cat_terms as $my_cat ) :
 					echo '<div class="swiper-slide" data-name="' , $my_cat->name , '"><ul>';
