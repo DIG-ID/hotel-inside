@@ -5,7 +5,7 @@
 			$args      = array(
 				'posts_per_page'      => 6,
 				'orderby'             => 'post_date',
-				'order'               => 'ASC',
+				'order'               => 'DESC',
 				'post_type'           => 'kommentar_by_hans',
 				'post_status'         => 'publish',
 				'ignore_sticky_posts' => 1,
@@ -41,8 +41,8 @@
 					</div>
 				</div>
 				<?php
+				wp_reset_postdata();
 			endif;
-			wp_reset_postdata();
 			?>
 			<div class="col-12 col-lg-5">
 				<div class="row">
@@ -54,7 +54,7 @@
 						$args      = array(
 							'posts_per_page'      => 3,
 							'orderby'             => 'post_date',
-							'order'               => 'ASC',
+							'order'               => 'DESC',
 							'post_type'           => 'post',
 							'post_status'         => 'publish',
 							'ignore_sticky_posts' => 1,
@@ -66,8 +66,8 @@
 								$the_query->the_post();
 								get_template_part( 'template-parts/components/card', 'horizontal-xs' );
 							endwhile;
+							wp_reset_postdata();
 						endif;
-						wp_reset_postdata();
 						?>
 					</div><!-- .col -->
 				</div><!-- .row -->

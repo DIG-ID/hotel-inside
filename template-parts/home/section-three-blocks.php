@@ -21,7 +21,7 @@
 								'cat'                 => $myterm->term_id,
 								'posts_per_page'      => 3,
 								'orderby'             => 'post_date',
-								'order'               => 'ASC',
+								'order'               => 'DESC',
 								'post_type'           => 'post',
 								'post_status'         => 'publish',
 								'ignore_sticky_posts' => 1,
@@ -47,8 +47,8 @@
 										<?php
 									endif;
 								endwhile;
+								wp_reset_postdata();
 							endif;
-							wp_reset_postdata();
 							?>
 						</div><!-- .row -->
 					</div><!-- .col -->

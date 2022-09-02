@@ -10,7 +10,7 @@
 				'posts_per_page' => 5,
 				'cat'            => $hi_cat,
 				'orderby'        => 'post_date',
-				'order'          => 'ASC',
+				'order'          => 'DESC',
 			);
 			$cat_query = new WP_Query( $cat_args );
 			if ( $cat_query->have_posts() ) :
@@ -42,8 +42,8 @@
 							break;
 					endswitch;
 				endwhile;
+				wp_reset_postdata();
 			endif;
-			wp_reset_postdata();
 			?>
 		</div>
 		<div class="row">

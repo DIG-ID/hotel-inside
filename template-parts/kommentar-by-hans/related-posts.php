@@ -10,7 +10,7 @@
 						'post__not_in'   => array( $post->ID ),
 						'posts_per_page' => 2,
 						'orderby'        => 'post_date',
-						'order'          => 'ASC',
+						'order'          => 'DESC',
 						'post_type'      => 'post',
 						'post_status'    => 'publish',
 					);

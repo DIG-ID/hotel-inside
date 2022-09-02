@@ -4,8 +4,7 @@
 			<div class="col-12 col-lg-7">
 				<div class="row">
 					<?php
-					$current_cat_id    = get_query_var( 'cat' );
-					//session_start();
+					$current_cat_id             = get_query_var( 'cat' );
 					$_SESSION['current_cat_ID'] = $current_cat_id;
 					?>
 					<div class="col-12 content">
@@ -40,8 +39,8 @@
 								});
 							});
 						</script>
-						<div class = "cvf_pag_loading">
-							<div class = "cvf_universal_container">
+						<div class="cvf_pag_loading">
+							<div class="cvf_universal_container">
 								<div class="cvf-universal-content"></div>
 							</div>
 						</div>

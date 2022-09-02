@@ -9,7 +9,7 @@
 			),
 		),
 		'orderby'             => 'post_date',
-		'order'               => 'ASC',
+		'order'               => 'DESC',
 	);
 	$news_query = new WP_Query( $args );
 	?>
@@ -21,8 +21,8 @@
 				<?php endwhile; ?>
 			</div>
 		</div>
+		<?php rewind_posts(); ?>
 	<?php endif; ?>
-	<?php rewind_posts(); ?>
 	<?php if ( $news_query->have_posts() ) : ?>
 		<div class="swiper hero-swiper-thumbs custom-container">
 			<hr>
@@ -32,6 +32,7 @@
 				<?php endwhile; ?>
 			</div>
 		</div>
+		<?php wp_reset_postdata(); ?>
 	<?php endif; ?>
-	<?php wp_reset_postdata(); ?>
+	
 </section>

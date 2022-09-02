@@ -20,7 +20,7 @@ endif;
 						'post__not_in'   => array( $post->ID ),
 						'posts_per_page' => 2,
 						'orderby'        => 'post_date',
-						'order'          => 'ASC',
+						'order'          => 'DESC',
 						'post_type'      => 'post',
 						'post_status'    => 'publish',
 					);
@@ -30,8 +30,8 @@ endif;
 							$related_query->the_post();
 							get_template_part( 'template-parts/components/card', 'horizontal-lg' );
 						endwhile;
+						wp_reset_postdata();
 					endif;
-					wp_reset_postdata();
 					?>
 				</div><!-- .col -->
 			</div>

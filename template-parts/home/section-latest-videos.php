@@ -15,7 +15,7 @@
 					$args1      = array(
 						'posts_per_page'      => 1,
 						'orderby'             => 'post_date',
-						'order'               => 'ASC',
+						'order'               => 'DESC',
 						'post_type'           => 'videos',
 						'post_status'         => 'publish',
 						'ignore_sticky_posts' => 1,
@@ -27,8 +27,8 @@
 							$the_query1->the_post();
 							get_template_part( 'template-parts/components/card', 'youtube' );
 						endwhile;
+						wp_reset_postdata();
 					endif;
-					wp_reset_postdata();
 					?>
 				</div>
 			</div>

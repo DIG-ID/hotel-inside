@@ -30,7 +30,7 @@
 					'post__not_in'   => array( $post->ID ),
 					'posts_per_page' => 2,
 					'orderby'        => 'post_date',
-					'order'          => 'ASC',
+					'order'          => 'DESC',
 					'post_type'      => 'kommentar_by_hans',
 					'post_status'    => 'publish',
 				);
@@ -48,4 +48,3 @@
 		<?php get_template_part( 'template-parts/modules/ads', 'sidebar' ); ?>
 	</div><!-- .container -->
 </div>
-

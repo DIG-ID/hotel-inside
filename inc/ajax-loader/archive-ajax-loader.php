@@ -73,7 +73,7 @@ function hi_archive_pagination_load_posts() {
 					'posts_per_page'      => $per_page,
 					'offset'              => $start,
 					'orderby'             => 'post_date',
-					'order'               => 'ASC',
+					'order'               => 'DESC',
 				)
 			);
 			$count = new WP_Query(
@@ -86,20 +86,29 @@ function hi_archive_pagination_load_posts() {
 					'post__not_in'        => get_option( 'sticky_posts' ),
 				)
 			);
+		// Loop into all the posts
+		if ( $count->have_posts() ) :
 			$count = $count->post_count;
+			wp_reset_postdata();
+		endif;
+			
 		// Loop into all the posts
 		if ( $all_blog_posts->have_posts() ) :
 			while ( $all_blog_posts->have_posts() ) :
 				$all_blog_posts->the_post();
 				$msg .= get_template_part( 'template-parts/components/card', 'wide' );
 			endwhile;
+			wp_reset_postdata();
 		endif;
-		wp_reset_postdata();
+		
 		// Optional, wrap the output into a container
 		$msg = "<div class='cvf-universal-content'>" . $msg . "</div>";
 
 		// This is where the magic happens
 		$no_of_paginations = ceil( $count / $per_page );
+;
+		var_dump($count);
+		var_dump($all_blog_posts);
 		if ( $cur_page >= 7 ) :
 			$start_loop = $cur_page - 3;
 			if ( $no_of_paginations > $cur_page + 3 ) :

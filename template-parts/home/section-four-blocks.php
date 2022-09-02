@@ -24,7 +24,7 @@ if ( $myterms ) :
 						'cat'                 => $mysingleterm->term_id,
 						'posts_per_page'      => 4,
 						'orderby'             => 'post_date',
-						'order'               => 'ASC',
+						'order'               => 'DESC',
 						'post_type'           => 'post',
 						'post_status'         => 'publish',
 						'ignore_sticky_posts' => 1,

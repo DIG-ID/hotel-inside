@@ -31,7 +31,7 @@ function hi_kommentar_pagination_load_posts() {
 					'posts_per_page' => $per_page,
 					'offset'         => $start,
 					'orderby'        => 'post_date',
-					'order'          => 'ASC',
+					'order'          => 'DESC',
 				)
 			);
 			$count = new WP_Query(
@@ -41,15 +41,20 @@ function hi_kommentar_pagination_load_posts() {
 					'posts_per_page' => -1,
 				)
 			);
+		// Loop into all the posts
+		if ( $count->have_posts() ) :
 			$count = $count->post_count;
+			wp_reset_postdata();
+		endif;
 		// Loop into all the posts
 		if ( $all_blog_posts->have_posts() ) :
 			while ( $all_blog_posts->have_posts() ) :
 				$all_blog_posts->the_post();
 				$msg .= get_template_part( 'template-parts/components/card', 'archive-kommentar' );
 			endwhile;
+			wp_reset_postdata();
 		endif;
-		wp_reset_postdata();
+		
 		// Optional, wrap the output into a container
 		$msg = "<div class='cvf-universal-content'>" . $msg . "</div>";
 
