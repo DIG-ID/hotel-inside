@@ -28,7 +28,8 @@
 			<div class="col-4 contact-intro__col">
 				<div class="content__separator-line"></div>
 				<h2 class="contact-intro__title"><?php the_field( 'form_title' ); ?></h2>
-				<?php echo do_shortcode( '[contact-form-7 id="197" title="Contact Page Form"]' ); ?>
+				<?php $kontakt_form = get_field( 'contact_form_shortcode' );?>
+				<?php echo do_shortcode( $kontakt_form ); ?>
 			</div>
 		</div>
 	</div>
