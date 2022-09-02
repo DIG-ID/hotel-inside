@@ -178,10 +178,33 @@
           background-color: #c26538 !important
 
 .top-header
-  input[type=search]
-    width: 254px
-    border: 1px solid #00172A
-    border-radius: 24px !important
+  .search-form
+    .input-group.has-search
+      //background-color: #fff
+    .form-control.search-field
+      width: 254px
+      border: 1px solid transparent
+      border-radius: 24px !important
+      background-color: #fff
+      background-image: url('../../images/search-icon.svg')
+      background-repeat: no-repeat
+      background-attachment: scroll
+      background-position: 12px 7px
+      padding-left: 40px
+      font-family: $acumin-font
+      font-weight: 400
+      font-size: 16px
+      line-height: 22px
+      color: $main-blue
+      &:placeholder
+        font-family: $acumin-font
+        font-weight: 300
+        font-size: 16px
+        line-height: 22px
+        color: $font-grey
+      &:focus-visible
+        outline: none
+
 
 /*Responsive*/
 @include media-breakpoint-down(lg)
