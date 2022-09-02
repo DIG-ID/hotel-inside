@@ -72,6 +72,9 @@
     .card-title
       font-size: 18px
 
+  &--xl
+    min-height: 440px
+
   &--kommentar-slider
     .card-content
       hr
@@ -231,6 +234,12 @@
           height: 34px
 
 .archive.category
-  .card--horizontal__xs
-    &:last-of-type
-      margin-bottom: 0px
+  .archive-sidebar
+    .sidebar-swiper
+      .swiper-wrapper
+        .swiper-slide
+          ul
+            li
+              &:last-of-type
+                .card--horizontal__xs
+                    margin-bottom: 0px
