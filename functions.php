@@ -221,7 +221,10 @@ function hi_custom_titles( $title ) {
 add_filter( 'get_the_archive_title', 'hi_custom_titles' );
 
 // Theme custom ajax loader
-require get_template_directory() . '/inc/users-configuration.php';
+require get_template_directory() . '/inc/theme-user-settings.php';
+
+// Theme custom ajax loader
+require get_template_directory() . '/inc/theme-admin-settings.php';
 
 // Theme custom template tags.
 require get_template_directory() . '/inc/theme-template-tags.php';
