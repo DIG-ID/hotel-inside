@@ -1,5 +1,5 @@
 <a href="<?php the_permalink(); ?>" class="card-link">
-	<article id="post-<?php the_ID(); ?>" class="card">
+	<article id="post-<?php the_ID(); ?>" class="card card--default">
 		<?php do_action( 'post_badges' ); ?>
 		<?php if ( has_post_thumbnail() ) : ?>
 			<figure>
