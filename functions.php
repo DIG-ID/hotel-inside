@@ -52,6 +52,8 @@ function hi_theme_setup() {
 
 	add_image_size( 'team-avatar', 270, 270, array( 'center', 'center' ) );
 
+	add_image_size( 'team-avatar-sm', 233, 270, array( 'center', 'center' ) );
+
 	add_image_size( 'markplatz-avatar', 150, 150, array( 'center', 'center' ) );
 
 	add_image_size( 'hero-banner', 1920, 700, array( 'center', 'center' ) );
