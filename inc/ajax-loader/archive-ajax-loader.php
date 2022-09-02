@@ -106,9 +106,7 @@ function hi_archive_pagination_load_posts() {
 
 		// This is where the magic happens
 		$no_of_paginations = ceil( $count / $per_page );
-;
-		var_dump($count);
-		var_dump($all_blog_posts);
+
 		if ( $cur_page >= 7 ) :
 			$start_loop = $cur_page - 3;
 			if ( $no_of_paginations > $cur_page + 3 ) :
