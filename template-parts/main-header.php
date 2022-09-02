@@ -20,10 +20,13 @@
 				</div>
 				<div class="col d-flex align-items-center justify-content-end">
 					<?php get_search_form(); ?>
-					<button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mega-menu">
-						<span></span>
-						<span></span>
-						<span></span>
+					<button id="nav-icon2" class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mega-menu">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
 					</button>
 					<div id="mega-menu" class="mega-menu collapse">
 						<div class="container">
