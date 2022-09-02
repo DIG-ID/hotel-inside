@@ -5,7 +5,7 @@
 				<h2 class="section-title"><?php _e( 'Video', 'hotel-inside' ); ?></h2>
 			</div>
 			<div class="col-3 text-end">
-				<a href="https://www.youtube.com/channel/UC09KtecogA-MJBpTnVc0NFw" target="_blank" class="btn-go-to-overview"><?php _e( 'Alle Beiträge', 'hotel-inside' ); ?> <i class="icon-arrow"></i></a>
+				<a href="https://www.youtube.com/channel/UC09KtecogA-MJBpTnVc0NFw" target="_blank" class="btn-go-to-overview"><?php _e( 'Alle Videos', 'hotel-inside' ); ?> <i class="icon-arrow"></i></a>
 			</div>
 		</div>
 		<div class="row">

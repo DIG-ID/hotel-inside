@@ -28,7 +28,7 @@ function hi_theme_setup() {
 
 	add_image_size( 'card-club-event', 768, 390, array( 'center', 'center' ) );
 
-	add_image_size( 'card-slider', 670, 454, array( 'center', 'center' ) );
+	add_image_size( 'card-slider', 610, 464, array( 'center', 'center' ) );
 
 	add_image_size( 'card-wide', 690, 369, array( 'center', 'center' ) );
 
@@ -49,6 +49,8 @@ function hi_theme_setup() {
 	add_image_size( 'kommentar-author-avatar', 370, 443, array( 'center', 'center' ) );
 
 	add_image_size( 'author-avatar', 180, 180, array( 'center', 'center' ) );
+
+	add_image_size( 'team-avatar', 270, 270, array( 'center', 'center' ) );
 
 	add_image_size( 'markplatz-avatar', 150, 150, array( 'center', 'center' ) );
 
