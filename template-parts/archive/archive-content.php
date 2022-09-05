@@ -1,4 +1,4 @@
-<section class="section section-archive-content">
+<section id="section-archive-content" class="section section-archive-content">
 	<div class="custom-container">
 		<div class="row">
 			<div class="col-12 col-lg-7">
@@ -14,7 +14,7 @@
 								var ajaxurl = '<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>';
 								function cvf_load_all_archive_posts(page){
 									// Start the transition
-									$(".cvf_pag_loading").fadeIn().css('background','#fff');
+									$(".cvf_pag_loading").fadeIn(1000).css('opacity','0');
 									// Data to receive from our server
 									// the value in 'action' is the key that will be identified by the 'wp_ajax_' hook
 									var currentCat = {};
@@ -27,7 +27,7 @@
 										// If successful Append the data into our html container
 										$(".cvf_universal_container").html(response);
 										// End the transition
-										$(".cvf_pag_loading").css({'background':'none', 'transition':'all 1s ease-out'});
+										$(".cvf_pag_loading").css({'opacity':'1', 'transition':'all 1s ease-in-out'});
 									});
 								}
 								// Load page 1 as the default

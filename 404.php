@@ -9,9 +9,9 @@ do_action( 'before_main_content' );
 				<div class="col-12 col-lg-6 text-center">
 					<div class="circle">
 						<span>404</span>
-						<h1 class="page-title"><?php esc_html_e( 'Ooops... Nothing here', 'hotel-inside' ); ?></h1>
-						<p><?php esc_html_e( 'The page your are looking for is not available or has been removed. Try going to Home Page by using the button below', 'hotel-inside' ); ?></p>
-						<a href="<?php echo get_home_url(); ?>"><?php esc_html_e( 'Back to home','hotel-inside' ); ?></a>
+						<h1 class="page-title"><?php esc_html_e( 'Hoppla ... Diese Seite wurde nicht gefunden', 'hotel-inside' ); ?></h1>
+						<p><?php esc_html_e( 'Hier geht es zurück zur Startseite', 'hotel-inside' ); ?></p>
+						<a href="<?php echo get_home_url(); ?>"><?php esc_html_e( 'zur Startseite','hotel-inside' ); ?></a>
 					</div>
 				</div>
 			</div>
