@@ -6,3 +6,50 @@
     font-size: 16px
     font-weight: 600
     margin-bottom: 40px
+
+.search.search-no-results
+  .section-content
+    padding-top: 100px
+    padding-bottom: 100px
+    .page-content
+      p
+        font-size: 16px
+        font-weight: 300
+        line-height: 24px
+        margin-bottom: 30px
+        color: $dark-blue
+      a
+        color: $dark-blue
+        font-family: $dark-blue
+        font-size: 14px
+        font-weight: 600
+        transition: all .3s ease-in-out
+        &:hover
+          color: $main-orange
+    .search-form
+      margin-bottom: 30px
+      .form-control.search-field
+        width: 100%
+        border: 1px solid $font-grey
+        border-radius: 24px !important
+        background-color: #fff
+        background-image: url('../../images/search-icon.svg')
+        background-repeat: no-repeat
+        background-attachment: scroll
+        background-position: 14px 12px
+        padding-top: 10px
+        padding-bottom: 10px
+        padding-left: 50px
+        font-family: $acumin-font
+        font-weight: 400
+        font-size: 16px
+        line-height: 22px
+        color: $main-blue
+        &:placeholder
+          font-family: $acumin-font
+          font-weight: 300
+          font-size: 16px
+          line-height: 22px
+          color: $font-grey
+        &:focus-visible
+          outline: none
