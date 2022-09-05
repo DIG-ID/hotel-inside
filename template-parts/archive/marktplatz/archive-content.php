@@ -8,10 +8,17 @@
 				<div class="navbar-form navbar-left markt-search-form">
 					<div class="form-group">
 						<?php
-						if ( $terms = get_terms( array( 'taxonomy' => 'categories_marktplatz', 'orderby' => 'name' ) ) ) :
+						$makrt_terms = get_terms(
+							array(
+								'taxonomy' => 'categories_marktplatz',
+								'orderby'  => 'name',
+							),
+						);
+						var_dump($makrt_terms);
+						if ( ! empty( $makrt_terms ) ) :
 							echo '<select name="categoryfilter"><option value="">KATEGORIE</option>';
-							foreach ( $terms as $term ) :
-								echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option
+							foreach ( $makrt_terms as $makrt_term ) :
+								echo '<option value="' . $makrt_term->term_id . '">' . $makrt_term->name . '</option>'; // ID of the category as the value of an option
 							endforeach;
 							echo '</select>';
 						endif;

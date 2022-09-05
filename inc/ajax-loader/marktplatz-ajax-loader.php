@@ -7,7 +7,7 @@ function demo_load_my_posts() {
 
 	global $wpdb;
 
-	$msg = '';
+	$msg           = '';
 	$pag_container = '';
 
 	if ( isset( $_POST['data']['page'] ) ) :
@@ -33,16 +33,50 @@ function demo_load_my_posts() {
 			$where_search = ' AND (post_title LIKE "%%' . $_POST['data']['search'] . '%%" OR post_content LIKE "%%' . $_POST['data']['search'] . '%%") ';
 		endif;
 
+		$all_blog_posts = new WP_Query(
+			array(
+				'post_type'      => 'marktplatz',
+				'post_status'    => 'publish',
+				'posts_per_page' => $per_page,
+				'offset'         => $start,
+				'orderby'        => 'post_date',
+				'order'          => 'DESC',
+			)
+		);
+		$count = new WP_Query(
+			array(
+				'post_type'      => 'marktplatz',
+				'post_status '   => 'publish',
+				'posts_per_page' => -1,
+			)
+		);
+		// Loop into all the posts
+		if ( $count->have_posts() ) :
+			$count = $count->post_count;
+			wp_reset_postdata();
+		endif;
 		// Retrieve all the posts
-		$all_posts = $wpdb->get_results($wpdb->prepare("
+		/*$all_posts = $wpdb->get_results($wpdb->prepare("
 			SELECT * FROM $posts WHERE post_type = 'marktplatz' AND post_status = 'publish' $where_search
-			ORDER BY $name $sort LIMIT %d, %d", $start, $per_page ) );
+			ORDER BY $name $sort LIMIT %d, %d", $start, $per_page ) );*/
 
-		$count = $wpdb->get_var($wpdb->prepare("
-			SELECT COUNT(ID) FROM " . $posts . " WHERE post_type = 'marktplatz' AND post_status = 'publish' $where_search", array() ) );
+		/*$count = $wpdb->get_var($wpdb->prepare("
+			SELECT COUNT(ID) FROM " . $posts . " WHERE post_type = 'marktplatz' AND post_status = 'publish' $where_search", array() ) );*/
 
+
+		if ( $all_blog_posts->have_posts() ) :
+			echo '<div class="container-fluid"><div class="row g-4">';
+			while ( $all_blog_posts->have_posts() ) :
+				$all_blog_posts->the_post();
+				$msg .= get_template_part( 'template-parts/components/card', 'marktplatz-v2' );
+			endwhile;
+			echo '</div></div>';
+			wp_reset_postdata();
+		else :
+			$msg .= '<p class = "bg-danger">No posts matching your search criteria were found.</p>';
+		endif;
 		// Check if our query returns anything.
-		if ( $all_posts ) :
+		/*if ( $all_posts ) :
 
 			$msg .= '<div class="container-fluid"><div class="row g-4">';
 
@@ -71,7 +105,7 @@ function demo_load_my_posts() {
 		else :
 			$msg .= '<p class = "bg-danger">No posts matching your search criteria were found.</p>';
 
-		endif;
+		endif;*/
 
 		$msg = "<div class='cvf-universal-content'>" . $msg . "</div><br class = 'clear' />";
 
