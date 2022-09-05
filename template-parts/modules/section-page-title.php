@@ -13,7 +13,7 @@
 				<?php if ( is_singular( 'marktplatz' ) ) : ?>
 					<h2 class="page-title"><?php esc_html_e( 'Marktplatz', 'hotel-inside' ); ?></h2>
 				<?php elseif ( is_singular( 'von_hans_r_amrein' ) ) : ?>
-					<h2 class="page-title"><?php esc_html_e( 'Kommentar', 'hotel-inside' ); ?></h2>
+					<h2 class="page-title"><?php esc_html_e( 'Kommentar von Hans r. Amrein', 'hotel-inside' ); ?></h2>
 				<?php elseif ( is_single() ) : ?>
 					<h2 class="page-title"><?php echo get_the_category( $id )[0]->name; ?></h2>
 				<?php elseif ( is_archive() ) : ?>
