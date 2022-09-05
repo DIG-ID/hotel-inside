@@ -22,3 +22,17 @@
       right: 0px
       margin-left: 15px
 
+/*Responsive*/
+@include media-breakpoint-down(lg)
+  .section-slider-w-sidebar-wrapper
+    position: relative
+    .kommentar
+      &__nav
+        position: absolute !important
+        bottom: 25px
+        left: 0
+        justify-content: flex-start !important
+      &__row
+        margin-bottom: 60px
+    .title-w-slider
+      justify-content: flex-start !important
