@@ -31,7 +31,7 @@
 					'posts_per_page' => 2,
 					'orderby'        => 'post_date',
 					'order'          => 'DESC',
-					'post_type'      => 'kommentar_by_hans',
+					'post_type'      => 'von_hans_r_amrein',
 					'post_status'    => 'publish',
 				);
 				$the_query = new WP_Query( $args );

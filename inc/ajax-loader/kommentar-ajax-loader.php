@@ -26,7 +26,7 @@ function hi_kommentar_pagination_load_posts() {
 
 			$all_blog_posts = new WP_Query(
 				array(
-					'post_type'      => 'kommentar_by_hans',
+					'post_type'      => 'von_hans_r_amrein',
 					'post_status'    => 'publish',
 					'posts_per_page' => $per_page,
 					'offset'         => $start,
@@ -36,7 +36,7 @@ function hi_kommentar_pagination_load_posts() {
 			);
 			$count = new WP_Query(
 				array(
-					'post_type'      => 'kommentar_by_hans',
+					'post_type'      => 'von_hans_r_amrein',
 					'post_status '   => 'publish',
 					'posts_per_page' => -1,
 				)

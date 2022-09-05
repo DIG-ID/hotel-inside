@@ -6,7 +6,7 @@
 				'posts_per_page'      => 6,
 				'orderby'             => 'post_date',
 				'order'               => 'DESC',
-				'post_type'           => 'kommentar_by_hans',
+				'post_type'           => 'von_hans_r_amrein',
 				'post_status'         => 'publish',
 				'ignore_sticky_posts' => 1,
 				'post__not_in'        => get_option( 'sticky_posts' ),
