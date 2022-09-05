@@ -16,7 +16,7 @@
 					<div class="col-12 col-md-4 col-lg-4 about-gesell__col">
 						<?php
 						if ( $profile_pic ) :
-							echo wp_get_attachment_image( $profile_pic, 'team-avatar-sm' );
+							echo wp_get_attachment_image( $profile_pic, 'team-avatar' );
 						else :
 							echo '<img src="' . esc_url( get_template_directory_uri() . '/assets/images/team-avatar-sm.png' ) . '" alt="team member default avatar">';
 						endif;
