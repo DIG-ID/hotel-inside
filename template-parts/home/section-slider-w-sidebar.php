@@ -13,7 +13,7 @@
 			);
 			$the_query = new WP_Query( $args );
 			if ( $the_query->have_posts() ) :
-				$cpt_name = get_post_type_object( 'kommentar_by_hans' );
+				$cpt_name = get_post_type_object( 'von_hans_r_amrein' );
 				?>
 				<div class="col-12 col-lg-7 section-slider-w-sidebar-wrapper">
 					<div class="row justify-content-center align-items-start title-w-slider">
