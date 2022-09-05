@@ -1,9 +1,7 @@
 $(function() {
 
   if( $( 'body' ).hasClass( 'archive post-type-archive' ) || $( 'body' ).hasClass( 'archive category' ) ) {
-    console.log('estou na pagina de arquivos');
     $( document ).on( 'click', '.cvf_universal_container .cvf-universal-pagination li.active', function(e) {
-      console.log('click na navegação ajax');
       var offset = 250;
       $('html, body').animate({
         scrollTop: $( '#section-archive-content' ).offset().top-offset
