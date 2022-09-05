@@ -11,7 +11,7 @@
 	<div class="footer-copyright">
 		<div class="custom-container">
 			<div class="row">
-				<div class="col-6">
+				<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 footer-copyright__topCol">
 					<div class="powered-by">
 						<p>
 							<?php
@@ -26,7 +26,7 @@
 						</p>
 					</div><!-- .powered-by -->
 				</div>
-				<div class="col-6">
+				<div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
 					<?php if ( has_nav_menu( 'copy-footer' ) ) : ?>
 						<nav aria-label="<?php esc_attr_e( 'Footer copyright menu', 'hotel-inside' ); ?>" class="footer-copyright-navigation">
 							<ul class="footer-copyright-navigation-wrapper">

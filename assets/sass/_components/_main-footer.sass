@@ -159,11 +159,24 @@
 @include media-breakpoint-down(lg)
   .main-footer
     .footer-content
+      padding: 80px 10px 20px 10px
       .footer-branding
         img
           max-width: 100%
+          margin: 0 auto 30px auto
+          display: block
       .widget_newsletter2go
         .nl2go-widget
           form
             input[type=email]
               max-width: 300px
+    .footer-copyright
+      &__topCol
+        order: 2
+      &-navigation
+        justify-content: flex-start !important
+        margin-bottom: 30px
+      &-navigation-wrapper
+        display: block !important
+        .menu-item
+          margin-bottom: 10px
