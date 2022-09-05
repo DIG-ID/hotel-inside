@@ -20,7 +20,7 @@
 					$i++;
 					switch ( $i ) :
 						case 1:
-							echo '<div class="col-3">';
+							echo '<div class="col-12 col-sm-4 col-md-3 col-lg-3 col-xl-3">';
 							get_template_part( 'template-parts/components/card', 'archive-sm' );
 							break;
 						case 2:
@@ -28,12 +28,12 @@
 							echo '</div>';
 							break;
 						case 3:
-							echo '<div class="col-6">';
+							echo '<div class="col-12 col-sm-4 col-md-6 col-lg-6 col-xl-6">';
 							get_template_part( 'template-parts/components/card', 'archive-md' );
 							echo '</div>';
 							break;
 						case 4:
-							echo '<div class="col-3">';
+							echo '<div class="col-12 col-sm-4 col-md-3 col-lg-3 col-xl-3">';
 							get_template_part( 'template-parts/components/card', 'archive-sm' );
 							break;
 						case 5:
