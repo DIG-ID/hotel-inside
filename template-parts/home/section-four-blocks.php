@@ -11,10 +11,10 @@ if ( $myterms ) :
 		<section class="section section-four-blocks">
 			<div class="custom-container">
 				<div class="row">
-					<div class="col-9">
+					<div class="col-7 col-sm-7 col-md-7 col-lg-8 col-xl-8">
 						<h2 class="section-title"><?php echo esc_html( $mysingleterm->name ); ?></h2>
 					</div>
-					<div class="col-3 text-end">
+					<div class="col-5 col-sm-5 col-md-5 col-lg-4 col-xl-4 text-end">
 						<a href="<?php echo esc_url( get_term_link( $mysingleterm ) ); ?>" class="btn-go-to-overview"><?php _e( 'Alle Beiträge', 'hotel-inside' ); ?> <i class="icon-arrow"></i></a>
 					</div>
 				</div><!-- .row -->

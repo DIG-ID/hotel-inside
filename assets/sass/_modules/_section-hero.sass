@@ -153,6 +153,13 @@
         color: $font-grey
 
 @include media-breakpoint-down(lg)
+  .hero-swiper
+    .hero-swiper-button-next, .hero-swiper-button-prev
+      display: none
+  .hero-swiper
+    .swiper-slide
+      .post
+        padding-bottom: 100px
   .section-hero
     height: calc(100vh - 60px)
   .hero-section
@@ -163,16 +170,20 @@
           h2
             font-size: 4rem
   .hero-swiper-thumbs
+    display: none
     .swiper-wrapper.row
       flex-wrap: nowrap
 
 @include media-breakpoint-down(sm)
+  .hero-swiper
+    .swiper-slide
+      .post
+        padding-bottom: 50px
   .hero-section
     height: calc( 80vh - 175px )
     .hero-swiper
       .swiper-slide
         .post
-          padding-bottom: 100px
           h2
             font-size: 3rem
             line-height: 3rem

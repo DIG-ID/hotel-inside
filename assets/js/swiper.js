@@ -54,7 +54,25 @@ $(function() {
   });
 
   var marktplatzSwiper = new Swiper('.swiper-marktplatz', {
-    slidesPerView: 6,
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 0,
+      },
+      992: {
+        slidesPerView: 4,
+        spaceBetween: 0,
+      },
+      1200: {
+        slidesPerView: 6,
+        spaceBetween: 0,
+      },
+    },
+    slidesPerView: 2,
     spaceBetween: 30,
     loop: true,
     //speed: 6000,

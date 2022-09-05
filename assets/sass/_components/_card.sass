@@ -255,3 +255,17 @@
             &:last-of-type
               .card--horizontal__xs
                   margin-bottom: 0px
+
+/*Responsive*/
+@include media-breakpoint-down(lg)
+  .card--xl
+    min-height: auto
+
+  .card--youtube
+    figure
+      .play-icon
+        width: 34px
+        height: 34px
+        svg
+          width: 9px
+          height: 10px
