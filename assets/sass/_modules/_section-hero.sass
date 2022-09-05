@@ -11,6 +11,12 @@
   height: 100%
   //padding: 150px 0px
   position: relative
+  .hero-swiper-button-next,
+  .hero-swiper-button-prev
+    color: $main-orange
+    &:before,
+    &:after
+      font-size: 26px
   .hero-banner-wrapper
     position: absolute
     width: 100%
@@ -80,77 +86,71 @@
   position: absolute
   left: 0
   right: 0
-  bottom: 50px
+  bottom: 0px
   width: 100%
+  z-index: 99
   hr
     background-color: #fff
     margin-bottom: 40px
     opacity: .5
-  .swiper-slide
-    .post
+  .card-link
+    display: block
+    text-decoration: none
+  .card--hero-thumbnail
+    background-color: transparent
+    transition: all .3s ease-in-out
+    min-height: 130px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    text-decoration: none
+    &:hover
       background-color: transparent
+      cursor: pointer
+      p
+        color: #FFFFFF
+    .post-title
+      position: relative
+      margin-bottom: 20px
+      padding-top: 10px
+      font-family: $acumin-font
+      font-weight: 700
+      font-size: 18px
+      text-decoration: none
       transition: all .3s ease-in-out
-      min-height: 130px
-      display: flex
-      flex-direction: column
-      justify-content: space-between
-      &:hover
-        background-color: transparent
-        cursor: pointer
-        p
-          color: #FFFFFF
-      ul
-        margin: 0
-        padding: 0
-        list-style: none
-        display: flex
-      .post-title
-        position: relative
-        margin-bottom: 20px
-        padding-top: 10px
-        font-family: $acumin-font
-        font-weight: 700
-        font-size: 18px
+      color: #fff
+      // Addition lines for 2 line or multiline ellipsis
+      text-overflow: ellipsis
+      overflow: hidden
+      display: -webkit-box !important
+      -webkit-line-clamp: 3
+      -webkit-box-orient: vertical
+      white-space: normal
+      &::before
+        content: ''
+        display: block
+        position: absolute
+        top: 0px
+        width: 170px
+        height: 3px
+        background-color: #fff
         transition: all .3s ease-in-out
-        color: #fff
-        // Addition lines for 2 line or multiline ellipsis
-        text-overflow: ellipsis
-        overflow: hidden
-        display: -webkit-box !important
-        -webkit-line-clamp: 3
-        -webkit-box-orient: vertical
-        white-space: normal
-        &::before
-          content: ''
-          display: block
-          position: absolute
-          top: 0px
-          width: 170px
-          height: 3px
-          background-color: #fff
-          transition: all .3s ease-in-out
-        &:hover
-          &::before
-            background-color: $main-orange
-      .post-date
-        display: flex
-        align-items: center
-        i
-          margin-right: 6px
-          color: $font-grey
-        time
-          font-family: $montserrat-font
-          font-weight: 300
-          font-size: 12px
-          text-transform: uppercase
-          color: $font-grey
-  .swiper-slide-thumb-active
-    .post
-      .post-title
+      &:hover
         &::before
           background-color: $main-orange
-
-
+    .post-date
+      display: flex
+      align-items: center
+      i
+        margin-right: 6px
+        color: $font-grey
+      time
+        font-family: $montserrat-font
+        font-weight: 300
+        font-size: 12px
+        text-transform: uppercase
+        text-decoration: none
+        color: $font-grey
 
 @include media-breakpoint-down(lg)
   .section-hero

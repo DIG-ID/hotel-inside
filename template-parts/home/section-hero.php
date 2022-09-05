@@ -20,13 +20,15 @@
 					<?php get_template_part( 'template-parts/components/card', 'hero-banner' ); ?>
 				<?php endwhile; ?>
 			</div>
+			<div class="swiper-button-prev hero-swiper-button-prev"></div>
+			<div class="swiper-button-next hero-swiper-button-next"></div>
 		</div>
 		<?php rewind_posts(); ?>
 	<?php endif; ?>
 	<?php if ( $news_query->have_posts() ) : ?>
-		<div class="swiper hero-swiper-thumbs custom-container">
+		<div class="hero-swiper-thumbs custom-container">
 			<hr>
-			<div class="swiper-wrapper row">
+			<div class="row">
 				<?php	while ( $news_query->have_posts() ) : $news_query->the_post(); ?>
 					<?php get_template_part( 'template-parts/components/card', 'hero-thumbnail' ); ?>
 				<?php endwhile; ?>

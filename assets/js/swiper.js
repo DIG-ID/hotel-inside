@@ -2,7 +2,7 @@ import Swiper from 'swiper/bundle';
 
 $(function() {
 
-  var heroSwiperThumbs = new Swiper('.hero-swiper-thumbs', {
+ /* var heroSwiperThumbs = new Swiper('.hero-swiper-thumbs', {
     breakpoints: {
       576: {
         slidesPerView: 1,
@@ -23,7 +23,7 @@ $(function() {
     },
     spaceBetween: 0,
     slidesPerView: 1,
-  });
+  });*/
 
   var heroSwiper = new Swiper('.hero-swiper', {
     slidesPerView: 1,
@@ -34,9 +34,13 @@ $(function() {
       delay: 4000,
       disableOnInteraction: false,
     },
-    thumbs: {
-      swiper: heroSwiperThumbs,
+    navigation: {
+      nextEl: ' .hero-swiper-button-next',
+      prevEl: ' .hero-swiper-button-prev',
     },
+    /*thumbs: {
+      swiper: heroSwiperThumbs,
+    },*/
   });
 
   var categorie1BlockSwiper = new Swiper('.section-slider-w-sidebar-swiper', {
