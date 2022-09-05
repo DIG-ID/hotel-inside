@@ -12,8 +12,7 @@ function demo_load_my_posts() {
 
 	if ( isset( $_POST['data']['page'] ) ) :
 		$page         = sanitize_text_field( $_POST['data']['page'] ); // The page we are currently at
-		$name         = sanitize_text_field( $_POST['data']['th_name'] ); // The name of the column name we want to sort
-		$sort         = sanitize_text_field( $_POST['data']['th_sort'] ); // The order of our sort (DESC or ASC)
+		$name         = sanitize_text_field( $_POST['data']['markt_cat'] ); // The name of the column name we want to sort
 		$cur_page     = $page;
 		$page        -= 1;
 		$per_page     = 9; // Number of items to display per page
@@ -43,6 +42,17 @@ function demo_load_my_posts() {
 				'order'          => 'DESC',
 			)
 		);
+
+		if ( isset($_POST['categoryfilter']) )  :
+			$all_blog_posts['tax_query'] = array(
+				array(
+					'taxonomy' => 'categories_marktplatz',
+					'field'    => 'id',
+					'terms'    => $_POST['categoryfilter'],
+				),
+			);
+
+		endif;
 		$count = new WP_Query(
 			array(
 				'post_type'      => 'marktplatz',
@@ -50,11 +60,13 @@ function demo_load_my_posts() {
 				'posts_per_page' => -1,
 			)
 		);
+
 		// Loop into all the posts
 		if ( $count->have_posts() ) :
 			$count = $count->post_count;
 			wp_reset_postdata();
 		endif;
+
 		// Retrieve all the posts
 		/*$all_posts = $wpdb->get_results($wpdb->prepare("
 			SELECT * FROM $posts WHERE post_type = 'marktplatz' AND post_status = 'publish' $where_search
@@ -62,7 +74,6 @@ function demo_load_my_posts() {
 
 		/*$count = $wpdb->get_var($wpdb->prepare("
 			SELECT COUNT(ID) FROM " . $posts . " WHERE post_type = 'marktplatz' AND post_status = 'publish' $where_search", array() ) );*/
-
 
 		if ( $all_blog_posts->have_posts() ) :
 			echo '<div class="container-fluid"><div class="row g-4">';
@@ -75,6 +86,7 @@ function demo_load_my_posts() {
 		else :
 			$msg .= '<p class = "bg-danger">No posts matching your search criteria were found.</p>';
 		endif;
+
 		// Check if our query returns anything.
 		/*if ( $all_posts ) :
 
