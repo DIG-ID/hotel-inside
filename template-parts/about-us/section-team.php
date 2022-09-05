@@ -13,7 +13,7 @@
 					the_row();
 					$profile_pic = get_sub_field( 'profile_picture' );
 					?>
-					<div class="col-12 col-md-4 col-lg-4 about-gesell__col">
+					<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 about-gesell__col">
 						<?php
 						if ( $profile_pic ) :
 							echo wp_get_attachment_image( $profile_pic, 'team-avatar' );
