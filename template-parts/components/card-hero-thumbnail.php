@@ -1,4 +1,4 @@
-<div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+<div class="col-sm-12 col-md-12 col-lg-3 col-xl-3">
 	<a href="<?php the_permalink(); ?>" class="card-link">
 		<article id="post-<?php the_ID(); ?>" class="card card--hero-thumbnail">
 			<?php the_title( '<p class="post-title">', '</p>' ); ?>
