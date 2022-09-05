@@ -14,7 +14,6 @@
 								'orderby'  => 'name',
 							),
 						);
-						var_dump($makrt_terms);
 						if ( ! empty( $makrt_terms ) ) :
 							echo '<select name="categoryfilter"><option value="">KATEGORIE</option>';
 							foreach ( $makrt_terms as $makrt_term ) :
