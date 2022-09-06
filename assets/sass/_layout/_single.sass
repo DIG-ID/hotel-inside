@@ -186,7 +186,7 @@
                 font-weight: 300
                 font-size: 14px
                 transition: all .3s ease-in-out
-                transform: translateY(100px)
+                transform: translateY(110px)
       .wp-block-image
         position: relative
         overflow: hidden
@@ -195,12 +195,36 @@
           figcaption
             transform: translateY(0px)
         figcaption
+          position: absolute
+          bottom: 0
+          left: 0
+          right: 0
+          width: 100%
+          padding: 10px 15px
+          margin: 0
           font-family: $acumin-font
           font-weight: 300
           font-size: 13px
           line-height: 22px
           transition: all .3s ease-in-out
-          transform: translateY(60px)
+          transform: translateY(110px)
+          background: linear-gradient(0deg, black, transparent)
+          color: #fff
+      .wp-block-gallery
+        .wp-block-image
+          position: relative
+          overflow: hidden
+          &:hover
+            cursor: pointer
+            figcaption
+              transform: translateY(0px)
+          figcaption
+            font-family: $acumin-font
+            font-weight: 300
+            font-size: 14px
+            transition: all .3s ease-in-out
+            transform: translateY(60px)
+            color: #fff
       .wp-block-group.has-background
         .wp-block-group__inner-container
           padding: 60px
