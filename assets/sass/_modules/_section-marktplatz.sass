@@ -14,3 +14,26 @@
       color: #9C98AE
       text-decoration: none
       margin-right: 40px
+      display: flex
+      align-items: center
+      float: left
+      .icon-arrow
+        font-size: 32px
+        margin-right: 10px
+        -moz-transform: scale(-1, 1)
+        -webkit-transform: scale(-1, 1)
+        -o-transform: scale(-1, 1)
+        -ms-transform: scale(-1, 1)
+        transform: scale(-1, 1)
+  .company-content
+    &__col-img
+      img
+        width: 100%
+
+/* Responsive */
+@include media-breakpoint-down(lg)
+  .company-content
+    &__col-banner
+      img
+        width: 100%
+        height: auto
