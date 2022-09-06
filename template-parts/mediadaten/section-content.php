@@ -15,7 +15,7 @@
 						<?php
 						if ( get_field( 'advertising_content' ) ) :
 							?>
-							<div class="col-12 advertising-content">
+							<div class="col-12 setup-content">
 								<?php the_field( 'advertising_content' ); ?>
 							</div>
 							<?php
