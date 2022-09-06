@@ -28,7 +28,7 @@ function hi_theme_setup() {
 
 	add_image_size( 'card-club-event', 768, 390, array( 'center', 'center' ) );
 
-	add_image_size( 'card-slider', 610, 464, array( 'center', 'center' ) );
+	add_image_size( 'card-slider', 685, 469, array( 'center', 'center' ) );
 
 	add_image_size( 'card-wide', 690, 369, array( 'center', 'center' ) );
 
@@ -47,6 +47,8 @@ function hi_theme_setup() {
 	add_image_size( 'card-default', 570, 300, array( 'center', 'center' ) );
 
 	add_image_size( 'kommentar-author-avatar', 370, 443, array( 'center', 'center' ) );
+
+	add_image_size( 'hans-author-avatar', 470, 352, array( 'center', 'center' ) );
 
 	add_image_size( 'author-avatar', 180, 180, array( 'center', 'center' ) );
 
