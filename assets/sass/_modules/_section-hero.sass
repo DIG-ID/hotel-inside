@@ -6,6 +6,9 @@
   padding-top: 0px
   padding-bottom: 0px
 
+.hero-swiper-scrollbar
+  display: none
+
 .hero-swiper
   width: 100%
   height: 100%
@@ -153,6 +156,22 @@
         color: $font-grey
 
 @include media-breakpoint-down(lg)
+  .hero-swiper-scrollbar
+    display: block
+    position: absolute
+    z-index: 999
+    background-color: #ffffff
+    height: 1px
+    width: calc(100% - 24px)
+    bottom: 40px
+    left: 50%
+    transform: translateX(-50%)
+  .swiper-scrollbar-drag
+    border-radius: 2px
+    background-color: #ffffff
+    height: 6px
+    bottom: 6px
+    top: auto
   .hero-swiper
     .hero-swiper-button-next, .hero-swiper-button-prev
       display: none
@@ -178,7 +197,7 @@
   .hero-swiper
     .swiper-slide
       .post
-        padding-bottom: 50px
+        padding-bottom: 90px
   .hero-section
     height: calc( 70vh - 175px )
     .hero-swiper

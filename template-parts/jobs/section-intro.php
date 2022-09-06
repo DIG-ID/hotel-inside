@@ -1,7 +1,7 @@
 <section class="section section-intro">
 	<div class="custom-container">
 		<div class="row justify-content-center align-items-center">
-			<div class="col-12 col-sm-10 col-md-6 col-lg-8 col-xl-8 text-center">
+			<div class="col-12 col-sm-10 col-md-8 col-lg-8 col-xl-8 text-center">
 				<p>
 				<div class="markt-intro__text"><?php 
 				$pagejobs = get_posts([

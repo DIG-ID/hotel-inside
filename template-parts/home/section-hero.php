@@ -22,6 +22,7 @@
 			</div>
 			<div class="swiper-button-prev hero-swiper-button-prev"></div>
 			<div class="swiper-button-next hero-swiper-button-next"></div>
+			<div class="hero-swiper-scrollbar"></div>
 		</div>
 		<?php rewind_posts(); ?>
 	<?php endif; ?>

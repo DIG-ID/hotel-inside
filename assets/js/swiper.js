@@ -38,6 +38,10 @@ $(function() {
       nextEl: ' .hero-swiper-button-next',
       prevEl: ' .hero-swiper-button-prev',
     },
+    scrollbar: {
+      el: ".hero-swiper-scrollbar",
+      hide: false,
+    },
     /*thumbs: {
       swiper: heroSwiperThumbs,
     },*/
