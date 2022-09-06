@@ -25,7 +25,9 @@
 						<div class="form-group">
 							<input type="text" id="markt-search" class="form-control post_search_text" placeholder="Suchen">
 						</div>
+						<input type="submit" value="Search" class = "btn btn-success post_search_submit" />
 					</div>
+					
 				</form>
 				<br class="clear" />
 				<script type="text/javascript">
@@ -69,6 +71,13 @@
 							var optionSelected = $("option:selected", this);
 							var valueSelected = this.value;
 							cvf_load_all_posts(1, valueSelected);
+						});
+
+						// Search
+						$('body').on('click', '.post_search_submit', function(e){
+							e.preventDefault();
+							var markt_cat = $("#markt-cat-filter option:selected").val();
+							cvf_load_all_posts(1, markt_cat);
 						});
 
 

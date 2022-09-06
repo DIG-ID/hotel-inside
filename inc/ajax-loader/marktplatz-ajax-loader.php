@@ -20,7 +20,72 @@ function demo_load_my_posts() {
 		$last_btn     = true;
 		$start        = $page * $per_page;
 
-		if ( ! empty( $markt_cat ) ) :
+		/*if ( ! empty( $markt_cat ) ) :
+			$all_blog_posts = new WP_Query(
+				array(
+					'post_type'      => 'marktplatz',
+					'post_status'    => 'publish',
+					'posts_per_page' => $per_page,
+					'offset'         => $start,
+					'orderby'        => 'post_date',
+					'order'          => 'DESC',
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'categories_marktplatz',
+							'field'    => 'id',
+							'terms'    => $markt_cat,
+						),
+					),
+				),
+			);
+		else :
+			$all_blog_posts = new WP_Query(
+				array(
+					'post_type'      => 'marktplatz',
+					'post_status'    => 'publish',
+					'posts_per_page' => $per_page,
+					'offset'         => $start,
+					'orderby'        => 'post_date',
+					'order'          => 'DESC',
+				),
+			);
+		endif;*/
+
+
+		if ( ! empty( $_POST['data']['search']) && ! empty( $markt_cat ) ) :
+			$search_text    = sanitize_text_field( $_POST['data']['search'] );
+			$all_blog_posts = new WP_Query(
+				array(
+					'post_type'      => 'marktplatz',
+					'post_status'    => 'publish',
+					'posts_per_page' => $per_page,
+					'offset'         => $start,
+					'orderby'        => 'post_date',
+					'order'          => 'DESC',
+					's'              => $search_text,
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'categories_marktplatz',
+							'field'    => 'id',
+							'terms'    => $markt_cat,
+						),
+					),
+				),
+			);
+		elseif ( ! empty( $_POST['data']['search']) ) :
+			$search_text    = sanitize_text_field( $_POST['data']['search'] );
+			$all_blog_posts = new WP_Query(
+				array(
+					'post_type'      => 'marktplatz',
+					'post_status'    => 'publish',
+					'posts_per_page' => $per_page,
+					'offset'         => $start,
+					'orderby'        => 'post_date',
+					'order'          => 'DESC',
+					's'              => $search_text,
+				),
+			);
+		elseif ( ! empty( $markt_cat ) ) :
 			$all_blog_posts = new WP_Query(
 				array(
 					'post_type'      => 'marktplatz',
@@ -50,11 +115,6 @@ function demo_load_my_posts() {
 				),
 			);
 		endif;
-
-
-		/*if ( ! empty( $_POST['data']['search']) ) :
-			// do something
-		endif;*/
 
 		$count = new WP_Query(
 			array(
