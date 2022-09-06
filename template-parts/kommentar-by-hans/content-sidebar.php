@@ -22,7 +22,7 @@
 		</div>
 		<div class="row">
 			<div class="col-12">
-				<p class="latest-posts-by-hans__title"><?php esc_html_e( 'Letzte Beiträge von Hans Amrein', 'hotel-inside' ); ?></p>
+				<p class="latest-posts-by-hans__title"><?php esc_html_e( 'Letzte Beiträge von Hans R. Amrein', 'hotel-inside' ); ?></p>
 				<?php
 				global $post;
 				$args      = array(

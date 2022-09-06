@@ -5,14 +5,12 @@ add_action( 'wp_ajax_nopriv_demo_load_my_posts', 'demo_load_my_posts' );
 
 function demo_load_my_posts() {
 
-	global $wpdb;
-
 	$msg           = '';
 	$pag_container = '';
 
 	if ( isset( $_POST['data']['page'] ) ) :
 		$page         = sanitize_text_field( $_POST['data']['page'] ); // The page we are currently at
-		$name         = sanitize_text_field( $_POST['data']['markt_cat'] ); // The name of the column name we want to sort
+		$markt_cat    = sanitize_text_field( $_POST['data']['markt_cat'] );
 		$cur_page     = $page;
 		$page        -= 1;
 		$per_page     = 9; // Number of items to display per page
@@ -22,9 +20,6 @@ function demo_load_my_posts() {
 		$last_btn     = true;
 		$start        = $page * $per_page;
 
-		// The table we are querying from  
-		$posts = $wpdb->prefix . "posts";
-
 		$where_search = '';
 
 		if ( ! empty( $_POST['data']['search']) ) :
@@ -32,7 +27,7 @@ function demo_load_my_posts() {
 			$where_search = ' AND (post_title LIKE "%%' . $_POST['data']['search'] . '%%" OR post_content LIKE "%%' . $_POST['data']['search'] . '%%") ';
 		endif;
 
-		$all_blog_posts = new WP_Query(
+		/*$all_blog_posts = new WP_Query(
 			array(
 				'post_type'      => 'marktplatz',
 				'post_status'    => 'publish',
@@ -40,19 +35,48 @@ function demo_load_my_posts() {
 				'offset'         => $start,
 				'orderby'        => 'post_date',
 				'order'          => 'DESC',
-			)
-		);
+				'tax_query' => array(
+					array(
+						'taxonomy' => 'categories_marktplatz',
+						'field'    => 'id',
+						'terms'    => $markt_cat,
+					),
+				),
+			),
+		);*/
 
-		if ( isset($_POST['categoryfilter']) )  :
-			$all_blog_posts['tax_query'] = array(
+		//var_dump((int)$_POST['data']['markt_cat']);
+		if ( ! empty( $markt_cat ) ) :
+			$all_blog_posts = new WP_Query(
 				array(
-					'taxonomy' => 'categories_marktplatz',
-					'field'    => 'id',
-					'terms'    => $_POST['categoryfilter'],
+					'post_type'      => 'marktplatz',
+					'post_status'    => 'publish',
+					'posts_per_page' => $per_page,
+					'offset'         => $start,
+					'orderby'        => 'post_date',
+					'order'          => 'DESC',
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'categories_marktplatz',
+							'field'    => 'id',
+							'terms'    => $markt_cat,
+						),
+					),
 				),
 			);
-
+		else :
+			$all_blog_posts = new WP_Query(
+				array(
+					'post_type'      => 'marktplatz',
+					'post_status'    => 'publish',
+					'posts_per_page' => $per_page,
+					'offset'         => $start,
+					'orderby'        => 'post_date',
+					'order'          => 'DESC',
+				),
+			);
 		endif;
+
 		$count = new WP_Query(
 			array(
 				'post_type'      => 'marktplatz',
