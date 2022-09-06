@@ -9,7 +9,7 @@ if( $('body.single-post').length ){
         bottomSpacing: 20
     });
 }
-if( $('body.single-kommentar_by_hans').length ){
+if( $('body.single-von_hans_r_amrein').length ){
     var sidebarbyhans = new StickySidebar('.sidebar-by-hans', {
         containerSelector: '.von_hans_r_amrein > .custom-container > .row',
         innerWrapperSelector: '.sidebar-by-hans__inner',
