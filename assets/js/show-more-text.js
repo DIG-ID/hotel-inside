@@ -5,12 +5,15 @@ jQuery(document).ready(function($) {
         e.stopPropagation();
         $('.author__description').animate({
             'height': h
-        })
+        });
+        $("#showmore").html($("#showmore").html().replace('Weiterlesen...','---'));
+        $("#showmore").addClass('itsopen');
     });
     $(document).click(function() {
         $('.author__description').animate({
             'height': '70px'
-        })
+        });
+        $("#showmore").html($("#showmore").html().replace('---','Weiterlesen...'));
     });
 }
 });

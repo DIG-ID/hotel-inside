@@ -21,7 +21,7 @@
 					<p class="author__title"><?php esc_html_e( 'Über den Autor', 'hotel-inside' ); ?></p>
 					<p class="author__username"><?php echo get_the_author_meta( 'display_name', $author_id ); ?></p>
 					<p class="author__description"><?php echo get_the_author_meta( 'user_description', $author_id ); ?></p>
-					<a id="showmore" class="author__showmore"><?php esc_html_e( 'Weiterlesen...', 'hotel-inside' ); ?></a>
+					<a id="showmore" class="author__showmore itsclosed"><?php esc_html_e( 'Weiterlesen...', 'hotel-inside' ); ?></a>
 				</div>
 			</div><!-- .row -->
 			<?php get_template_part( 'template-parts/modules/ads', 'sidebar' ); ?>
