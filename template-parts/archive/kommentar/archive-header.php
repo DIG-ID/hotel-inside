@@ -6,7 +6,7 @@ if ( $author_id ) :
 	<section class="section section-archive-header">
 		<div class="custom-container">
 			<div class="row justify-content-between">
-				<div class="col-12 col-lg-7">
+				<div class="col-12 col-lg-7 order-mobile">
 					<p class="author__description"><?php the_author_meta( 'user_description', $author_id ); ?></p>
 					<h3 class="author__name">Hans Amrein</h3>
 					<p class="author__position">Founder of Hotel Inside</p>
