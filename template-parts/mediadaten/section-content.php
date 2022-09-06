@@ -12,6 +12,15 @@
 						<div class="col-12">
 							<p><?php the_field( 'mediadaten_description' ); ?></p>
 						</div>
+						<?php
+						if ( get_field( 'advertising_content' ) ) :
+							?>
+							<div class="col-12 advertising-content">
+								<?php the_field( 'advertising_content' ); ?>
+							</div>
+							<?php
+						endif;
+						?>
 					</div>
 				</div>
 				<aside class="col-12 col-lg-4 sidebar sidebar__page">

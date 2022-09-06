@@ -7,9 +7,9 @@ if ( $author_id ) :
 		<div class="custom-container">
 			<div class="row justify-content-between">
 				<div class="col-12 col-lg-7 order-mobile">
-					<p class="author__description"><?php the_author_meta( 'user_description', $author_id ); ?></p>
-					<h3 class="author__name">Hans Amrein</h3>
-					<p class="author__position">Founder of Hotel Inside</p>
+					<p class="author__description"><?php wpautop( the_author_meta( 'user_description', $author_id ) ); ?></p>
+					<h3 class="author__name"><?php esc_html_e( 'Hans R. Amrein', 'hotel-inside' ); ?></h3>
+					<p class="author__position"><?php esc_html_e( 'Founder of Hotel Inside', 'hotel-inside' ); ?></p>
 					<hr>
 				</div>
 				<div class="col-12 col-lg-4">
