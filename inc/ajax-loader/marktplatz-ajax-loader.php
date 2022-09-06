@@ -20,32 +20,6 @@ function demo_load_my_posts() {
 		$last_btn     = true;
 		$start        = $page * $per_page;
 
-		$where_search = '';
-
-		if ( ! empty( $_POST['data']['search']) ) :
-			// If a string is inputted, include an additional query logic to our main query to filter the results
-			$where_search = ' AND (post_title LIKE "%%' . $_POST['data']['search'] . '%%" OR post_content LIKE "%%' . $_POST['data']['search'] . '%%") ';
-		endif;
-
-		/*$all_blog_posts = new WP_Query(
-			array(
-				'post_type'      => 'marktplatz',
-				'post_status'    => 'publish',
-				'posts_per_page' => $per_page,
-				'offset'         => $start,
-				'orderby'        => 'post_date',
-				'order'          => 'DESC',
-				'tax_query' => array(
-					array(
-						'taxonomy' => 'categories_marktplatz',
-						'field'    => 'id',
-						'terms'    => $markt_cat,
-					),
-				),
-			),
-		);*/
-
-		//var_dump((int)$_POST['data']['markt_cat']);
 		if ( ! empty( $markt_cat ) ) :
 			$all_blog_posts = new WP_Query(
 				array(
@@ -77,6 +51,11 @@ function demo_load_my_posts() {
 			);
 		endif;
 
+
+		/*if ( ! empty( $_POST['data']['search']) ) :
+			// do something
+		endif;*/
+
 		$count = new WP_Query(
 			array(
 				'post_type'      => 'marktplatz',
@@ -91,14 +70,6 @@ function demo_load_my_posts() {
 			wp_reset_postdata();
 		endif;
 
-		// Retrieve all the posts
-		/*$all_posts = $wpdb->get_results($wpdb->prepare("
-			SELECT * FROM $posts WHERE post_type = 'marktplatz' AND post_status = 'publish' $where_search
-			ORDER BY $name $sort LIMIT %d, %d", $start, $per_page ) );*/
-
-		/*$count = $wpdb->get_var($wpdb->prepare("
-			SELECT COUNT(ID) FROM " . $posts . " WHERE post_type = 'marktplatz' AND post_status = 'publish' $where_search", array() ) );*/
-
 		if ( $all_blog_posts->have_posts() ) :
 			echo '<div class="container-fluid"><div class="row g-4">';
 			while ( $all_blog_posts->have_posts() ) :
@@ -110,38 +81,6 @@ function demo_load_my_posts() {
 		else :
 			$msg .= '<p class = "bg-danger">No posts matching your search criteria were found.</p>';
 		endif;
-
-		// Check if our query returns anything.
-		/*if ( $all_posts ) :
-
-			$msg .= '<div class="container-fluid"><div class="row g-4">';
-
-			// Iterate thru each item
-			foreach ( $all_posts as $key => $post ) :
-				$msg .= '<div class="col-sm-12 col-md-6 col-lg-4"><div class="marktplatz__col">';
-				$msg .= '
-				<h3 class="marktplatz__title active">' . $post->post_title . '</h3>
-				<p class="marktplatz__cat">position</p><br>';
-				$terms       = get_the_terms( $post->ID, 'categories_marktplatz' );
-				$checkifpaid = get_field( 'single_page_access', $post->ID );
-				if ( $terms ) :
-					foreach( $terms as $term ) :
-						$msg .= '<p class="marktplatz__cat">' . $term->name . '</p>';
-					endforeach;
-				endif;
-				if ( $checkifpaid ) :
-					$msg .= '<a href="' . get_permalink( $post->ID ) . '" class="marktplatz__read-more m-0">Mehr erfahren</a>';
-				endif;
-				$msg .= '</div></div>';
-			endforeach;
-
-			$msg .= '</div></div>';
-
-		// If the query returns nothing, we throw an error message
-		else :
-			$msg .= '<p class = "bg-danger">No posts matching your search criteria were found.</p>';
-
-		endif;*/
 
 		$msg = "<div class='cvf-universal-content'>" . $msg . "</div><br class = 'clear' />";
 
