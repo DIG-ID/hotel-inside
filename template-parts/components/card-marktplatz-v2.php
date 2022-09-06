@@ -12,7 +12,7 @@
 			endforeach;
 		endif;
 		if ( $checkifpaid ) :
-			echo '<a href="' . get_permalink() . '" class="marktplatz__read-more m-0">Mehr erfahren<i class="icon-arrow"></i></a>';
+			echo '<a href="' . get_permalink() . '" class="marktplatz__read-more m-0">Mehr erfahren<i class="icon-arrow"></a>';
 		endif;
 		?>
 	</div>

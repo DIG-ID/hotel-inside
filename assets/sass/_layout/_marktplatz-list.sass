@@ -24,7 +24,7 @@
         font-weight: 600
         letter-spacing: 0px
         color: #090036
-    &__cat
+    &__cat, &__position p
         display: inline
         font-family: $montserrat-font
         font-size: 12px
@@ -33,14 +33,20 @@
         text-transform: uppercase
         margin-right: 5px
     &__cat:not(:last-child):not(:nth-last-child(2))::after
-        content: ""
+        content: ","
     &__read-more
-        display: block
+        display: flex
         font-family: $acumin-font
         font-size: 18px
         font-weight: 600
         color: #C26538
         text-decoration: none
+        &:hover
+            color: #1A2338
+        .icon-arrow
+            display: block
+            font-size: 32px
+            margin-left: 10px
 
 .markt-search-form
     display: flex
