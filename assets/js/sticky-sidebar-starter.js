@@ -6,7 +6,8 @@ if( $('body.single-post').length ){
         containerSelector: '.section > .custom-container > .row',
         innerWrapperSelector: '.sidebar__inner',
         topSpacing: 200,
-        bottomSpacing: 20
+        bottomSpacing: 20,
+        minWidth: 992
     });
 }
 if( $('body.single-von_hans_r_amrein').length ){
@@ -14,7 +15,8 @@ if( $('body.single-von_hans_r_amrein').length ){
         containerSelector: '.von_hans_r_amrein > .custom-container > .row',
         innerWrapperSelector: '.sidebar-by-hans__inner',
         topSpacing: 200,
-        bottomSpacing: 20
+        bottomSpacing: -315,
+        minWidth: 992
     });
 }
 });
