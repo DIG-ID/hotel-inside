@@ -17,7 +17,7 @@
 					<hr>
 				</div>
 			</div>
-			<aside class="col-md-12 col-lg-5 sidebar sidebar-by-hans">
+			<aside class="col-md-12 col-lg-5 sidebar-by-hans">
 				<?php get_template_part( 'template-parts/kommentar-by-hans/content', 'sidebar' ); ?>
 			</aside>
 		</div><!-- .row -->
