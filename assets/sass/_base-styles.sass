@@ -52,13 +52,17 @@ body
 
 
 /*Responsive*/
-@include media-breakpoint-down(lg)
-  .order-mobile
-    order: 2
+@include media-breakpoint-down(xl)
   .navbar.navbar-expand-lg.bg-light
     display: none
   .main-content
     padding-top: 100px
+  .mega-menu #top-nav li
+    line-height: 33px !important
+    
+@include media-breakpoint-down(lg)
+  .order-mobile
+    order: 2
 
 @include media-breakpoint-down(md)
   .main-content
