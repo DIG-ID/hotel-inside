@@ -14,7 +14,7 @@ if( $('body.single-von_hans_r_amrein').length ){
         containerSelector: '.von_hans_r_amrein > .custom-container > .row',
         innerWrapperSelector: '.sidebar-by-hans__inner',
         topSpacing: 200,
-        bottomSpacing: 200
+        bottomSpacing: 20
     });
 }
 });
