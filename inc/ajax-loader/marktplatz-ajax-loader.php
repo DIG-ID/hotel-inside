@@ -20,39 +20,9 @@ function demo_load_my_posts() {
 		$last_btn     = true;
 		$start        = $page * $per_page;
 
-		/*if ( ! empty( $markt_cat ) ) :
-			$all_blog_posts = new WP_Query(
-				array(
-					'post_type'      => 'marktplatz',
-					'post_status'    => 'publish',
-					'posts_per_page' => $per_page,
-					'offset'         => $start,
-					'orderby'        => 'post_date',
-					'order'          => 'DESC',
-					'tax_query' => array(
-						array(
-							'taxonomy' => 'categories_marktplatz',
-							'field'    => 'id',
-							'terms'    => $markt_cat,
-						),
-					),
-				),
-			);
-		else :
-			$all_blog_posts = new WP_Query(
-				array(
-					'post_type'      => 'marktplatz',
-					'post_status'    => 'publish',
-					'posts_per_page' => $per_page,
-					'offset'         => $start,
-					'orderby'        => 'post_date',
-					'order'          => 'DESC',
-				),
-			);
-		endif;*/
-
-
+		// all posts query
 		if ( ! empty( $_POST['data']['search']) && ! empty( $markt_cat ) ) :
+			// check if search input and categorie filter aren't empty
 			$search_text    = sanitize_text_field( $_POST['data']['search'] );
 			$all_blog_posts = new WP_Query(
 				array(
@@ -73,6 +43,7 @@ function demo_load_my_posts() {
 				),
 			);
 		elseif ( ! empty( $_POST['data']['search']) ) :
+			// check if search input aren't empty
 			$search_text    = sanitize_text_field( $_POST['data']['search'] );
 			$all_blog_posts = new WP_Query(
 				array(
@@ -86,6 +57,7 @@ function demo_load_my_posts() {
 				),
 			);
 		elseif ( ! empty( $markt_cat ) ) :
+			// check if categorie filter aren't empty
 			$all_blog_posts = new WP_Query(
 				array(
 					'post_type'      => 'marktplatz',
@@ -116,10 +88,11 @@ function demo_load_my_posts() {
 			);
 		endif;
 
-
+		// count query
 		if ( ! empty( $_POST['data']['search']) && ! empty( $markt_cat ) ) :
-			$search_text    = sanitize_text_field( $_POST['data']['search'] );
-			$count = new WP_Query(
+			// check if search input and categorie filter aren't empty
+			$search_text = sanitize_text_field( $_POST['data']['search'] );
+			$count       = new WP_Query(
 				array(
 					'post_type'      => 'marktplatz',
 					'post_status '   => 'publish',
@@ -135,8 +108,9 @@ function demo_load_my_posts() {
 				)
 			);
 		elseif ( ! empty( $_POST['data']['search']) ) :
-			$search_text    = sanitize_text_field( $_POST['data']['search'] );
-			$count = new WP_Query(
+			// check if search input aren't empty
+			$search_text = sanitize_text_field( $_POST['data']['search'] );
+			$count       = new WP_Query(
 				array(
 					'post_type'      => 'marktplatz',
 					'post_status '   => 'publish',
@@ -145,6 +119,7 @@ function demo_load_my_posts() {
 				)
 			);
 		elseif ( ! empty( $markt_cat ) ) :
+			// check if categorie filter s aren't empty
 			$count = new WP_Query(
 				array(
 					'post_type'      => 'marktplatz',
@@ -169,20 +144,15 @@ function demo_load_my_posts() {
 			);
 		endif;
 
-		/*$count = new WP_Query(
-			array(
-				'post_type'      => 'marktplatz',
-				'post_status '   => 'publish',
-				'posts_per_page' => -1,
-			)
-		);*/
-
-		// Loop into all the posts
+		// Loop into all the posts to cout them
 		if ( $count->have_posts() ) :
 			$count = $count->post_count;
 			wp_reset_postdata();
+		else : 
+			$count = 0;
 		endif;
 
+		// Loop into all the posts
 		if ( $all_blog_posts->have_posts() ) :
 			echo '<div class="container-fluid"><div class="row g-4">';
 			while ( $all_blog_posts->have_posts() ) :
@@ -192,7 +162,7 @@ function demo_load_my_posts() {
 			echo '</div></div>';
 			wp_reset_postdata();
 		else :
-			$msg .= '<p class = "bg-danger">No posts matching your search criteria were found.</p>';
+			$msg .= '<p class = "bg-danger">Es wurde kein Unternehmen gefunden, das Ihren Suchkriterien entspricht.</p>';
 		endif;
 
 		$msg = "<div class='cvf-universal-content'>" . $msg . "</div><br class = 'clear' />";

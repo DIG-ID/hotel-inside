@@ -27,19 +27,20 @@
 						</div>
 						<input type="submit" value="Search" class = "btn btn-success post_search_submit" />
 					</div>
-					
 				</form>
 				<br class="clear" />
 				<script type="text/javascript">
 					jQuery(document).ready(function($) {
 
 						var ajaxurl = '<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>';
-
+						var markt_cat = $("#markt-cat-filter option:selected").val();
+						//console.log(markt_cat);
 						function cvf_load_all_posts(page, markt_cat){
+							$(".cvf_pag_loading").fadeIn(1000).css('opacity','0');
 							var post_data = {
 								page: page,
 								search: $('#markt-search').val(),
-								markt_cat: $("#markt-cat-filter option:selected").val(),
+								markt_cat: markt_cat,
 							};
 
 							$('form.post-list input.markt-hidden-form').val(JSON.stringify(post_data));
@@ -51,6 +52,7 @@
 
 							$.post(ajaxurl, data, function(response) {
 								$(".cvf_universal_container").html(response);
+								$(".cvf_pag_loading").css({'opacity':'1', 'transition':'all 1s ease-in-out'});
 							});
 						}
 
@@ -62,29 +64,31 @@
 							cvf_load_all_posts(data.page, data.markt_cat);
 						} else {
 							// Load first page
-							var markt_cat = $("#markt-cat-filter option:selected").val();
 							cvf_load_all_posts(1, markt_cat);
 						}
 
 						// Dropdown functions
-						$('#markt-cat-filter').on('change', function (e) {
+						$('#markt-cat-filter').on('change', function(e) {
 							var optionSelected = $("option:selected", this);
-							var valueSelected = this.value;
-							cvf_load_all_posts(1, valueSelected);
+							markt_cat = this.value;
+							cvf_load_all_posts(1, markt_cat);
 						});
 
 						// Search
 						$('body').on('click', '.post_search_submit', function(e){
 							e.preventDefault();
-							var markt_cat = $("#markt-cat-filter option:selected").val();
 							cvf_load_all_posts(1, markt_cat);
 						});
 
-
+						// Loop into all the posts
+						$('body').on('input', '.post_search_text', function(e){
+								// Print entered value in a div box
+								console.log( markt_cat );
+								cvf_load_all_posts(1, markt_cat);
+						});
 						// Search when Enter Key is triggered
 						$(".post_search_text").keyup(function (e) {
 							if (e.keyCode == 13) {
-								var markt_cat = $("#markt-cat-filter option:selected").val();
 								cvf_load_all_posts(1, markt_cat);
 							}
 						});
@@ -92,7 +96,6 @@
 						// Pagination Clicks
 						$('body').on('click', '.cvf_universal_container .cvf-universal-pagination li.active', function(e) {
 							var page = $(this).attr('p');
-							var markt_cat = $("#markt-cat-filter option:selected").val();
 							cvf_load_all_posts(page, markt_cat);
 						});
 

@@ -3,22 +3,19 @@
 		<div class="row">
 			<div class="col-12 col-lg-7">
 				<div class="row">
-					<?php
-					$current_cat_id             = get_query_var( 'cat' );
-					$_SESSION['current_cat_ID'] = $current_cat_id;
-					?>
+					<?php $current_cat_id = get_query_var( 'cat' ); ?>
 					<div class="col-12 content">
 						<script type="text/javascript">
 							jQuery(document).ready(function($) {
 								// This is required for AJAX to work on our page
 								var ajaxurl = '<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>';
-								function cvf_load_all_archive_posts(page){
+								function cvf_load_all_archive_posts(page, curr_cat){
 									// Start the transition
 									$(".cvf_pag_loading").fadeIn(1000).css('opacity','0');
 									// Data to receive from our server
 									// the value in 'action' is the key that will be identified by the 'wp_ajax_' hook
-									var currentCat = {};
 									var data = {
+										curr_cat: curr_cat,
 										page: page,
 										action: "hi_archive_pagination_load_posts",
 									};
@@ -31,11 +28,11 @@
 									});
 								}
 								// Load page 1 as the default
-								cvf_load_all_archive_posts(1);
+								cvf_load_all_archive_posts(1, <?php echo $current_cat_id; ?>);
 								// Handle the clicks
 								$(document).on( 'click', '.cvf_universal_container .cvf-universal-pagination li.active', function(e){
 									var page = $(this).attr('p');
-									cvf_load_all_archive_posts(page);
+									cvf_load_all_archive_posts(page, <?php echo $current_cat_id; ?>);
 								});
 							});
 						</script>

@@ -24,28 +24,31 @@ function hi_kommentar_pagination_load_posts() {
 		$last_btn     = false;
 		$start        = $page * $per_page;
 
-			$all_blog_posts = new WP_Query(
-				array(
-					'post_type'      => 'von_hans_r_amrein',
-					'post_status'    => 'publish',
-					'posts_per_page' => $per_page,
-					'offset'         => $start,
-					'orderby'        => 'post_date',
-					'order'          => 'DESC',
-				)
-			);
-			$count = new WP_Query(
-				array(
-					'post_type'      => 'von_hans_r_amrein',
-					'post_status '   => 'publish',
-					'posts_per_page' => -1,
-				)
-			);
+		$all_blog_posts = new WP_Query(
+			array(
+				'post_type'      => 'von_hans_r_amrein',
+				'post_status'    => 'publish',
+				'posts_per_page' => $per_page,
+				'offset'         => $start,
+				'orderby'        => 'post_date',
+				'order'          => 'DESC',
+			)
+		);
+
+		$count = new WP_Query(
+			array(
+				'post_type'      => 'von_hans_r_amrein',
+				'post_status '   => 'publish',
+				'posts_per_page' => -1,
+			)
+		);
+
 		// Loop into all the posts
 		if ( $count->have_posts() ) :
 			$count = $count->post_count;
 			wp_reset_postdata();
 		endif;
+
 		// Loop into all the posts
 		if ( $all_blog_posts->have_posts() ) :
 			while ( $all_blog_posts->have_posts() ) :
@@ -54,7 +57,7 @@ function hi_kommentar_pagination_load_posts() {
 			endwhile;
 			wp_reset_postdata();
 		endif;
-		
+
 		// Optional, wrap the output into a container
 		$msg = "<div class='cvf-universal-content'>" . $msg . "</div>";
 
