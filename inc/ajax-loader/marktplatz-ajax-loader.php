@@ -116,13 +116,66 @@ function demo_load_my_posts() {
 			);
 		endif;
 
-		$count = new WP_Query(
+
+		if ( ! empty( $_POST['data']['search']) && ! empty( $markt_cat ) ) :
+			$search_text    = sanitize_text_field( $_POST['data']['search'] );
+			$count = new WP_Query(
+				array(
+					'post_type'      => 'marktplatz',
+					'post_status '   => 'publish',
+					'posts_per_page' => -1,
+					's'              => $search_text,
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'categories_marktplatz',
+							'field'    => 'id',
+							'terms'    => $markt_cat,
+						),
+					),
+				)
+			);
+		elseif ( ! empty( $_POST['data']['search']) ) :
+			$search_text    = sanitize_text_field( $_POST['data']['search'] );
+			$count = new WP_Query(
+				array(
+					'post_type'      => 'marktplatz',
+					'post_status '   => 'publish',
+					'posts_per_page' => -1,
+					's'              => $search_text,
+				)
+			);
+		elseif ( ! empty( $markt_cat ) ) :
+			$count = new WP_Query(
+				array(
+					'post_type'      => 'marktplatz',
+					'post_status '   => 'publish',
+					'posts_per_page' => -1,
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'categories_marktplatz',
+							'field'    => 'id',
+							'terms'    => $markt_cat,
+						),
+					),
+				)
+			);
+		else :
+			$count = new WP_Query(
+				array(
+					'post_type'      => 'marktplatz',
+					'post_status '   => 'publish',
+					'posts_per_page' => -1,
+				)
+			);
+		endif;
+
+		/*$count = new WP_Query(
 			array(
 				'post_type'      => 'marktplatz',
 				'post_status '   => 'publish',
 				'posts_per_page' => -1,
 			)
-		);
+		);*/
 
 		// Loop into all the posts
 		if ( $count->have_posts() ) :
