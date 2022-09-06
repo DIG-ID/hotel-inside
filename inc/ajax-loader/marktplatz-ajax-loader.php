@@ -74,7 +74,7 @@ function demo_load_my_posts() {
 			echo '<div class="container-fluid"><div class="row g-4">';
 			while ( $all_blog_posts->have_posts() ) :
 				$all_blog_posts->the_post();
-				$msg .= get_template_part( 'template-parts/components/card', 'marktplatz-v2' );
+				$msg .= get_template_part( 'template-parts/components/card', 'marktplatz' );
 			endwhile;
 			echo '</div></div>';
 			wp_reset_postdata();
