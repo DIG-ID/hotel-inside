@@ -11,7 +11,7 @@ if( $('body.single-post').length ){
 }
 if( $('body.single-kommentar_by_hans').length ){
     var sidebarbyhans = new StickySidebar('.sidebar-by-hans', {
-        containerSelector: '.section > .custom-container > .row',
+        containerSelector: '.von_hans_r_amrein > .custom-container > .row',
         innerWrapperSelector: '.sidebar-by-hans__inner',
         topSpacing: 200,
         bottomSpacing: 200
