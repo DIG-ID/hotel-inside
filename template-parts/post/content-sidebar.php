@@ -20,8 +20,13 @@
 					<span class="separator-line"></span>
 					<p class="author__title"><?php esc_html_e( 'Über den Autor', 'hotel-inside' ); ?></p>
 					<p class="author__username"><?php echo get_the_author_meta( 'display_name', $author_id ); ?></p>
-					<p class="author__description"><?php echo get_the_author_meta( 'user_description', $author_id ); ?></p>
-					<a id="showmore" class="author__showmore itsclosed"><?php esc_html_e( 'Weiterlesen...', 'hotel-inside' ); ?></a>
+					<?php
+					$author_description = get_the_author_meta( 'user_description', $author_id );
+					if ( ! empty( $author_description ) ) :
+						echo '<p class="author__description">' . $author_description . '</p>
+						<a id="showmore" class="author__showmore itsclosed">' . esc_html__( 'Weiterlesen...', 'hotel-inside' ) . '</a>';
+					endif;
+					?>
 				</div>
 			</div><!-- .row -->
 			<?php get_template_part( 'template-parts/modules/ads', 'sidebar' ); ?>
