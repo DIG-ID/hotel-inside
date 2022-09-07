@@ -44,11 +44,13 @@ function hi_theme_setup() {
 
 	add_image_size( 'card-archive-kommentar', 570, 273, array( 'center', 'center' ) );
 
+	add_image_size( 'card-archive-kommentar-single', 680, 362, array( 'center', 'center' ) );
+
 	add_image_size( 'card-default', 570, 300, array( 'center', 'center' ) );
 
 	add_image_size( 'kommentar-author-avatar', 370, 443, array( 'center', 'center' ) );
 
-	add_image_size( 'hans-author-avatar', 470, 352, array( 'center', 'center' ) );
+	add_image_size( 'hans-author-avatar', 480, 362, array( 'center', 'center' ) );
 
 	add_image_size( 'author-avatar', 180, 180, array( 'center', 'center' ) );
 
@@ -56,7 +58,7 @@ function hi_theme_setup() {
 
 	add_image_size( 'team-avatar-sm', 233, 270, array( 'center', 'center' ) );
 
-	add_image_size( 'markplatz-avatar', 150, 150, array( 'center', 'center' ) );
+	add_image_size( 'markplatz-avatar', 200, 200, array( 'center', 'center' ) );
 
 	add_image_size( 'hero-banner', 1920, 700, array( 'center', 'center' ) );
 

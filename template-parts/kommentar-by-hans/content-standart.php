@@ -4,7 +4,7 @@
 			<div class="col-md-12 col-lg-7 content">
 				<?php
 				if ( has_post_thumbnail() ) :
-					the_post_thumbnail( 'single-post-thumbnail' );
+					the_post_thumbnail( 'card-archive-kommentar-single' );
 				endif;
 				?>
 				<header class="post-header">

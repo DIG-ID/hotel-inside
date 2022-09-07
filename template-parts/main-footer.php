@@ -18,7 +18,7 @@
 							$y = date( 'Y' );
 							printf(
 								/* translators: %s: WordPress. */
-								esc_html__( '%d &copy; All rights reserved by %s.', 'hotel-inside' ),
+								esc_html__( '%d &copy; All rights reserved by %s', 'hotel-inside' ),
 								esc_html( $y ),
 								'<a href="' . esc_url( __( 'https://dig.id/', 'hotel-inside' ) ) . '">dig.id</a>'
 							);
