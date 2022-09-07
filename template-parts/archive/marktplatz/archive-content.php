@@ -1,5 +1,5 @@
 <div id="section-marktplatz" class="section section-marktplatz">
-	<div class="custom-container p-0">
+	<div class="custom-container">
 		<div class="row">
 			<div class="col-12">
 				<form class="post-list">
