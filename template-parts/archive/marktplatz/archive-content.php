@@ -31,12 +31,11 @@
 				<br class="clear" />
 				<script type="text/javascript">
 					jQuery(document).ready(function($) {
-
 						var ajaxurl = '<?php echo esc_url( admin_url( 'admin-ajax.php' ) ); ?>';
 						var markt_cat = $("#markt-cat-filter option:selected").val();
 						//console.log(markt_cat);
 						function cvf_load_all_posts(page, markt_cat){
-							$(".cvf_pag_loading").fadeIn(1000).css('opacity','0');
+							$(".spinner").fadeIn(800);
 							var post_data = {
 								page: page,
 								search: $('#markt-search').val(),
@@ -52,7 +51,7 @@
 
 							$.post(ajaxurl, data, function(response) {
 								$(".cvf_universal_container").html(response);
-								$(".cvf_pag_loading").css({'opacity':'1', 'transition':'all 1s ease-in-out'});
+								$(".spinner").fadeOut(800);
 							});
 						}
 
@@ -74,20 +73,19 @@
 							cvf_load_all_posts(1, markt_cat);
 						});
 
-						// Search
+						// Search submit
 						$('body').on('click', '.post_search_submit', function(e){
 							e.preventDefault();
 							cvf_load_all_posts(1, markt_cat);
 						});
 
-						// Loop into all the posts
+						// Search input
 						$('body').on('input', '.post_search_text', function(e){
-								// Print entered value in a div box
-								console.log( markt_cat );
-								cvf_load_all_posts(1, markt_cat);
+							cvf_load_all_posts(1, markt_cat);
 						});
+
 						// Search when Enter Key is triggered
-						$(".post_search_text").keyup(function (e) {
+						$(".post_search_text").keyup(function(e) {
 							if (e.keyCode == 13) {
 								cvf_load_all_posts(1, markt_cat);
 							}
@@ -104,9 +102,11 @@
 			</div>
 		</div><!-- .row -->
 		<div class="row marktplatz__row">
-			<div class="cvf_pag_loading p-0">
-				<div class="cvf_universal_container">
-					<div class="cvf-universal-content"></div>
+			<div class="col-12">
+				<div class="cvf_pag_loading p-0">
+					<div class="cvf_universal_container">
+						<div class="cvf-universal-content"></div>
+					</div>
 				</div>
 			</div>
 		</div><!-- .row -->
