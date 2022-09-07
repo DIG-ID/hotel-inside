@@ -49,6 +49,7 @@
     -webkit-line-clamp: 2
     -webkit-box-orient: vertical
     white-space: normal
+    p
   &-badge
     position: absolute
     top: 0px
@@ -89,6 +90,19 @@
 
   &--kommentar-slider
     .card-content
+      .card-description
+        p
+          font-family: $acumin-font
+          font-weight: 400
+          font-size: 16px
+          color: $main-blue
+          // Addition lines for 2 line or multiline ellipsis
+          text-overflow: ellipsis
+          overflow: hidden
+          display: -webkit-box !important
+          -webkit-line-clamp: 2
+          -webkit-box-orient: vertical
+          white-space: normal
       hr
         max-width: 50%
         background-color: $main-blue
