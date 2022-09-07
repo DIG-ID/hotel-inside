@@ -67,31 +67,31 @@ $(function() {
   var marktplatzSwiper = new Swiper('.swiper-marktplatz', {
     breakpoints: {
       576: {
-        //slidesPerView: 2,
+        slidesPerView: 2,
         spaceBetween: 30,
       },
       768: {
-        //slidesPerView: 2,
+        slidesPerView: 2,
         spaceBetween: 30,
       },
       992: {
-        //slidesPerView: 4,
+        slidesPerView: 4,
         spaceBetween: 30,
       },
       1200: {
-        //slidesPerView: 6,
+        slidesPerView: 6,
         spaceBetween: 30,
       },
     },
-    //slidesPerView: 6,
+    slidesPerView: 6,
     spaceBetween: 30,
-    loop: true,
-    speed: 6000,
-    slidesPerView: 'auto',
-    autoplay: {
+    //loop: true,
+    //speed: 6000,
+    //slidesPerView: 'auto',
+    /*autoplay: {
       delay: 1,
       disableOnInteraction: false,
-    },
+    },*/
   });
 
   var clubEventsSwiper = new Swiper('.swiper-club-events', {
