@@ -12,6 +12,14 @@
 				<div class="page-title--line"></div>
 				<?php if ( is_singular( 'marktplatz' ) ) : ?>
 					<h2 class="page-title"><?php esc_html_e( 'Marktplatz', 'hotel-inside' ); ?></h2>
+				<?php elseif ( is_page( 'top-jobs' ) ) : ?>
+					<h1 class="page-title"><?php esc_html_e( 'Top-Jobs', 'hotel-inside' ); ?></h1>
+				<?php elseif ( is_page( 'mediadaten' ) ) : ?>
+					<h1 class="page-title"><?php esc_html_e( 'Mediadaten', 'hotel-inside' ); ?></h1>
+				<?php elseif ( is_page( 'nutzungsbedingungen' ) ) : ?>
+					<h1 class="page-title"><?php esc_html_e( 'Nutzungsbedingungen', 'hotel-inside' ); ?></h1>
+				<?php elseif ( is_page( 'impressum' ) ) : ?>
+					<h1 class="page-title"><?php esc_html_e( 'Impressum', 'hotel-inside' ); ?></h1>
 				<?php elseif ( is_singular( 'von_hans_r_amrein' ) ) : ?>
 					<h2 class="page-title"><?php esc_html_e( 'Kommentar von Hans r. Amrein', 'hotel-inside' ); ?></h2>
 				<?php elseif ( is_single() ) : ?>
