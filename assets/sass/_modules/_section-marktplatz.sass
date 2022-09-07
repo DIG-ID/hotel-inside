@@ -8,23 +8,32 @@
       display: none
       display: none
   .swiper-marktplatz
-    .swiper-slide
-      a
+    .swiper-wrapper
+      transition-timing-function: linear
+      .swiper-slide
         display: flex
         justify-content: center
         align-items: center
-        min-height: 150px
-        img
-          max-width: 100%
-          height: auto
-          object-fit: cover
-    .swiper-slide.logo-portrait
-      max-width: 110px
-      a
-        img
-          max-width: none
-          position: relative
-          top: -15px
+        text-align: center
+        width: auto
+        a
+          display: flex
+          justify-content: center
+          align-items: center
+          text-align: center
+          width: auto
+          img
+            width: 100%
+            max-width: 100%
+            height: auto
+            object-fit: cover
+      .swiper-slide.logo-portrait
+        max-width: 110px
+        a
+          img
+            max-width: none
+            position: relative
+            top: -15px
 
 .section-company-content
   .latest-posts
