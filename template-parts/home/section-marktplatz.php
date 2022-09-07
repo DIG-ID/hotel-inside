@@ -15,9 +15,15 @@
 						<?php
 						foreach ( $featured_marktplatz as $post ) :
 							setup_postdata( $post );
+							$logo_ratio = '';
+							if ( get_field( 'logo_ratio' ) === 'lanscape' ) :
+								$logo_ratio = 'logo-landscape';
+							else :
+								$logo_ratio = 'logo-portrait';
+							endif;
 							?>
-							<div class="swiper-slide marktplatz-company">
-								<a href="<?php echo esc_url( get_post_type_archive_link( get_post_type() ) ); ?>">
+							<div class="swiper-slide marktplatz-company <?php echo $logo_ratio; ?>">
+								<a href="<?php echo esc_url( get_post_type_archive_link( get_post_type() ) ); ?>" >
 									<?php
 									if ( has_post_thumbnail() ) :
 										the_post_thumbnail( 'markplatz-avatar' );

@@ -85,7 +85,7 @@ $(function() {
     },
     slidesPerView: 1,
     spaceBetween: 30,
-    //loop: true,
+    loop: true,
     //speed: 6000,
     //slidesPerView: 'auto',
     /*autoplay: {
