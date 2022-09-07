@@ -23,7 +23,7 @@
 							?>
 						</div>
 						<div class="form-group">
-							<input type="text" id="markt-search" class="form-control post_search_text" placeholder="Suchen Konzern">
+							<input type="text" id="markt-search" class="form-control post_search_text" placeholder="Suchen">
 						</div>
 						<input type="submit" value="Search" class = "btn btn-success post_search_submit" />
 					</div>
