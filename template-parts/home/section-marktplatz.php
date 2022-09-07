@@ -18,8 +18,10 @@
 							$logo_ratio = '';
 							if ( get_field( 'logo_ratio' ) === 'lanscape' ) :
 								$logo_ratio = 'logo-landscape';
-							else :
+							elseif ( ( get_field( 'logo_ratio' ) === 'portrait' ) ) :
 								$logo_ratio = 'logo-portrait';
+							else :
+								$logo_ratio = '';
 							endif;
 							?>
 							<div class="swiper-slide marktplatz-company <?php echo $logo_ratio; ?>">
