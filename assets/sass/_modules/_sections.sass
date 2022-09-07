@@ -63,3 +63,12 @@
     .section
       .section-title:before
         content: none
+
+@include media-breakpoint-down(sm)
+  .section-four-blocks,
+  .section-latest-videos,
+  .section-categorie-three-blocks
+    .section-title
+      margin-bottom: 0
+    .btn-go-to-overview
+      margin-bottom: 25px
