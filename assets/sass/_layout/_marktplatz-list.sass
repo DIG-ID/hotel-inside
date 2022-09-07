@@ -200,6 +200,12 @@
             color: $main-orange
 
 /*Responsive*/
+@include media-breakpoint-up(xl)
+    .section-marktplatz
+        .custom-container
+            padding-right: 0
+            padding-left: 0
+
 @include media-breakpoint-down(lg)
     .cvf-universal-pagination
         justify-content: center
@@ -214,12 +220,22 @@
             margin-bottom: 25px
 
 @include media-breakpoint-down(md)
-.cvf-universal-pagination
-    ul
-        li
-            padding: 6px 9px
+    .marktplatz__row
+        .cvf_pag_loading
+            .cvf_universal_container
+                min-height: auto
+                .spinner
+                    top: 5%
+    .cvf-universal-pagination
+        ul
+            li
+                padding: 6px 9px
 
 @include media-breakpoint-down(sm)
+    .cvf-universal-pagination
+            ul
+                li
+                    padding: 6px 6px
     .markt-intro
         &__text
             p
