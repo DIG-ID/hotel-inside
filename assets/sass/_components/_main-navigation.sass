@@ -40,3 +40,16 @@
           background-position: 0
           &::before
             width: 100%
+
+/*Responsive*/
+@include media-breakpoint-down(xl)
+  .navbar
+    &-nav
+      align-content: center
+      justify-content: center
+
+  .mega-menu
+    #navbarSupportedContent
+      align-items: center
+      align-content: center
+      justify-content: center

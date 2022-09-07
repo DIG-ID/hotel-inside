@@ -226,6 +226,14 @@
 
 
 /*Responsive*/
+@include media-breakpoint-down(xl)
+  .mega-menu
+    #top-nav
+      display: block
+      column-count: 2
+    .navbar-cols-2
+      column-count: 1
+
 @include media-breakpoint-down(lg)
   #main-header
     .navbar__subtitle, .search-form
