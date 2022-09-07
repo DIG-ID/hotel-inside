@@ -39,7 +39,7 @@
 						'posts_per_page'      => 3,
 						'offset'              => 1,
 						'orderby'             => 'post_date',
-						'order'               => 'ASC',
+						'order'               => 'DESC',
 						'post_type'           => 'videos',
 						'post_status'         => 'publish',
 						'ignore_sticky_posts' => 1,
