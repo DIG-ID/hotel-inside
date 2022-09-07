@@ -347,3 +347,15 @@
     .type-von_hans_r_amrein
       padding-top: 0px
       padding-bottom: 0px
+
+@include media-breakpoint-down(sm)
+  .post-template-default,
+  .von_hans_r_amrein-template-default
+    .type-post,
+    .type-von_hans_r_amrein
+      .content
+        .wp-block-group.has-background
+          .wp-block-group__inner-container
+            padding: 60px 20px 60px 20px
+            &::before
+              top: 25px
