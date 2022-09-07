@@ -76,9 +76,9 @@ $(function() {
         spaceBetween: 0,
       },
     },
-    slidesPerView: 2,
+    slidesPerView: 5,
     spaceBetween: 30,
-    loop: true,
+    //loop: true,
     //speed: 6000,
     //slidesPerView: 'auto',
     /*autoplay: {
