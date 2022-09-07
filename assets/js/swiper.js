@@ -26,9 +26,16 @@ $(function() {
   });*/
 
   var heroSwiper = new Swiper('.hero-swiper', {
+    breakpoints: {
+      1200: {
+        slidesPerView: 1,
+        spaceBetween: 0,
+        loop: true
+      },
+    },
     slidesPerView: 1,
     spaceBetween: 0,
-    loop: true,
+    loop: false,
     //effect: 'fade',
     autoplay: {
       delay: 4000,
