@@ -7,7 +7,7 @@
 		$markt_terms = get_the_terms( $markt_id, 'categories_marktplatz' );
 		$checkifpaid = get_field( 'single_page_access', $markt_id );
 		if ( $markt_terms ) :
-			foreach ( $markt_terms as $markt_term ) :
+			foreach ( array_slice($markt_terms, 0, 3) as $markt_term ) :
 				echo '<p class="marktplatz__cat">' . $markt_term->name . '</p>';
 			endforeach;
 		endif;
