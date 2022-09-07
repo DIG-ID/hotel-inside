@@ -83,7 +83,7 @@ $(function() {
         spaceBetween: 30,
       },
     },
-    slidesPerView: 1,
+    slidesPerView: 6,
     spaceBetween: 30,
     loop: true,
     //speed: 6000,
