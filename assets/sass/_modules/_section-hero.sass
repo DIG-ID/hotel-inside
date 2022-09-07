@@ -155,6 +155,12 @@
         text-decoration: none
         color: $font-grey
 
+@include media-breakpoint-down(xl)
+    .section-hero
+      .hero-swiper
+        .swiper-button-prev,
+        .swiper-button-next
+          display: none
 @include media-breakpoint-down(lg)
   .hero-swiper-scrollbar
     display: block

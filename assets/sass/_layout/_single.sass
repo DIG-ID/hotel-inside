@@ -340,6 +340,10 @@
         object-fit: cover
 
 /*Responsive*/
+@include media-breakpoint-down(xl)
+  .format-video
+    iframe
+      width: 100%
 @include media-breakpoint-down(lg)
   .post-template-default,
   .von_hans_r_amrein-template-default
