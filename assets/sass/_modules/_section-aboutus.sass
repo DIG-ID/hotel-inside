@@ -42,6 +42,49 @@
 .section-about-team
     padding-bottom: 150px
 
+.page-template-page-about-us
+    .fancybox__container
+        .fancybox__backdrop
+            background: rgba(1, 12, 21, 0.92)
+    .about-gesell-modal
+        max-width: 970px
+        background-color: #F3F3F3
+        &--trigger
+            display: block
+            cursor: pointer
+        .content__separator-line
+            margin: 10px 0px 30px
+        .profile-picture
+            img
+                width: 100%
+                max-width: 100%
+                height: auto
+                object-fit: cover
+        .about-gesell
+            &__name
+                text-align: left
+                color: #090036
+                margin-bottom: 10px
+            &__role
+                font-weight: 600
+                text-transform: uppercase
+                text-align: left
+                margin-bottom: 15px
+            &__bio
+                p
+                    font-weight: 300
+                    font-size: 16px
+                    line-height: 26px
+                    color: $dark-blue
+            &__profile-link
+                max-width: 24px
+                max-height: 24px
+                display: block
+                margin-top: 20px
+                text-decoration: none
+                svg
+                    max-height: 24px
+                    fill: #006699
 /*Responsive*/
 @include media-breakpoint-down(lg)
     .about-intro
