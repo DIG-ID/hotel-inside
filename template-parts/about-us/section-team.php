@@ -9,9 +9,11 @@
 		<div class="row">
 			<?php
 			if ( have_rows( 'team_list') ):
+				$i = 0;
 				while ( have_rows( 'team_list' ) ) :
 					the_row();
-					get_template_part( 'template-parts/components/card', 'team' );
+					$i++;
+					get_template_part( 'template-parts/components/card', 'team', array( 'post_counter' => $i ) );
 				endwhile;
 			endif;
 			?>
