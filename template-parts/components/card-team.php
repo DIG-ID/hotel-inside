@@ -1,10 +1,10 @@
-<div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3 about-gesell__col">
+<?php $profile_pic = get_sub_field( 'profile_picture' ); ?>
+<div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 about-gesell__col">
 	<?php
-	$profile_pic = get_sub_field( 'profile_picture' );
 	if ( $profile_pic ) :
-		echo '<span data-fancybox="about-gesell-modal" data-src="#about-gesell-modal" class="about-gesell-modal--trigger">' . wp_get_attachment_image( $profile_pic, 'team-avatar-sm' ) . '</span>';
+		echo '<span data-fancybox="about-gesell-team-modal" data-src="#about-gesell-team-modal" class="about-gesell-modal--trigger">' . wp_get_attachment_image( $profile_pic, 'team-avatar' ) . '</span>';
 	else :
-		echo '<img src="' . esc_url( get_template_directory_uri() . '/assets/images/team-avatar-default.png' ) . '" alt="team member default avatar">';
+		echo '<span data-fancybox="about-gesell-team-modal" data-src="#about-gesell-team-modal" class="about-gesell-modal--trigger"><img src="' . esc_url( get_template_directory_uri() . '/assets/images/team-avatar-sm.png' ) . '" alt="team member default avatar"></span>';
 	endif;
 	?>
 	<div class="about-gesell__wrapper">
@@ -13,7 +13,7 @@
 	</div>
 </div>
 <!-- Modal start -->
-<div id="about-gesell-modal" class="about-gesell-modal" style="display:none;">
+<div id="about-gesell-team-modal" class="about-gesell-team-modal" style="display:none;">
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-12 col-md-4">
@@ -53,6 +53,5 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
 </div><!-- .about-gesell-modal -->

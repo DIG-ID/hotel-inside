@@ -11,5 +11,10 @@ $(function() {
 			autoStart: false,
 		},
   });
+	Fancybox.bind('[data-fancybox="about-gesell-team-modal"]', {
+		Thumbs: {
+			autoStart: false,
+		},
+  });
 	
 });
