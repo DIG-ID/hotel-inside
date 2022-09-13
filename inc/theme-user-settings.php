@@ -19,6 +19,7 @@ function hi_add_user_editor_caps() {
 		$role->add_cap( 'remove_users' );
 		$role->add_cap( 'promote_users' );
 		$role->add_cap( 'list_users' );
+		$role->add_cap( 'edit_theme_options' );
 		$role->add_cap( 'customize' );
 	else :
 		// Theme is deactivated
