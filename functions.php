@@ -60,6 +60,8 @@ function hi_theme_setup() {
 
 	add_image_size( 'markplatz-avatar', 200, 200, array( 'center', 'center' ) );
 
+	add_image_size( 'markplatz-banner', 680, 464, array( 'center', 'center' ) );
+
 	add_image_size( 'hero-banner', 1920, 700, array( 'center', 'center' ) );
 
 }
