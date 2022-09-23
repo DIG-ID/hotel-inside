@@ -4,7 +4,7 @@
 		<a data-fancybox data-small-btn="true" href="https://youtu.be/<?php echo esc_html( $video_id ); ?>" class="card-link">
 			<article id="post-<?php the_ID(); ?>" class="card card--youtube">
 				<figure>
-					<img src="http://img.youtube.com/vi/<?php echo esc_html( $video_id ); ?>/maxresdefault.jpg" />
+					<img src="https://img.youtube.com/vi/<?php echo esc_html( $video_id ); ?>/maxresdefault.jpg" />
 					<span class="play-icon">
 						<svg xmlns="http://www.w3.org/2000/svg" width="27.742" height="34.144" viewBox="0 0 27.742 34.144"><defs><style>.a{fill:#e12127;}</style></defs><path class="a" d="M17.072,0,34.144,27.742H0Z" transform="translate(27.742) rotate(90)"/></svg>
 					</span>
