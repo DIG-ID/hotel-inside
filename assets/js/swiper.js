@@ -85,6 +85,9 @@ $(function() {
     },
     //slidesPerView: 1,
     spaceBetween: 30,
+    //pauseOnMouseEnter: true,
+    //grabCursor: true,
+   // reverseDirection: true,
     loop: true,
     speed: 6000,
     slidesPerView: 'auto',
@@ -120,5 +123,7 @@ $(function() {
       },
     },
   });
-
+	$( document ).on('ready', function() {
+		marktplatzSwiper.autoplay.start()
+	});
 });
