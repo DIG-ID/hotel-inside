@@ -251,3 +251,34 @@ require get_template_directory() . '/inc/custom-nav-walker.php';
 
 // Theme custom ajax loader
 require get_template_directory() . '/inc/ajax-loader.php';
+
+
+// GET FEATURED IMAGE
+function ST4_get_access_cf($post_ID) {
+	$post_cf = get_field( 'single_page_access', $post_ID );
+	//var_dump( $post_cf );
+	if ($post_cf) {
+		return $post_cf;
+	}
+}
+
+// ADD NEW COLUMN
+function ST4_columns_head($defaults) {
+	$defaults['access_to_single'] = 'Access to single page';
+	return $defaults;
+}
+
+// SHOW THE FEATURED IMAGE
+function ST4_columns_content($column_name, $post_ID) {
+	if ($column_name == 'access_to_single') {
+			$post_access_to_single = ST4_get_access_cf($post_ID);
+			if ($post_access_to_single == 1) {
+					echo "Yes";
+			} else {
+				echo "No";
+			}
+	}
+}
+
+add_filter('manage_posts_columns', 'ST4_columns_head');
+add_action('manage_posts_custom_column', 'ST4_columns_content', 10, 2);
