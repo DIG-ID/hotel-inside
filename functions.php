@@ -272,10 +272,11 @@ function ST4_columns_head($defaults) {
 function ST4_columns_content($column_name, $post_ID) {
 	if ($column_name == 'access_to_single') {
 			$post_access_to_single = ST4_get_access_cf($post_ID);
-			if ($post_access_to_single == 1) {
+			if ($post_access_to_single === 1) {
 					echo "Yes";
-			} else {
-				echo "No";
+			} else{
+				//echo "No";
+				var_dump($post_access_to_single);
 			}
 	}
 }
