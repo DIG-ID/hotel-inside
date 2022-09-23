@@ -83,15 +83,15 @@ $(function() {
         spaceBetween: 30,
       },
     },
-    slidesPerView: 1,
+    //slidesPerView: 1,
     spaceBetween: 30,
-    //loop: true,
-    //speed: 6000,
-    //slidesPerView: 'auto',
-    /*autoplay: {
+    loop: true,
+    speed: 6000,
+    slidesPerView: 'auto',
+    autoplay: {
       delay: 1,
       disableOnInteraction: false,
-    },*/
+    },
   });
 
   var clubEventsSwiper = new Swiper('.swiper-club-events', {
