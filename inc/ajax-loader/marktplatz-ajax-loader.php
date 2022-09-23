@@ -30,9 +30,10 @@ function demo_load_my_posts() {
 					'post_status'    => 'publish',
 					'posts_per_page' => $per_page,
 					'offset'         => $start,
-					'orderby'        => 'post_date',
-					'order'          => 'DESC',
 					's'              => $search_text,
+					'meta_key'       => 'single_page_access',
+					'orderby'        => array( 'meta_value_num' => 'DESC', 'title' => 'ASC' ),
+					'order'          => 'ASC',
 					'tax_query' => array(
 						array(
 							'taxonomy' => 'categories_marktplatz',
@@ -51,8 +52,9 @@ function demo_load_my_posts() {
 					'post_status'    => 'publish',
 					'posts_per_page' => $per_page,
 					'offset'         => $start,
-					'orderby'        => 'post_date',
-					'order'          => 'DESC',
+					'meta_key'       => 'single_page_access',
+					'orderby'        => array( 'meta_value_num' => 'DESC', 'title' => 'ASC' ),
+					'order'          => 'ASC',
 					's'              => $search_text,
 				),
 			);
@@ -64,8 +66,9 @@ function demo_load_my_posts() {
 					'post_status'    => 'publish',
 					'posts_per_page' => $per_page,
 					'offset'         => $start,
-					'orderby'        => 'post_date',
-					'order'          => 'DESC',
+					'meta_key'       => 'single_page_access',
+					'orderby'        => array( 'meta_value_num' => 'DESC', 'title' => 'ASC' ),
+					'order'          => 'ASC',
 					'tax_query' => array(
 						array(
 							'taxonomy' => 'categories_marktplatz',
@@ -82,8 +85,9 @@ function demo_load_my_posts() {
 					'post_status'    => 'publish',
 					'posts_per_page' => $per_page,
 					'offset'         => $start,
-					'orderby'        => 'post_date',
-					'order'          => 'DESC',
+					'meta_key'       => 'single_page_access',
+					'orderby'        => array( 'meta_value_num' => 'DESC', 'title' => 'ASC' ),
+					'order'          => 'ASC',
 				),
 			);
 		endif;
