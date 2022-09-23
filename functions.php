@@ -274,6 +274,8 @@ function ST4_columns_content($column_name, $post_ID) {
 			$post_access_to_single = ST4_get_access_cf($post_ID);
 			if ($post_access_to_single === 1) {
 					echo "Yes";
+			} else {
+				echo "No";
 			}
 	}
 }
