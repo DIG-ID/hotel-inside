@@ -36,7 +36,7 @@
 				<div class="row">
 					<?php
 					$args2      = array(
-						'posts_per_page'      => 3,
+						'posts_per_page'      => 2,
 						'offset'              => 1,
 						'orderby'             => 'post_date',
 						'order'               => 'DESC',
