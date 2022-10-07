@@ -114,12 +114,13 @@ function hi_allowed_block_types( $allowed_blocks ) {
 				'core/cover-image',
 				'core/gallery',
 				'core/quote',
-				'core-embed/youtube',
 				'core/list',
 				'core/spacer',
 				'core/group',
 				'core/block',
+				'core/embed',
 				'core/video',
+				'core-embed/youtube',
 			);
 			return $blocks;
 		endif;
