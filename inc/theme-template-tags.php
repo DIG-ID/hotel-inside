@@ -78,8 +78,8 @@ if ( ! function_exists( 'hi_post_badges' ) ) :
 
 	function hi_post_badges() {
 		$badges = get_field( 'post_badges' );
-		if ( $badges && in_array( 'sponsoredcontent', $badges ) ) :
-			echo '<span class="card-badge card-badge--sponsoredcontent">' . esc_html__( 'Sponsored Content', 'hotel-inside' ) . '</span>';
+		if ( $badges && in_array( 'publireportage', $badges ) ) :
+			echo '<span class="card-badge card-badge--publireportage">' . esc_html__( 'Publireportage', 'hotel-inside' ) . '</span>';
 		elseif ( $badges && in_array( 'kommentar', $badges ) ) :
 			echo '<span class="card-badge card-badge--kommentar">' . esc_html__( 'Kommentar', 'hotel-inside' ) . '</span>';
 		endif;
