@@ -64,6 +64,8 @@ function hi_theme_setup() {
 
 	add_image_size( 'hero-banner', 1920, 700, array( 'center', 'center' ) );
 
+	add_image_size( 'badge-logo', 120, 120, array( 'center', 'center' ) );
+
 }
 
 add_action( 'after_setup_theme', 'hi_theme_setup' );
