@@ -174,31 +174,40 @@
     .post-badge
 
       &--custom-badge
-        display: inline-block
-        position: relative
-        padding: 25px
+        display: flex
+        flex-direction: column
+        width: 250px
         background-color: rgb(248, 249, 250)
-        border-radius: 12px
-        box-shadow: 0px 2px 3px 1px rgb(0 0 0 / 5%)
-        svg
-          position: absolute
-          top: 15px
-          left: 15px
-          max-width: 35px
-          height: auto
-        .content
-          padding-top: 10px
+        .badge-header
+          display: flex
+          align-items: center
+          padding: 8px
+          background-color: #00172A
+          svg
+            width: 25px
+            height: auto
+          h3
+            color: #fff
+            font-family: $acumin-font
+            font-size: 16px
+            font-weight: 600
+            margin: 0
+            text-align: center
+            flex-grow: 1
+        .badge-content
+          padding: 20px
           display: flex
           flex-direction: column
           justify-content: center
           align-items: center
+          
           p
             margin-bottom: 0
             margin-top: 10px
             color: #00172A
-            font-size: 12px
-            font-family: $montserrat-font
-            font-weight: 600
+            font-size: 14px
+            font-family: $raj-font
+            font-weight: normal
             text-transform: uppercase
           img
             width: auto

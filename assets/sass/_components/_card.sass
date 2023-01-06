@@ -69,14 +69,14 @@
       background-color: $main-orange
       color: $main-blue
     &--custom-badge
-      padding: 15px
+      padding: 10px
       display: flex
       align-items: center
-      left: 5px
-      top: 5px
+      left: 0px
+      top: 0px
       cursor: pointer
       svg
-        width: 40px
+        width: 35px
         z-index: 2
       .content
         margin-left: -20px
@@ -85,11 +85,41 @@
         p
           padding: 5px 5px 5px 25px
           margin: 0
+          margin-right: 10px
           background-color: #00172A
           color: #fff
           line-height: 1
           transform: translateX(-200px)
           transition: all 0.6s ease-in-out
+          position: relative
+          &::after
+            content: ''
+            display: block
+            position: absolute
+            right: -10px
+            top: 0
+            width: 0
+            height: 0
+            border-right: 5px solid transparent
+            border-top: 5px solid #00172A
+
+            border-bottom: 5px solid transparent
+            border-left: 5px solid #00172A
+            z-index: 1
+          &::before
+            content: ''
+            display: block
+            position: absolute
+            right: -10px
+            bottom: 0
+            width: 0
+            height: 0
+            border-right: 5px solid transparent
+            border-top: 5px solid transparent
+
+            border-bottom: 5px solid #00172A
+            border-left: 5px solid #00172A
+            z-index: 1
       &:hover
         .content
           p
