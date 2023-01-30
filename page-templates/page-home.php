@@ -11,7 +11,8 @@ do_action( 'before_main_content' );
 	get_template_part( 'template-parts/home/section', 'marktplatz' );
 	//get_template_part( 'template-parts/home/section', 'club-events' );
 	get_template_part( 'template-parts/home/section', 'latest-videos' );
-	get_template_part( 'template-parts/home/section', 'four-blocks' );
 	get_template_part( 'template-parts/modules/section', 'ads-footer' );
+	get_template_part( 'template-parts/home/section', 'four-blocks' );
+	
 do_action( 'after_main_content' );
 get_footer();
