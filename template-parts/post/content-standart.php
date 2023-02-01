@@ -7,6 +7,7 @@
 					the_post_thumbnail( 'single-post-thumbnail' );
 				endif;
 				?>
+				<?php do_action( 'post_badges' ); ?>
 				<header class="post-header">
 					<div class="post-date"><i class="icon-clock"></i><?php echo get_the_date( 'd M, Y' ); ?></div>
 					<?php the_title( '<h1 class="post-title">', '</h1>' ); ?>

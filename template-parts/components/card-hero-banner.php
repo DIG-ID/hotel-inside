@@ -8,6 +8,7 @@
 				<img src="https://picsum.photos/1920/1080?random=4" alt="example thumbnail">
 			<?php endif; ?>
 		</div>
+		<?php do_action( 'post_badges' ); ?>
 		<div class="custom-container">
 			<div class="row">
 				<div class="col-12 col-sm-12 col-md-12 col-lg-7">

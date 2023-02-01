@@ -51,8 +51,6 @@
     white-space: normal
 
   &-badge
-    position: absolute
-    top: 0px
     display: block
     z-index: 99
     padding: 5px 15px
@@ -61,14 +59,15 @@
     font-weight: 600
     text-transform: uppercase
     &--sponsoredcontent
-      right: 20px
       background-color: $main-blue
       color: $main-orange
     &--kommentar
-      left: 20px
+      margin-left: 10px
       background-color: $main-orange
       color: $main-blue
     &--custom-badge
+      position: absolute
+
       padding: 10px
       display: flex
       align-items: center
@@ -124,6 +123,18 @@
         .content
           p
             transform: translateX(0px)
+    &__wrapper
+      position: absolute
+      top: 0
+      right: 10px
+      width: 100%
+      display: flex
+      justify-content: flex-end
+      align-items: center
+      &--single
+        justify-content: flex-start
+        left: 20px
+
   &--default
     min-height: 233px
     .card-content
