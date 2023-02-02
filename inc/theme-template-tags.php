@@ -114,6 +114,28 @@ if ( ! function_exists( 'hi_post_badges' ) ) :
 
 endif;
 
+/**
+ * This function add a badge to the post card if exists.
+ */
+
+if ( ! function_exists( 'hi_post_badges_mini' ) ) :
+
+	function hi_post_badges_mini() {
+		$badges = get_field( 'post_badges' );
+
+		if ( $badges ) :
+			echo '<div class="card-badge__wrapper">';
+			if ( $badges && in_array( 'sponsoredcontent', $badges ) ) :
+				echo '<span class="card-badge card-badge--sponsoredcontent">' . esc_html__( 'P', 'hotel-inside' ) . '</span>';
+			endif;
+
+			echo '</div>';
+		endif;
+	}
+
+	add_action( 'post_badges_mini', 'hi_post_badges_mini' );
+
+endif;
 
 /**
  * This function add the button back to overiew to an post.
