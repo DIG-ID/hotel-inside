@@ -57,12 +57,12 @@
     &__col
         background-color: #F3F3F3
         padding: 15px
-        min-height: 140px
         height: 100%
-        overflow: hidden
+        min-height: 190px
         display: flex
         flex-direction: column
-        justify-content: space-around
+        justify-content: space-between
+        overflow: hidden
         flex: 1
     &__title
         font-family: $acumin-font
@@ -86,8 +86,6 @@
         margin-bottom: 10px
     &__cat:not(:last-of-type)::after
         content: ","
-    &__read-more--wrapper
-        //align-self: flex-end
     &__read-more
         display: flex
         font-family: $acumin-font
