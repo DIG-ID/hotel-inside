@@ -1,6 +1,6 @@
 <div class="col-sm-12 col-md-6 col-lg-4">
 	<div class="marktplatz__col">
-		<h3 class="marktplatz__title active"> <?php the_title(); ?></h3>
+		<h2 class="marktplatz__title active"><?php the_title(); ?> <br> <?php the_field( 'second_line_title' ); ?></h2>
 		<div class="marktplatz__position"><?php the_excerpt(); ?><br></div>
 		<?php
 		$markt_id    = get_the_ID();
