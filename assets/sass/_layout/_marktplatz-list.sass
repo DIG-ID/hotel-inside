@@ -60,7 +60,10 @@
         min-height: 140px
         height: 100%
         overflow: hidden
-        position: relative
+        display: flex
+        flex-direction: column
+        justify-content: space-around
+        flex: 1
     &__title
         font-family: $acumin-font
         font-size: 22px
@@ -68,15 +71,23 @@
         letter-spacing: 0px
         color: #090036
     &__cat, &__position p
-        display: inline
+        display: inline-block
         font-family: $montserrat-font
         font-size: 12px
         font-weight: 500
         color: #1A2338
         text-transform: uppercase
         margin-right: 5px
+    &__position
+        margin-bottom: 5px
+        p
+            margin-bottom: 0px
+    &__cat--wrapper
+        margin-bottom: 10px
     &__cat:not(:last-of-type)::after
         content: ","
+    &__read-more--wrapper
+        //align-self: flex-end
     &__read-more
         display: flex
         font-family: $acumin-font
