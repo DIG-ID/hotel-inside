@@ -118,6 +118,7 @@ function hi_allowed_block_types( $allowed_blocks ) {
 				'core/spacer',
 				'core/group',
 				'core/block',
+				'core/audio',
 				'core/embed',
 				'core/video',
 				'core-embed/youtube',
