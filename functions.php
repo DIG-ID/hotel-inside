@@ -236,6 +236,29 @@ function hi_custom_titles( $title ) {
 
 add_filter( 'get_the_archive_title', 'hi_custom_titles' );
 
+
+/**
+ * Create an options page with ACF.
+ */
+if ( function_exists( 'acf_add_options_page' ) ) :
+
+	acf_add_options_page(
+		array(
+			'page_title'      => __( 'Presenting Partner', 'hotel-inside' ),
+			'menu_title'      => __( 'Presenting Partner', 'hotel-inside' ),
+			'menu_slug'       => 'presenting-partner',
+			'capability'      => 'edit_posts',
+			'redirect'        => false,
+			'position'        => '20.3',
+			'icon_url'        => 'dashicons-groups',
+			'post_id'         => 'presenting_partner',
+			'update_button'   => __( 'Update', 'hotel-inside' ),
+			'updated_message' => __( 'Presenting Partner Settings Updated', 'acf' ),
+		),
+	);
+
+endif;
+
 // Theme custom ajax loader
 require get_template_directory() . '/inc/theme-user-settings.php';
 
