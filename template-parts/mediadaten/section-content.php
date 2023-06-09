@@ -11,7 +11,7 @@
 					<div class="row">
 						<div class="col-12">
 							<p><?php the_field( 'mediadaten_description' ); ?></p>
-							<a href="<?php the_field( 'mediadaten_button_url' ); ?>" class="btn btn__orange" target="_blank"><?php esc_html_e( 'Mehr erfahren', 'hotel-inside' ); ?></a>
+							<a href="<?php the_field( 'mediadaten_button_url' ); ?>" class="btn btn__orange" target="_blank"><?php esc_html_e( 'Mediadaten', 'hotel-inside' ); ?></a>
 						</div>
 						<?php
 						if ( get_field( 'advertising_content' ) ) :
