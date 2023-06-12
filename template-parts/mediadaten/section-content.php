@@ -5,7 +5,7 @@
 				<div class="col-12 col-lg-7">
 					<h1 class="section-title"><?php the_field( 'mediadaten_subtitle' ); ?></h1>
 				</div>
-				<aside class="col-12 col-lg-4 sidebar sidebar__page position-absolute end-0">
+				<aside class="col-12 col-lg-4 sidebar sidebar__page position-lg-absolute end-lg-0">
 					<?php get_template_part( 'template-parts/mediadaten/section', 'sidebar' ); ?>
 				</aside>
 			</div>
