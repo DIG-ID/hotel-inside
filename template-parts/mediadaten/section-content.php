@@ -5,6 +5,9 @@
 				<div class="col-12">
 					<h1 class="section-title"><?php the_field( 'mediadaten_subtitle' ); ?></h1>
 				</div>
+				<aside class="col-12 col-lg-4 sidebar sidebar__page">
+					<?php get_template_part( 'template-parts/mediadaten/section', 'sidebar' ); ?>
+				</aside>
 			</div>
 			<div class="row justify-between">
 				<div class="col-12 col-lg-7">
@@ -24,9 +27,7 @@
 						?>
 					</div>
 				</div>
-				<aside class="col-12 col-lg-4 sidebar sidebar__page">
-					<?php get_template_part( 'template-parts/mediadaten/section', 'sidebar' ); ?>
-				</aside>
+				
 			</div>
 		</div>
 	</article>
