@@ -1,11 +1,11 @@
 <?php
-if ( get_field( 'sidebar_box_box_title' ) ) :
+if ( get_field( 'sidebar_box_box_title' ) || get_field( 'mediadaten_image' ) ) :
 	?>
 	<div class="row">
 		<div class="col-12">
 			<div class="sidebar__box">
 				<?php 
-				$image = get_field('image');
+				$image = get_field('mediadaten_image');
 				$size = 'full';
 				if( $image ) {
 					echo wp_get_attachment_image( $image, $size );
