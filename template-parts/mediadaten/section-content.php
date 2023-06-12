@@ -2,7 +2,7 @@
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 		<div class="custom-container">
 			<div class="row">
-				<div class="col-12">
+				<div class="col-12 col-lg-7">
 					<h1 class="section-title"><?php the_field( 'mediadaten_subtitle' ); ?></h1>
 				</div>
 				<aside class="col-12 col-lg-4 sidebar sidebar__page">
