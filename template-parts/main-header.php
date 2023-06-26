@@ -3,7 +3,7 @@
 		<div class="custom-container">
 			<div class="row align-items-center">
 				<div class="col">
-					<?php if ( is_home() ) : ?>
+					<?php if ( is_front_page() ) : ?>
 						<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url" class="navbar-brand custom-logo-link ">
 							<h1 class="screen-reader-text"><?php bloginfo( 'name' ); ?></h1>
 							<?php the_custom_logo(); ?>
