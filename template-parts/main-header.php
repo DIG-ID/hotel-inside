@@ -5,12 +5,12 @@
 				<div class="col">
 					<?php if ( is_front_page() ) : ?>
 						<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url" class="navbar-brand custom-logo-link ">
-							<h1 class="screen-reader-text"><?php bloginfo( 'name' ); ?></h1>
+							<h1 class="screen-reader-text">Hotel Inside - Hospitality-Fachportal für den deutschsprachigen Raum</h1>
 							<?php the_custom_logo(); ?>
 						</a>
 					<?php else : ?>
 						<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" itemprop="url" class="navbar-brand custom-logo-link">
-							<p class="screen-reader-text"><?php bloginfo( 'name' ); ?></p>
+							<p class="screen-reader-text">Hotel Inside - Hospitality-Fachportal für den deutschsprachigen Raum</p>
 							<?php the_custom_logo(); ?>
 						</a>
 					<?php endif; ?>
