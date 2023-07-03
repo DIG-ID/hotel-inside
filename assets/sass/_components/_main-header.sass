@@ -196,7 +196,7 @@
           &:hover
             background-color: $main-blue !important
 
-.top-header
+.top-header, .search__bar
   .search-form
     .input-group.has-search
       //background-color: #fff
@@ -236,13 +236,28 @@
 
 @include media-breakpoint-down(lg)
   #main-header
-    .navbar__subtitle, .search-form
+    .navbar__subtitle
       display: none
+    .search__bar
+      .search-form
+        display: block
+
+@include media-breakpoint-up(md)
+  #main-header
+    .search__bar
+      display: none
+    .search
+      &__mobile-btn
+        display: none
 
 @include media-breakpoint-down(md)
   .admin-bar
     .main-header.fixed-top
       top: 46px
+
+  #main-header
+    .search-form
+      display: none
 
   .custom-logo-link
     margin-left: 15px
@@ -255,6 +270,8 @@
   .main-header
     .top-header
       padding: 4px 0
+      position: relative
+      z-index: 999
 
   .mega-menu
     top: 60px

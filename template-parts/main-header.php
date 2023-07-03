@@ -20,6 +20,9 @@
 				</div>
 				<div class="col d-flex align-items-center justify-content-end">
 					<?php get_search_form(); ?>
+					<a href="#" class="search__mobile-btn">
+						<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/images/search_m.svg" alt="" title="">
+					</a>
 					<button id="nav-icon2" class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mega-menu">
 					<span></span>
 					<span></span>
@@ -45,6 +48,11 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div id="search__bar" class="search__bar invisible n-margin-top-1">
+		<div class="search__bar-wrapper">
+			<?php get_search_form(); ?>	
+		</div>			
 	</div>
 	<nav class="navbar navbar-expand-lg bg-light" role="navigation">
 		<div class="custom-container">
