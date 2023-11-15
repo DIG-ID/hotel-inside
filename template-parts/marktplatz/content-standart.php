@@ -19,7 +19,9 @@
 											$image_url = wp_get_attachment_image_url($image['ID'], 'markplatz-banner');
 											?>
 											<img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-											<p class="marktplatz_caption"><?php echo esc_html($image['caption']); ?></p>
+											<?php if ($image['caption']) : ?>
+												<p class="marktplatz_caption"><?php echo esc_html($image['caption']); ?></p>
+											<?php endif; ?>
 										</div>
 									<?php endforeach; ?>
 								</div>
