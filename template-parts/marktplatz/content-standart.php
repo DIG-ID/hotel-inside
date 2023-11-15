@@ -5,7 +5,29 @@
 				<div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 company-content__col-banner">
 					<?php the_title( '<h1 class="company-content__title">', '</h1>' ); ?>
 					<?php $banner_image = get_field( 'company_banner_image' ); ?>
-					<?php echo wp_get_attachment_image( $banner_image, 'markplatz-banner' ); ?>
+					<?php if( $banner_image ) : ?>
+						<?php echo wp_get_attachment_image( $banner_image, 'markplatz-banner' ); ?>
+					<?php else : ?>
+						<?php 
+						$images = get_field('company_banner_slider');
+						if ($images) : ?>
+							<div class="swiper swiper-single-marktplatz">
+								<div class="swiper-wrapper">
+									<?php foreach ($images as $image) : ?>
+										<div class="swiper-slide">
+											<?php
+											$image_url = wp_get_attachment_image_url($image['ID'], 'markplatz-banner');
+											?>
+											<img src="<?php echo esc_url($image_url); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
+											<p class="marktplatz_caption"><?php echo esc_html($image['caption']); ?></p>
+										</div>
+									<?php endforeach; ?>
+								</div>
+								<div class="swiper-button-next single-marktplatz-button-next"></div>
+								<div class="swiper-button-prev single-marktplatz-button-prev"></div>
+							</div>
+						<?php endif; ?>
+					<?php endif; ?>
 					<div class="row company-content__row">
 						<div class="col-5 col-sm-5 col-md-3 col-lg-3 col-xl-3 company-content__col-img">
 							<?php if ( has_post_thumbnail() ) : ?>

@@ -126,4 +126,16 @@ $(function() {
 	$( document ).on('ready', function() {
 		marktplatzSwiper.autoplay.start()
 	});
+
+  if (document.body.classList.contains("single-marktplatz")) {
+    var singleMarktplatzEventsSwiper = new Swiper('.swiper-single-marktplatz', {
+      slidesPerView: 1,
+      spaceBetween: 0,
+      navigation: {
+        nextEl: ".single-marktplatz-button-next",
+        prevEl: ".single-marktplatz-button-prev",
+      },
+    });
+  }
+
 });

@@ -47,3 +47,40 @@
       svg
         height: 20px
         fill: #9A9A9A
+
+.marktplatz_caption
+  background: linear-gradient(0deg,#1b1f27,#1b1f27 0%,rgba(27,31,39,.6) 15%,rgba(27,31,39,.5) 60%,rgba(27,31,39,.3) 75%,rgba(27,31,39,0))
+  -webkit-line-clamp: 3
+  -webkit-box-orient: vertical
+  color: #fff
+  display: -webkit-box!important
+  font-family: acumin-pro,sans-serif
+  font-size: 18px
+  font-weight: 700
+  margin-bottom: 0px
+  overflow: hidden
+  padding-top: 10px
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  padding-left: 25px
+  padding-bottom: 20px
+  text-decoration: none
+  text-overflow: ellipsis
+  transition: all .3s ease-in-out
+  white-space: normal
+  &::before
+    background-color: #fff
+    content: ""
+    display: block
+    height: 3px
+    position: absolute
+    top: 0
+    transition: all .3s ease-in-out
+    width: 170px
+
+.single-marktplatz-button-next,
+.single-marktplatz-button-prev
+  color: #c26538
+  width: 27px
