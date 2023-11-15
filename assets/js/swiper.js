@@ -130,6 +130,8 @@ $(function() {
   if (document.body.classList.contains("single-marktplatz")) {
     var singleMarktplatzEventsSwiper = new Swiper('.swiper-single-marktplatz', {
       slidesPerView: 1,
+      loop: true,
+      autoplay: true,
       spaceBetween: 0,
       navigation: {
         nextEl: ".single-marktplatz-button-next",
