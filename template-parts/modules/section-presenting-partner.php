@@ -14,7 +14,7 @@ if ( have_rows( 'partners', 'presenting_partner' ) ) :
 					the_row();
 					$partner_logo = get_sub_field( 'logo' );
 					$partner_url  = get_sub_field( 'link_url' );
-					echo '<div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 text-center presenting-partner-card">';
+					echo '<div class="col-12 col-sm-12 col-md-12 col-lg-3 col-xl-3 text-center presenting-partner-card">';
 					if ( $partner_logo && $partner_url ) :
 						echo '<a href="' . esc_url( $partner_url ) . '" target="_blank" class="presenting-partner-link">' . wp_get_attachment_image( $partner_logo, 'markplatz-avatar', false, array( 'class' => 'presenting-partner-logo' ) ) . '</a>';
 					else :
