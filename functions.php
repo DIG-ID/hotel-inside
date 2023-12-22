@@ -208,7 +208,7 @@ function hi_get_font_face_styles() {
 
 function hi_preload_webfonts() {
 	?>
-	<link rel="preload" href="https://p.typekit.net/p.css?s=1&k=frp2sqi&ht=tk&f=26053.26054.26056.26062.41022.41025&a=100534906&app=typekit&e=css" as="font" crossorigin>
+	<link rel="preload" href="https://p.typekit.net/p.css?s=1&k=frp2sqi&ht=tk&f=26053.26054.26056.26062.41022.41025&a=100534906&app=typekit&e=css" as="style" crossorigin>
 	<?php
 }
 

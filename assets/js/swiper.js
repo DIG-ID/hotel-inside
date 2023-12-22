@@ -97,6 +97,39 @@ $(function() {
     },
   });
 
+  var partenrSwiper = new Swiper('.swiper-presenting-partner', {
+    breakpoints: {
+      576: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      992: {
+        slidesPerView: 4,
+        spaceBetween: 30,
+      },
+      1200: {
+        slidesPerView: 6,
+        spaceBetween: 30,
+      },
+    },
+    //slidesPerView: 1,
+    spaceBetween: 30,
+    //pauseOnMouseEnter: true,
+    //grabCursor: true,
+   // reverseDirection: true,
+    loop: true,
+    speed: 6000,
+    slidesPerView: 'auto',
+    autoplay: {
+      delay: 1,
+      disableOnInteraction: false,
+    },
+  });
+
   var clubEventsSwiper = new Swiper('.swiper-club-events', {
     slidesPerView: 1,
     grid: {
@@ -125,6 +158,7 @@ $(function() {
   });
 	$( document ).on('ready', function() {
 		marktplatzSwiper.autoplay.start()
+    partenrSwiper.autoplay.start()
 	});
 
   if (document.body.classList.contains("single-marktplatz")) {
