@@ -79,8 +79,7 @@ $(function() {
 				spaceBetween: 30,
 			},
 			1200: {
-				//slidesPerView: 6,
-				slidesPerView: 4,
+				slidesPerView: 6,
 				spaceBetween: 30,
 			},
 		},
@@ -89,14 +88,13 @@ $(function() {
 		//pauseOnMouseEnter: true,
 		//grabCursor: true,
 	 // reverseDirection: true,
-		//loop: true,
+		loop: true,
 		speed: 6000,
-		//slidesPerView: 'auto',
-		slidesPerView: 4,
-		/*autoplay: {
+		slidesPerView: 'auto',
+		autoplay: {
 			delay: 1,
 			disableOnInteraction: false,
-		},*/
+		},
 	});
 
 	var partenrSwiper = new Swiper('.swiper-presenting-partner', {
@@ -114,7 +112,8 @@ $(function() {
 				spaceBetween: 30,
 			},
 			1200: {
-				slidesPerView: 6,
+				slidesPerView: 4,
+				//slidesPerView: 6,
 				spaceBetween: 30,
 			},
 		},
@@ -123,9 +122,10 @@ $(function() {
 		//pauseOnMouseEnter: true,
 		//grabCursor: true,
 	 // reverseDirection: true,
-		loop: true,
+		//loop: true,
 		speed: 6000,
-		slidesPerView: 'auto',
+		slidesPerView: 4,
+		//slidesPerView: 'auto',
 		/*autoplay: {
 			delay: 1,
 			disableOnInteraction: false,
