@@ -97,6 +97,7 @@ $(function() {
 		},
 	});
 
+	/*
 	var partenrSwiper = new Swiper('.swiper-presenting-partner', {
 		breakpoints: {
 			576: {
@@ -130,7 +131,7 @@ $(function() {
 			delay: 1,
 			disableOnInteraction: false,
 		},*/
-	});
+		//});
 
 	var clubEventsSwiper = new Swiper('.swiper-club-events', {
 		slidesPerView: 1,
