@@ -79,7 +79,8 @@ $(function() {
 				spaceBetween: 30,
 			},
 			1200: {
-				slidesPerView: 6,
+				//slidesPerView: 6,
+				slidesPerView: 4,
 				spaceBetween: 30,
 			},
 		},
@@ -88,13 +89,14 @@ $(function() {
 		//pauseOnMouseEnter: true,
 		//grabCursor: true,
 	 // reverseDirection: true,
-		loop: true,
+		//loop: true,
 		speed: 6000,
-		slidesPerView: 'auto',
-		autoplay: {
+		//slidesPerView: 'auto',
+		slidesPerView: 4,
+		/*autoplay: {
 			delay: 1,
 			disableOnInteraction: false,
-		},
+		},*/
 	});
 
 	var partenrSwiper = new Swiper('.swiper-presenting-partner', {
