@@ -8,27 +8,27 @@ if ( have_rows( 'partners', 'presenting_partner' ) ) :
 					<h2 class="section-title"><?php esc_html_e( 'Presenting Partner', 'hotel-inside' ); ?></h2>
 				</div>
 			</div>
-			<div class="row justify-content-center align-items-center">
-				<div class="row">
-					<div class="swiper swiper-presenting-partner">
-						<div class="swiper-wrapper">
-							<?php
-							while ( have_rows( 'partners', 'presenting_partner' ) ) :
-								the_row();
-								$partner_logo = get_sub_field( 'logo' );
-								$partner_url  = get_sub_field( 'link_url' );
-								echo '<div class="swiper-slide text-center presenting-partner-card">';
-								if ( $partner_logo && $partner_url ) :
-									echo '<a href="' . esc_url( $partner_url ) . '" target="_blank" class="presenting-partner-link">' . wp_get_attachment_image( $partner_logo, 'markplatz-avatar', false, array( 'class' => 'presenting-partner-logo' ) ) . '</a>';
-								else :
-									echo '<p class="text-center">' . esc_html__( 'Partner logo or URL not set.', 'hotel-inside' ) . '</p>';
-								endif;
-								echo '</div>';
-							endwhile;
-							?>
-						</div>
+			<div class="row">
+
+				<div class="swiper swiper-presenting-partner">
+					<div class="swiper-wrapper">
+						<?php
+						while ( have_rows( 'partners', 'presenting_partner' ) ) :
+							the_row();
+							$partner_logo = get_sub_field( 'logo' );
+							$partner_url  = get_sub_field( 'link_url' );
+							echo '<div class="swiper-slide text-center presenting-partner-card">';
+							if ( $partner_logo && $partner_url ) :
+								echo '<a href="' . esc_url( $partner_url ) . '" target="_blank" class="presenting-partner-link">' . wp_get_attachment_image( $partner_logo, 'markplatz-avatar', false, array( 'class' => 'presenting-partner-logo' ) ) . '</a>';
+							else :
+								echo '<p class="text-center">' . esc_html__( 'Partner logo or URL not set.', 'hotel-inside' ) . '</p>';
+							endif;
+							echo '</div>';
+						endwhile;
+						?>
 					</div>
 				</div>
+
 			</div>
 		</div>
 	</section>
