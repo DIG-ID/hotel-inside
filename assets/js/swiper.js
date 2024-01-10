@@ -112,7 +112,7 @@ $(function() {
 				spaceBetween: 30,
 			},
 			1200: {
-				slidesPerView: 4,
+				slidesPerView: 6,
 				//slidesPerView: 6,
 				spaceBetween: 30,
 			},

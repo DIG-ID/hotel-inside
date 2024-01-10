@@ -11,7 +11,7 @@ if ( have_rows( 'partners', 'presenting_partner' ) ) :
 			<div class="row justify-content-center align-items-center">
 				<div class="row">
 					<div class="swiper swiper-presenting-partner">
-						<div class="swiper-wrapper justify-content-center align-items-center">
+						<div class="swiper-wrapper">
 							<?php
 							while ( have_rows( 'partners', 'presenting_partner' ) ) :
 								the_row();
