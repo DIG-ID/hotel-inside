@@ -97,7 +97,6 @@ $(function() {
 		},
 	});
 
-	/*
 	var partenrSwiper = new Swiper('.swiper-presenting-partner', {
 		breakpoints: {
 			576: {
@@ -123,15 +122,15 @@ $(function() {
 		//pauseOnMouseEnter: true,
 		//grabCursor: true,
 	 // reverseDirection: true,
-		//loop: true,
+		loop: true,
 		speed: 6000,
-		slidesPerView: 4,
-		//slidesPerView: 'auto',
-		/*autoplay: {
+		//slidesPerView: 4,
+		slidesPerView: 'auto',
+		autoplay: {
 			delay: 1,
 			disableOnInteraction: false,
-		},*/
-		//});
+		},
+		});
 
 	var clubEventsSwiper = new Swiper('.swiper-club-events', {
 		slidesPerView: 1,
