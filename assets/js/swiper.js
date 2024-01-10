@@ -160,7 +160,7 @@ $(function() {
 	});
 	$( document ).on('ready', function() {
 		marktplatzSwiper.autoplay.start();
-		//partenrSwiper.autoplay.start()
+		partnerSwiper.autoplay.start()
 	});
 
 	if (document.body.classList.contains("single-marktplatz")) {
