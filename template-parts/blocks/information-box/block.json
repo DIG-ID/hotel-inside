@@ -1,0 +1,18 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "acf/information-box",
+  "title": "Information Box",
+  "description": "A custom information box block that uses ACF fields.",
+  "style": [ "file:./information-box.css" ],
+  "category": "theme",
+  "icon": "info",
+  "keywords": ["info", "box", "information", "info-box"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "information-box.php"
+  },
+  "supports": {
+    "anchor": true
+  }
+}

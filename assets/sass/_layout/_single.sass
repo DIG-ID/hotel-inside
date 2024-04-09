@@ -172,6 +172,38 @@
             display: inline-block
             width: 1em
             margin-left: -1em
+      .information-box
+        &__wrapper
+          padding: 60px
+          padding-left: 70px
+          border-left: 5px solid $main-blue
+          background-color: #F3F3F3
+          margin: 30px 0px
+          position: relative
+          &::before
+            content: ''
+            display: block
+            position: absolute
+            top: 65px
+            left: 20px
+            width: 27px
+            height: 27px
+            background-image: url( '../../images/infobox-icon.png' )
+            background-position: center center
+            background-repeat: no-repeat
+            background-size: cover
+        &__title
+          font-family: $acumin-font
+          font-size: 18px
+          font-weight: 700
+          color: $main-blue
+          margin-top: 0px
+          margin-bottom: 10px
+        &__content
+          p
+            &:last-of-type
+              margin-bottom: 0px
+
       .wp-block-gallery
         .blocks-gallery-grid
           .blocks-gallery-item
@@ -380,6 +412,8 @@
         height: auto
         object-fit: cover
 
+
+
 /*Responsive*/
 @include media-breakpoint-down(xl)
   .format-video
@@ -401,6 +435,11 @@
       .content
         .wp-block-group.has-background
           .wp-block-group__inner-container
+            padding: 60px 20px 60px 20px
+            &::before
+              top: 25px
+        .information-box
+          &__wrapper
             padding: 60px 20px 60px 20px
             &::before
               top: 25px

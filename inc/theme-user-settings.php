@@ -122,13 +122,14 @@ function hi_allowed_block_types( $allowed_blocks ) {
 				'core/embed',
 				'core/video',
 				'core-embed/youtube',
+				'acf/information-box',
 			);
 			return $blocks;
 		endif;
 	endif;
 }
 
-add_filter( 'allowed_block_types', 'hi_allowed_block_types' );
+add_filter( 'allowed_block_types_all', 'hi_allowed_block_types' );
 
 /**
  * Remove all default Gutenberg block patterns
