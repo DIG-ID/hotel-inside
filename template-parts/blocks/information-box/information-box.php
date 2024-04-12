@@ -27,7 +27,6 @@ if ( ! empty( $block['align'] ) ) {
 
 <div <?php echo esc_attr( $anchor ); ?> class="<?php echo esc_attr( $class_name ); ?>">
 	<div class="information-box__wrapper">
-		<h3 class="information-box__title"><?php echo $box_title; ?></h3>
 		<div class="information-box__content">
 			<?php if ( ! empty( $box_content ) ) : ?>
 				<?php echo wp_kses_post( $box_content ); ?>
