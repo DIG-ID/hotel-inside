@@ -236,6 +236,17 @@ function hi_custom_titles( $title ) {
 
 add_filter( 'get_the_archive_title', 'hi_custom_titles' );
 
+/**
+ * Pass parameteres through a form to a CF7 form. For the newsletter.
+ */
+add_filter('wpcf7_form_tag', 'prefill_email_with_get_param', 10, 2);
+function prefill_email_with_get_param($tag, $unused) {
+    if ($tag['name'] == 'your-email' && isset($_GET['email'])) {
+        $tag['values'] = [sanitize_email($_GET['email'])];
+        $tag['raw_values'] = [sanitize_email($_GET['email'])];
+    }
+    return $tag;
+}
 
 /**
  * Create an options page with ACF.

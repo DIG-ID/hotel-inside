@@ -1,3 +1,68 @@
+.newsletter-section
+  &__header
+    margin-bottom: 10px
+    form
+      input[type=email]
+        margin-right: 0px
+        width: 100%
+        border-radius: 24px !important
+        color: $main-blue
+        background-color: #FFFFFF
+        border: none !important
+        text-transform: uppercase
+        font-family: $montserrat-font
+        font-size: 12px
+        font-weight: 600
+        padding: 8.5px 15px !important
+      button[type=submit]
+        margin-left: 0px
+        border-radius: 24px !important
+        background-color: $main-orange !important
+        color: #FFFFFF !important
+        border: none !important
+        text-transform: uppercase
+        font-family: $montserrat-font
+        font-size: 12px
+        font-weight: 600
+        padding: 8.5px 15px !important
+        margin: 10px 0 0 0px !important
+        transition: all .3s ease-in-out
+        &:hover
+          background-color: darken($main-orange, 10%) !important
+  &__wrapper
+    max-width: 270px
+
+.section-newsletter-cta
+  .newsletter-section
+    &__header
+      form
+        input[type=email]
+          margin-right: 20px
+          width: 270px
+          border-radius: 24px !important
+          color: $main-blue
+          background-color: #FFFFFF
+          border: none !important
+          text-transform: uppercase
+          font-family: $montserrat-font
+          font-size: 12px
+          font-weight: 600
+          line-height: 18px
+          padding: 8.5px 15px !important
+        button[type=submit]
+          border-radius: 24px !important
+          background-color: $main-blue !important
+          color: #FFFFFF !important
+          border: none !important
+          text-transform: uppercase
+          font-family: $montserrat-font
+          font-size: 12px
+          font-weight: 600
+          padding: 8.5px 15px !important
+          margin-top: 0 !important
+    &__wrapper
+      max-width: none
+
 .widget_newsletter2go
   .nl2go-widget
     form
@@ -90,6 +155,19 @@
       button[type=submit]
         width: 100%
         margin-top: 10px !important
+  .newsletter-section
+    &__header
+      form
+        input[type=email]
+          width: 100%
+          border: 1px solid #707070 !important
+        button[type=submit]
+          width: 100%
+          background-color: $main-blue !important
+          color: #FFFFFF !important
+          margin-top: 10px !important
+    &__wrapper
+      max-width: none
 
 @include media-breakpoint-down(md)
   .widget_newsletter2go
@@ -106,3 +184,16 @@
         td
           display: block
           width: 100%
+@include media-breakpoint-down(md)
+  .section-newsletter-cta
+    .newsletter-section
+      &__header
+        form
+          input[type=email]
+            width: 80%
+            margin: 0 auto 15px auto
+      &__wrapper
+        max-width: none
+        display: flex
+        flex-direction: column
+        align-items: center
