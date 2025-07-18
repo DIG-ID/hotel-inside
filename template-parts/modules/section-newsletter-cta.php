@@ -15,7 +15,7 @@ $newsletter_sc = get_theme_mod( 'newsletter_sc' );
 					<form action="/newsletteranmeldung/" method="get">
 						<div class="newsletter-section__wrapper">
 							<input type="email" name="email" placeholder="E-mail" required>
-							<button type="submit"><?php esc_html_e('Abschicken', 'hotel-inside'); ?></button>
+							<button type="submit"><?php esc_html_e('Anmelden', 'hotel-inside'); ?></button>
 						</div>
 					</form>
 				</div>
